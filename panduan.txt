@@ -1,0 +1,19 @@
+halaman pegawai:
+1. teks isi bisa didownload ke pdf
+	a. index
+	b. dokumen pengetahuan
+2. link ke forum diskusi
+3. search berfungsi
+
+halaman admin:
+1. manajemen menu utama berfungsi
+2. data pegawai belum bisa ditampilkan
+
+halaman kepala:
+1. 1. teks isi bisa didownload ke pdf
+	a. index
+	b. dokumen pengetahuan
+2. kepala dapat memanajemen forum diskusi
+3. 3. search berfungsi
+
+> semua halaman rapikan dan percantik tampilannya
