@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$query=mysql_query("select * from pegawai_pinmas");
+$query = mysql_query("select * from pegawai_pinmas");
 require "includes/header_user_input.php";
 require "includes/config.php";
 ?>
