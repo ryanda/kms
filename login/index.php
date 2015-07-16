@@ -75,7 +75,6 @@ unset($_POST['login']);
 				            if (isset($_GET['login'])) {
 				                echo $_GET['login'];
 				            } ?>
-
 		                </form>
 	                </div>
 	            </div>
@@ -86,30 +85,10 @@ unset($_POST['login']);
 	    <!--    footer page-->
 	    <footer class="page-footer green darken-4">
 	        <div class="container">
-	            <div class="row">
-	                <div class="col l6 s12">
-	                    <h5 class="white-text">Knowledge Management System</h5>
-	                    <!-- <p class="grey-text text-lighten-4">Lorem ipsum Reprehenderit reprehenderit in esse est amet aliquip cillum culpa reprehenderit ut ea Duis dolore nisi consectetur magna magna deserunt dolor adipisicing ut dolore deserunt Ut adipisicing pariatur eu.</p> -->
-	                </div>
-	                <!-- <div class="col l4 offset-l2 s12">
-	                    <h5 class="white-text"><i class="mdi-action-account-circle left"></i>Links</h5>
-	                    <ul>
-	                        <li><a class="grey-text text-lighten-3" href="#!"><i class="mdi-content-add-circle left"></i>Link 1</a>
-	                        </li>
-	                        <li><a class="grey-text text-lighten-3" href="#!"><i class="mdi-content-mail left"></i>Link 2</a>
-	                        </li>
-	                        <li><a class="grey-text text-lighten-3" href="#!"><i class="mdi-content-send left"></i>Link 3</a>
-	                        </li>
-	                        <li><a class="grey-text text-lighten-3" href="#!"><i class="mdi-content-archive left"></i>Link 4</a>
-	                        </li>
-	                    </ul>
-	                </div> -->
-	            </div>
-	        </div>
-	        <div class="footer-copyright">
-	            <div class="container">
-	                © 2015 Copyright miftaamelia
-	            </div>
+                <h5 class="white-text">Knowledge Management System</h5>
+		        <div class="footer-copyright">
+		            © 2015 Copyright miftaamelia
+		        </div>
 	        </div>
 	    </footer>
 	    <!--    end footer page-->
