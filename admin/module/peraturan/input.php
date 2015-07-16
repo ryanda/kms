@@ -9,6 +9,8 @@ require "includes/config.php";
 
 </head>
 <body>
+    <main style="margin-top:30px;">
+
 		<div class="container">
 			<div class="hero-unit">
 			<?
@@ -30,8 +32,7 @@ require "includes/config.php";
             </tr>
             </table>
         </form>
-    </body>
-</html>
+
 <?php
 include "../includes/config.php";
  
@@ -56,5 +57,6 @@ echo mysql_error();
 ?>
 		</div>
 		</div>
+    </main>
 </body>
 </html>
