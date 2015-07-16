@@ -10,7 +10,7 @@ require "includes/config.php";
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <!-- TinyMCE -->
-<script type="text/javascript" src="includes/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="../../../asset/admin/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
 tinyMCE.init({
         // General options

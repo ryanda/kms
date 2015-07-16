@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 //Including facebook php sdk file
-$path = 'includes/';
+$path = '../../../asset/admin/';
 ?>
 <!DOCTYPE html>
 <html lang="en">
