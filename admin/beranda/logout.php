@@ -15,13 +15,13 @@
 </HEAD>
 <BODY>
 <meta charset="utf-8">
-<link rel="shortcut icon" type="image/img.png" href="css/images/img.png">
-<link rel="stylesheet" href="css/style_login.css" type="text/css" media="all">
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all">
-<script src="js/jquery-1.7.2.min.js"></script>
+<link rel="shortcut icon" type="image/img.png" href="../../asset/css/images/img.png">
+<link rel="stylesheet" href="../../asset/css/style_login.css" type="text/css" media="all">
+<link rel="stylesheet" href="../../asset/css/flexslider.css" type="text/css" media="all">
+<script src="../../asset/js/jquery-1.7.2.min.js"></script>
 <!--[if lt IE 9]><script src="js/modernizr.custom.js"></script><![endif]-->
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/functions.js"></script>
+<script src="../../asset/js/jquery.flexslider-min.js"></script>
+<script src="../../asset/js/functions.js"></script>
 <style type="text/css">
 <!--
 .style1 {font-family: "hobo Std"}
@@ -47,7 +47,7 @@
       <div class="slider-holder"> <span class="slider-t"></span> <span class="slider-b-left"></span> <span class="slider-b-center"></span> <span class="slider-b-right"></span> <span class="slider-l"></span> <span class="slider-r"></span>
         <div class="flexslider">
           <ul class="slides">
-            <li> <img src="css/images/slide-img.png" alt="">
+            <li> <img src="../../asset/css/images/slide-img.png" alt="">
               <div class="slide-cnt">
               <center>
 

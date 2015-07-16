@@ -1,5 +1,5 @@
 <?php
-include ("config.php");
+include ("includes/config.php");
  
 $data = @mysql_query ("select * from peraturan where
         id_peraturan=" . $_REQUEST['id_peraturan']);

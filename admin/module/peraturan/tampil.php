@@ -5,7 +5,6 @@ require "includes/config.php";
 $data = mysql_query("select * from peraturan");
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <!-- TinyMCE -->
@@ -47,34 +46,62 @@ tinyMCE.init({
         }
 });
 </script>
+
+<link href="../../../asset/css/materialize.min.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+            main { flex: 1 0 auto }
+            .container{width:90%}            
+        </style>
+
 </head>
+
 <body>
-		<div class="container">
-			<div class="hero-unit">
-<table class="table table-striped" border="0">
-				<thead>
-				<tr>
-      <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">No</th>
-      <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Judul Peraturan</th>
-      <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Nama File</th>
-      <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Tipe</th>
-      <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Ukuran</th>
-      <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Download</th>
-	  <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Opsi</th>
-   </thread>
-   </tr>
-   <?php while ($row =mysql_fetch_assoc($data)) { ?>
-   <tr>
-      <td><center><?php echo $c=$c+1;?></td>
-      <td><?php echo $row['judul_peraturan'] ?></td>
-      <td><?php echo $row['filename'] ?></td>
-      <td><?php echo $row['filetype'] ?></td>
-      <td><?php echo $row['filesize'] ?></td>
-      <td><a href="download.php?id_peraturan=<?php echo $row['id_peraturan'] ?>">Download</a></td>
-	  <td><a href="delete.php?id_peraturan=<?php echo $row['id_peraturan'] ?>">Hapus</a></td>
-      
-   </tr>
-   <?php } ?>
-</table>
+    
+       <!-- start main content -->
+        <main style="margin-top:30px;">
+            <div class="container">
+               
+                    
+                        <table class="hoverable centered responsive-table">
+                          <thead>
+                              <tr>
+                                <th>No</th>
+                                <th>Judul Peraturan</th>
+                                <th>Nama File</th>
+                                <th>Tipe</th>
+                                <th>Ukuran</th>
+                                <th>Download</th>
+                                <th>Opsi</th>
+                             </tr>
+                             </thead>
+                             
+                             <tbody> 
+                             <?php while ($row =mysql_fetch_assoc($data)) { ?>
+                             
+                             <tr>
+                                <td><?php echo $c=$c+1;?></td>
+                                <td><?php echo $row['judul_peraturan'] ?></td>
+                                <td><?php echo $row['filename'] ?></td>
+                                <td><?php echo $row['filetype'] ?></td>
+                                <td><?php echo $row['filesize'] ?></td>
+                                <td><a href="download.php?id_peraturan=<?php echo $row['id_peraturan'] ?>">Download</a></td>
+                                <td><a href="delete.php?id_peraturan=<?php echo $row['id_peraturan'] ?>">Hapus</a></td>   
+                             </tr>
+
+                             <?php } ?>
+
+                             </tbody>
+                          
+                          </table>
+
+            </div>
+        </main>
+        <!-- end main content -->
+
 </body>
 </html>
