@@ -1,17 +1,16 @@
 <?php
-error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$query=mysql_query("select * from pegawai_pinmas");
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING) ^ E_DEPRECATED);
+$query = mysql_query("select * from pegawai_pinmas");
 require "includes/header_user_input.php";
 require "includes/config.php";
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!-- TinyMCE -->
-<script type="text/javascript" src="../../../asset/admin/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
-<script type="text/javascript">
-tinyMCE.init({
+    <!-- TinyMCE -->
+    <script type="text/javascript" src="../../../asset/admin/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+    <script type="text/javascript">
+    tinyMCE.init({
         // General options
         mode : "textareas",
         theme : "advanced",
@@ -45,23 +44,29 @@ tinyMCE.init({
                 username : "Some User",
                 staffid : "991234"
         }
-});
-</script>
+    });
+    </script>
 </head>
+
 <body>
+    <main style="margin-top:30px;">
 		<div class="container">
 			<div class="hero-unit">
-                     <?php
-error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-include "config.php";
-$nip=$_GET['nip'];
-$query=mysql_query("select * from pegawai_pinmas where nip='$nip'");
-?>
-<form action="simpan.php" method="post">
-<table border="1" cellspacing="0" cellpadding="0" width="580">
-<?php
-while($row=mysql_fetch_array($query)){
-?>
+                     
+        <?php
+            error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+            include "config.php";
+            $nip=$_GET['nip'];
+            $query=mysql_query("select * from pegawai_pinmas where nip='$nip'");
+        ?>
+
+    <form action="simpan.php" method="post">
+    <table border="1" cellspacing="0" cellpadding="0" width="580">
+
+        <?php
+            while($row=mysql_fetch_array($query)){
+        ?>
+        
 <input type="hidden" name="nip" value="<?php echo $nip;?>"/>
 <table border="0" cellspacing="0" cellpadding="0" width="580">
 <TR>
@@ -95,5 +100,7 @@ while($row=mysql_fetch_array($query)){
 <td><input type="submit" value="Simpan" name="simpan" /></td>                         
 </form>
 </center>
-</br>    
+</br>  
+</main>
+</body>  
                     
