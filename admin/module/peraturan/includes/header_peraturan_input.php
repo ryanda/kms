@@ -1,6 +1,5 @@
 <?php
 require 'config.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +16,6 @@ require 'config.php';
             .container{width:90%}            
         </style>
     </head>
-
     <body>
         <!-- start header navbar -->
         <header> 
@@ -36,8 +34,7 @@ require 'config.php';
                 </div>
 
                 <ul id="dropdown1" class="dropdown-content">
-                        <li><a href="tampil.php">View</a></li>
-                        
+                    <li><a href="tampil.php">View</a></li>
                 </ul>
 
             </nav>
@@ -46,5 +43,3 @@ require 'config.php';
 
         <script src="../../../asset/js/jquery.min.js"></script>
         <script src="../../../asset/js/materialize.min.js"></script>
-        </body>
-

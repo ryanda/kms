@@ -34,8 +34,7 @@ require 'config.php';
                 </div>
 
                 <ul id="dropdown1" class="dropdown-content">
-                        <li><a href="../peraturan/input.php">Input</a></li>
-                        
+                    <li><a href="../peraturan/input.php">Input</a></li>
                 </ul>
 
             </nav>
@@ -44,4 +43,3 @@ require 'config.php';
 
         <script src="../../../asset/js/jquery.min.js"></script>
         <script src="../../../asset/js/materialize.min.js"></script>
-        </body>
