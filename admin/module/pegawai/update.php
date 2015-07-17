@@ -46,6 +46,21 @@ require "includes/config.php";
         }
     });
     </script>
+
+     <head>
+       <title>KMS Pinmas Kementerian Agama</title>
+        <link href="../../../asset/css/materialize.min.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+            main { flex: 1 0 auto }
+            .container{width:90%}            
+        </style>
+    </head>
+
 </head>
 
 <body>
@@ -61,26 +76,28 @@ require "includes/config.php";
         ?>
 
     <form action="simpan.php" method="post">
-    <table border="1" cellspacing="0" cellpadding="0" width="580">
+    
+    <table class="hoverable centered responsive-table">
 
         <?php
             while($row=mysql_fetch_array($query)){
         ?>
         
 <input type="hidden" name="nip" value="<?php echo $nip;?>"/>
-<table border="0" cellspacing="0" cellpadding="0" width="580">
-<TR>
-<th scope scope="col">NIP</font></th>
-<th scope scope="col">Nama Lengkap</font></th>
-<th scope scope="col">Jabatan</font></th>
-<th scope scope="col">Golongan</font></th>
-<th scope scope="col">Jenis Kelamin</font></th>
-<th scope scope="col">Tempat Lahir</font></th>
-<th scope scope="col">Tanggal Lahir</font></th>
-<th scope scope="col">Alamat</font></th>
-<th scope scope="col">No. Telepon</font></th>
-<th scope scope="col">Email</font></th>
-</TR>
+
+<tr>
+<th>NIP</th>
+<th>Nama Lengkap</th>
+<th>Jabatan</th>
+<th>Golongan</th>
+<th>Jenis Kelamin</th>
+<th>Tempat Lahir</th>
+<th>Tanggal Lahir</th>
+<th>Alamat</th>
+<th>No. Telepon</th>
+<th>Email</th>
+</tr>
+
 <tr>
 <td><input type="text" name="nip" value="<?php echo $row['nip'];?>" /></td>
 <td><input type="text" name="nama_lengkap" value="<?php echo $row['nama_lengkap'];?>" /></td>
@@ -92,15 +109,26 @@ require "includes/config.php";
 <td><input type="password" name="alamat" value="<?php echo $row['alamat'];?>"  /></td>
 <td><input type="text" name="no_telp" value="<?php echo $row['no_telp'];?>" /></td>
 <td><input type="text" name="email" value="<?php echo $row['email'];?>" /></td>
-</TR>
+</tr>
+
 <?php
 }
 ?>
-</TABLE>
-<td><input type="submit" value="Simpan" name="simpan" /></td>                         
+</table>
+
+<button class="btn waves-effect waves-light" type="submit" name="simpan">Submit
+                <i class="mdi-content-send right"></i>
+</button>
+
 </form>
-</center>
-</br>  
+
+</div>
+</div>
+
 </main>
+
+    <script src="../../../asset/js/jquery.min.js"></script>
+    <script src="../../../asset/js/materialize.min.js"></script>
+
 </body>  
                     

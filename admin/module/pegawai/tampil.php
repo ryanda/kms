@@ -3,10 +3,8 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 require "includes/header_user.php";
 require "includes/config.php";
 $query=mysql_query("select * from pegawai_pinmas");
-
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <!-- TinyMCE -->
@@ -49,50 +47,70 @@ tinyMCE.init({
 });
 </script>
 </head>
+
 <body>
-		<div class="container">
-			<div class="hero-unit">
-<table class="table table-striped">
-				<thead>
-				<tr>
 
-<th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">No.</font></th>
-<th scope scope="col"bgcolor="#333333"><font color="#CCCCCC">NIP</font></th>
-<th scope scope="col"bgcolor="#333333"><font color="#CCCCCC">Nama Lengkap</font></th>
-<th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Jabatan</font></th>
-<th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Golongan</font></th>
-<th scope scope="col"bgcolor="#333333"><font color="#CCCCCC">Jenis Kelamin</font></th>
-<th scope scope="col" bgcolor="#333333"><font color="#CCCCCC"><center>Tempat Lahir</font></th>
-<th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Tanggal Lahir</font></th>
-<th scope scope="col"bgcolor="#333333"><font color="#CCCCCC">Alamat</font></th>
-<th scope scope="col"bgcolor="#333333"><font color="#CCCCCC">No. Telepon</font></th>
-<th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Email</font></th>
+<main style="margin-top:30px;">
 
-</thread>
-</TR>
+        <div class="container">
+	     
+        <table class="hoverable centered responsive-table">
+				
+        <thead>
+	<tr>
+
+        <th>No</th>
+        <th>NIP</th>
+        <th>Nama Lengkap</th>
+        <th>Jabatan</th>
+        <th>Golongan</th>
+        <th>Jenis Kelamin</th>
+        <th>Tempat Lahir</th>
+        <th>Tanggal Lahir</th>
+        <th>Alamat</th>
+        <th>No Telepon</th>
+        <th>Email</th>
+
+        </tr>
+        </thead>
+
 <?php
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 while($row=mysql_fetch_array($query)){
 ?>
-<tr>
-<td align="center"><?php echo $c=$c+1;?></td>
-<td><?php echo $row['nip'];?></td></center>
-<td><?php echo $row['nama_lengkap'];?></td></center>
-<td><?php echo $row['jabatan'];?></td></center>
-<td><?php echo $row['golongan'];?></td></center>
-<td><?php echo $row['jenis_kelamin'];?></td></center>
-<td><?php echo $row['tempat_lahir'];?></td></center>
-<td><?php echo $row['tgl_lahir'];?></td></center>
-<td><?php echo $row['alamat'];?></td></center>
-<td><?php echo $row['no_telp'];?></td></center>
-<td><?php echo $row['email'];?></td></center>
-<td><center>&nbsp
-<a href="update.php?nip=<?php echo $row['nip']; ?>">UBAH</a> &nbsp;|
-<a href="hapus.php?nip=<?php echo $row['nip']; ?>" onClick="return confirm('Apakah anda yakin?')">HAPUS</a></td></center>
-<?php
-}
-?>
+        <tbody>
+        <tr>
+        <td><?php echo $c=$c+1;?></td>
+        <td><?php echo $row['nip'];?></td>
+        <td><?php echo $row['nama_lengkap'];?></td>
+        <td><?php echo $row['jabatan'];?></td>
+        <td><?php echo $row['golongan'];?></td>
+        <td><?php echo $row['jenis_kelamin'];?></td>
+        <td><?php echo $row['tempat_lahir'];?></td>
+        <td><?php echo $row['tgl_lahir'];?></td>
+        <td><?php echo $row['alamat'];?></td>
+        <td><?php echo $row['no_telp'];?></td>
+        <td><?php echo $row['email'];?></td>
+        
+        <td>
+         <a href="update.php?nip=<?php echo $row['nip']; ?>">ubah</a> | <a href="hapus.php?nip=<?php echo $row['nip']; ?>" onClick="return confirm('Apakah anda yakin?')">hapus</a>
+        </td>
 
-</TABLE></body></html>
-</br>			
+        <?php
+        }
+        ?>
+
+        </tr>
+        </tbody>
+
+        </table>
+
+                
+        </div>
+</main>
+
+</body>
+
+</html>
+		
                          

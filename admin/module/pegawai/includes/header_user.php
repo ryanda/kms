@@ -5,6 +5,7 @@ require 'config.php';
 <html lang="en">
      <head>
        <title>KMS Pinmas Kementerian Agama</title>
+      <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
         <link href="../../../asset/css/materialize.min.css" rel="stylesheet">
         <style type="text/css">
             body {
@@ -48,38 +49,4 @@ require 'config.php';
 
     </body>
 
-      <!-- <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="index.php"></a>
-                        </li>
-                        
-						<ul class="nav nav-pills">
-							<li class="dropdown" id="menu1">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
-									Posts
-									<b class="caret"></b>
-								</a>
-                                
-								<ul class="dropdown-menu">
-									<li><a href="input.php">Input</a></li>
-									
-								</ul>
-                                <li class="dropdown">
-								<a href="../../beranda/menu.php">Home</a>
-                                </li>
-
-							</li>
-							</ul>
-					</ul>
-					 
-                    <ul class="nav pull-right">
-							<li><a>Selamat Datang, Admin</a></li>
-				    </ul>
-                </div>
-            </div>
-        </div>
-		<div class="container">
- -->
+      
