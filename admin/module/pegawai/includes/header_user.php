@@ -23,7 +23,7 @@ require 'config.php';
         <header> 
             <nav class="green darken-4">
                 <div class="nav-wrapper container">
-                    <a class="brand-logo">Peraturan</a>
+                    <a class="brand-logo">Data Pegawai</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                     
                         <li><a href="../../beranda/menu.php"><i class="mdi-action-home left"></i>Home</a></li>

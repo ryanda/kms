@@ -70,7 +70,7 @@ tinyMCE.init({
         <th>Alamat</th>
         <th>No Telepon</th>
         <th>Email</th>
-
+        
         </tr>
         </thead>
 
@@ -92,9 +92,8 @@ while($row=mysql_fetch_array($query)){
         <td><?php echo $row['no_telp'];?></td>
         <td><?php echo $row['email'];?></td>
         
-        <td>
-         <a href="update.php?nip=<?php echo $row['nip']; ?>">ubah</a> | <a href="hapus.php?nip=<?php echo $row['nip']; ?>" onClick="return confirm('Apakah anda yakin?')">hapus</a>
-        </td>
+        <td><a href="update.php?nip=<?php echo $row['nip']; ?>">ubah</a></td>
+        <td><a href="hapus.php?nip=<?php echo $row['nip']; ?>" onClick="return confirm('Apakah anda yakin?')">hapus</a></td>
 
         <?php
         }
