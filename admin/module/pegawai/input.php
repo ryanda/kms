@@ -4,7 +4,6 @@ require "includes/header_user_input.php";
 require "includes/config.php";
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <!-- TinyMCE -->
@@ -47,65 +46,74 @@ tinyMCE.init({
 });
 </script>
 </head>
+
 <body>
-		<div class="container">
-			<div class="hero-unit">
-<table>
-<form action="proses.php" method="post"> 
-<tr>
-<td>NIP</td><td> : </td>
-<td><input type="text" name="nip" id="nip" required=""/></td>
-</tr>
+        <main style="margin-top:30px; margin-bottom: 30px; ">
+                <div class="container">
+			
+        <table class="hoverable responsive-table">
+                <form action="proses.php" method="post"> 
+        
+        <tr>
+        <td>NIP</td><td> : </td>
+        <td><input type="text" name="nip" id="nip" required=""/></td>
+        </tr>
 
-<tr>
-<td>Nama Lengkap</td><td> : </td>
-<td><input type="text" name="nama_lengkap" id="nama_lengkap" required=""/></td>
-</tr>
+        <tr>
+        <td>Nama Lengkap</td><td> : </td>
+        <td><input type="text" name="nama_lengkap" id="nama_lengkap" required=""/></td>
+        </tr>
 
-<tr>
-<td>Jabatan</td><td> : </td>
-<td><input type="text" name="jabatan" id="jabatan"/></td>
-</tr>
+        <tr>
+        <td>Jabatan</td><td> : </td>
+        <td><input type="text" name="jabatan" id="jabatan"/></td>
+        </tr>
 
-<tr>
-<td>Golongan</td><td> : </td>
-<td><input type="text" name="golongan" id="golongan" required=""/></td>
-</tr>
+        <tr>
+        <td>Golongan</td><td> : </td>
+        <td><input type="text" name="golongan" id="golongan" required=""/></td>
+        </tr>
 
-<tr>
-<td>Jenis Kelamin</td><td> : </td>
-<td><input type="enum" value="L,P" name="jenis_kelamin" id="jenis_kelamin" required=""/></td>
-</tr>
+        <tr>
+        <td>Jenis Kelamin</td><td> : </td>
+        <td><input type="enum" value="L,P" name="jenis_kelamin" id="jenis_kelamin" required=""/></td>
+        </tr>
 
-<tr>
-<td>Tempat Lahir</td><td> : </td>
-<td><input type="text" name="tempat_lahir" id="tempat_lahir"/></td>
-</tr>
+        <tr>
+        <td>Tempat Lahir</td><td> : </td>
+        <td><input type="text" name="tempat_lahir" id="tempat_lahir"/></td>
+        </tr>
 
-<tr>
-<td>Tanggal Lahir</td><td> : </td>
-<td><input type="date" name="tgl_lahir" id="tgl_lahir" required=""/></td>
-</tr>
+        <tr>
+        <td>Tanggal Lahir</td><td> : </td>
+        <td><input type="date" name="tgl_lahir" id="tgl_lahir" required=""/></td>
+        </tr>
 
-<tr>
-<td>Alamat</td><td> : </td>
-<td><input type="text" name="alamat" id="alamat" required=""/></td>
-</tr>
+        <tr>
+        <td>Alamat</td><td> : </td>
+        <td><input type="text" name="alamat" id="alamat" required=""/></td>
+        </tr>
 
-<tr>
-<td>No. Telepon</td><td> : </td>
-<td><input type="text" name="no_telp" id="no_telp"/></td>
-</tr>
+        <tr>
+        <td>No. Telepon</td><td> : </td>
+        <td><input type="text" name="no_telp" id="no_telp"/></td>
+        </tr>
 
-<tr>
-<td>Email</td><td> : </td>
-<td><input type="text" name="email" id="email"/></td>
-</tr>
+        <tr>
+        <td>Email</td><td> : </td>
+        <td><input type="text" name="email" id="email"/></td>
+        </tr>
 
-</table>
+        </table>
+        
+        
+        <button class="btn waves-effect waves-light" type="submit" name="proses">Proses
+                <i class="mdi-content-send right"></i>
+              </button>
+       
+        </form> 
 
-<input type="submit" name="proses" value="proses"/>
-</form> 
-</center>
-</br>    
+   
+                </div>
+        </main> 
                     
