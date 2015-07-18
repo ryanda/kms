@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <title>KMS Pinmas</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image"/img.png href="images/logo-kemenag.png">
+  <link rel="shortcut icon" type="image"/img.png href="../asset/images/logo-kemenag.png">
 
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-  <script src="js/slides.min.jquery.js"></script>
+  <script src="../asset/js/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> -->
+  <script src="../asset/js/slides.min.jquery.js"></script>
 	
 	<!--[if IE]>
 	<script type="text/javascript">
@@ -140,11 +140,11 @@ if ($noPage < $jumPage) echo "<a href='".$_SERVER['PHP_SELF']."?page=".($noPage+
 	<div id="client-wrap" class="group">
 		<div id="client">
 			<ul>
-				<li><a href="http://kemenag.go.id/" target="_blank"><img src="images/kemenag.go.id1.png" alt="" /></li>
-				<li><a href="http://haji.kemenag.go.id/" target="_blank"><img src="images/hajiumroh1 copy.png" alt="" /></li>
-				<li><a href="http://lpse.kemenag.go.id/" target="_blank"><img src="images/lpse.png" alt="" /></li>
-				<li><a href="http://webmail@kemenag.go.id/" target="_blank"><img src="images/webkemenag.png" alt="" /></li>
-				<li><a href="http://satulayanan.id/" target="_blank"><img src="images/layanan.png" alt="" /></li>
+				<li><a href="http://kemenag.go.id/" target="_blank"><img src="../asset/images/kemenag.go.id1.png" alt="" /></li>
+				<li><a href="http://haji.kemenag.go.id/" target="_blank"><img src="../asset/images/hajiumroh1 copy.png" alt="" /></li>
+				<li><a href="http://lpse.kemenag.go.id/" target="_blank"><img src="../asset/images/lpse.png" alt="" /></li>
+				<li><a href="http://webmail@kemenag.go.id/" target="_blank"><img src="../asset/images/webkemenag.png" alt="" /></li>
+				<li><a href="http://satulayanan.id/" target="_blank"><img src="../asset/images/layanan.png" alt="" /></li>
 			</ul>
 		</div><!-- end client -->
 	</div><!-- end client-wrap -->
@@ -166,7 +166,7 @@ if ($noPage < $jumPage) echo "<a href='".$_SERVER['PHP_SELF']."?page=".($noPage+
 			</ul>
 		</div>
 				
-		<a href="#header-wrap"><img src="images/back-top.png" alt="back-top" class="back-top" /></a>	</footer>
+		<a href="#header-wrap"><img src="../asset/images/back-top.png" alt="back-top" class="back-top" /></a>	</footer>
 	
 	
 <script>

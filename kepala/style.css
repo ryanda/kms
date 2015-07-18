@@ -111,7 +111,7 @@ header{
 header h2 a{
 	display: block;
 	text-indent: -999999px;
-	background: url(images/logo.png) no-repeat;
+	background: url(../asset/images/logo.png) no-repeat;
 	width: 500px;
 	height: 77px;
 	float: left;
@@ -162,7 +162,7 @@ nav ul li{
 nav ul li.home{
 	border-left: none;
 	text-indent: -9999px;
-	background: url(images/home.png) no-repeat 50% 50%;
+	background: url(../asset/images/home.png) no-repeat 50% 50%;
 }
 
 nav ul li.last{
@@ -189,7 +189,7 @@ nav ul li.home a:hover{
 	-webkit-border-bottom-left-radius: 30px;
 	border-top-left-radius: 30px;
 	border-bottom-left-radius: 30px;
-	background: #5fae53 url(images/home.png) no-repeat 50% 50%;
+	background: #5fae53 url(../asset/images/home.png) no-repeat 50% 50%;
 }
 nav ul li div input[type=text]{
 	-webkit-border-radius: 20px;
@@ -217,7 +217,7 @@ nav ul li div input[type=text]:focus{
 }
 
 nav ul li div input[type=submit]{
-	background: url(images/search.png) no-repeat 50% 50%;
+	background: url(../asset/images/search.png) no-repeat 50% 50%;
 	border: none;
 	text-indent: -999999px;
 	margin-left: 15px;
@@ -248,7 +248,7 @@ nav ul li div input[type=submit]{
 }
  
 .slide-heading{
-	background: url(images/slide-heading.png) no-repeat;
+	background: url(../asset/images/slide-heading.png) no-repeat;
 	width: 494px;
 	height: 68px;
 	color: #fff;
@@ -271,7 +271,7 @@ nav ul li div input[type=submit]{
 	text-decoration: none;
 	color: #509743;
 	padding-left: 15px;
-	background: url(images/more.png) no-repeat 0 50%;
+	background: url(../asset/images/more.png) no-repeat 0 50%;
 	
 }
 .readmore:hover{
@@ -288,7 +288,7 @@ nav ul li div input[type=submit]{
 ul.pagination li{
 	float: left;
 	margin-right: 10px;
-	background: url(images/pagination.png) no-repeat;
+	background: url(../asset/images/pagination.png) no-repeat;
 	background-position: top;
 	width: 14px;
 	height: 15px;
@@ -308,7 +308,7 @@ a.next{
 	display: block;
 	width: 7px;
 	height: 13px;
-	background: transparent url(images/prev-next.png) no-repeat;
+	background: transparent url(../asset/images/prev-next.png) no-repeat;
 	background-position: top right;
 	text-indent: -9999px;
 }
@@ -319,7 +319,7 @@ a.prev{
 	display: block;
 	width: 7px;
 	height: 13px;
-	background: transparent url(images/prev-next.png) no-repeat;
+	background: transparent url(../asset/images/prev-next.png) no-repeat;
 	background-position: top left;
 	text-indent: -9999px;
 }
@@ -336,7 +336,7 @@ a.prev:hover{
 	margin: 40px auto;
 	height: 253px;
 	padding-top: 30px;
-	background: url(images/service-bg.jpg) no-repeat;
+	background: url(../asset/images/service-bg.jpg) no-repeat;
 }
 
 
@@ -380,7 +380,7 @@ a.prev:hover{
 	padding-top: 20px;
 	float: left;
 	margin-right: 58px;
-	background: transparent url(images/video-bg.png) no-repeat;
+	background: transparent url(../asset/images/video-bg.png) no-repeat;
 	height: 225px;
 }
 #video h4{
@@ -402,7 +402,7 @@ a.prev:hover{
 	height: 180px;
 	float: left;
 	margin-right: 30px;
-	background: transparent url(images/twitter-bg.png) no-repeat;
+	background: transparent url(../asset/images/twitter-bg.png) no-repeat;
 	background-position: bottom;
 	padding: 0 0 20px 0;
 }
@@ -437,14 +437,14 @@ float: right;
 /* WIDGET */
 #widget-wrap{
 	padding: 50px 0;
-	background: #333333 url(images/widget-bg.jpg);
+	background: #333333 url(../asset/images/widget-bg.jpg);
 }
 #widget{
 	width: 960px;
 	margin: 0 auto;
 }
 h4.footer-header{
-	background: transparent url(images/footer-header.png) no-repeat;
+	background: transparent url(../asset/images/footer-header.png) no-repeat;
 	line-height: 58px;
 	text-indent: 30px;
 }
@@ -454,7 +454,7 @@ h4.footer-header{
 	margin-right: 75px;
 }
 #links ul{
-	list-style-image: url(images/links.png);
+	list-style-image: url(../asset/images/links.png);
 	margin-left: 15px;
 }
 #links ul li a{
@@ -514,7 +514,7 @@ h4.footer-header{
 
 /* CLIENT */
 #client-wrap{
-	background: #fff url(images/client-bg.jpg) repeat-x;
+	background: #fff url(../asset/images/client-bg.jpg) repeat-x;
 	padding: 40px 0;
 	border-bottom: 1px solid #c8c8c8;
 }	
@@ -537,7 +537,7 @@ footer{
 	margin: 0 auto;
 	position: relative;
 	padding: 50px 0;
-	background: #333333 url(images/widget-bg.jpg);
+	background: #333333 url(../asset/images/widget-bg.jpg);
 }
 
 #footer-left{
