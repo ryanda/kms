@@ -4,116 +4,75 @@ require "includes/header_user_input.php";
 require "includes/config.php";
 ?>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<!-- TinyMCE -->
-<script type="text/javascript" src="../../../asset/admin/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
-<script type="text/javascript">
-tinyMCE.init({
-        // General options
-        mode : "textareas",
-        theme : "advanced",
-        plugins : "autolink,lists,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+<main style="margin-top:30px; margin-bottom: 30px;">
+    <form action="proses.php" method="post"> 
+        <div class="container row">
 
-        // Theme options
-        theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
-        theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
-        theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
-        theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,insertfile,insertimage",
-        theme_advanced_toolbar_location : "top",
-        theme_advanced_toolbar_align : "left",
-        theme_advanced_statusbar_location : "bottom",
-        theme_advanced_resizing : true,
+            <div class="input-field col s4">
+              <input name="nip" id="nip" required="" type="text" class="validate">
+              <label for="nip">NIP</label>
+            </div>
 
-        // Skin options
-        skin : "o2k7",
-        skin_variant : "black",
+            <div class="input-field col s8">
+              <input name="nama_lengkap" id="nama_lengkap" required="" type="text" class="validate">
+              <label for="nama_lengkap">Nama Lengkap</label>
+            </div>
 
-        // Example content CSS (should be your site CSS)
-        content_css : "css/example.css",
+            <div class="input-field col s4">
+              <input name="jabatan" id="jabatan" type="text" class="validate">
+              <label for="jabatan">Jabatan</label>
+            </div>
 
-        // Drop lists for link/image/media/template dialogs
-        template_external_list_url : "js/template_list.js",
-        external_link_list_url : "js/link_list.js",
-        external_image_list_url : "js/image_list.js",
-        media_external_list_url : "js/media_list.js",
+            <div class="input-field col s4">
+              <input name="golongan" id="golongan" required="" type="text" class="validate">
+              <label for="golongan">Golongan</label>
+            </div>
 
-        // Replace values for the template plugin
-        template_replace_values : {
-                username : "Some User",
-                staffid : "991234"
-        }
-});
-</script>
-</head>
+            <div class="input-field col s4">
+                <select name="jenis_kelamin" id="jenis_kelamin" required="" class="validate">
+                  <option value="" disabled selected>Pilihan</option>
+                  <option value="L">L</option>
+                  <option value="P">P</option>
+                </select>
+                <label>Jenis Kelamin</label>
+            </div>
 
-<body>
-        <main style="margin-top:30px; margin-bottom: 30px; ">
-                <div class="container">
-			
-        <table class="hoverable responsive-table">
-                <form action="proses.php" method="post"> 
-        
-        <tr>
-        <td>NIP</td><td> : </td>
-        <td><input type="text" name="nip" id="nip" required=""/></td>
-        </tr>
+            <div class="input-field col s6">
+              <input type="text" class="validate" name="tempat_lahir" id="tempat_lahir">
+              <label for="tempat_lahir">Tempat Lahir</label>
+            </div>
+            
+            <div class="input-field col s6">
+              <input type="date" name="tgl_lahir" id="tgl_lahir" required="">
+            </div>
 
-        <tr>
-        <td>Nama Lengkap</td><td> : </td>
-        <td><input type="text" name="nama_lengkap" id="nama_lengkap" required=""/></td>
-        </tr>
+            <div class="input-field col s12">
+              <input type="text" name="alamat" id="alamat" required="">
+              <label for="alamat">Alamat</label>
+            </div>
 
-        <tr>
-        <td>Jabatan</td><td> : </td>
-        <td><input type="text" name="jabatan" id="jabatan"/></td>
-        </tr>
+            <div class="input-field col s6">
+              <input type="text" name="no_telp" id="no_telp">
+              <label for="no_telp">No. Telepon</label>
+            </div>
 
-        <tr>
-        <td>Golongan</td><td> : </td>
-        <td><input type="text" name="golongan" id="golongan" required=""/></td>
-        </tr>
+            <div class="input-field col s6">
+              <input type="text" name="email" id="email">
+              <label for="email">Email</label>
+            </div>
 
-        <tr>
-        <td>Jenis Kelamin</td><td> : </td>
-        <td><input type="enum" value="L,P" name="jenis_kelamin" id="jenis_kelamin" required=""/></td>
-        </tr>
-
-        <tr>
-        <td>Tempat Lahir</td><td> : </td>
-        <td><input type="text" name="tempat_lahir" id="tempat_lahir"/></td>
-        </tr>
-
-        <tr>
-        <td>Tanggal Lahir</td><td> : </td>
-        <td><input type="date" name="tgl_lahir" id="tgl_lahir" required=""/></td>
-        </tr>
-
-        <tr>
-        <td>Alamat</td><td> : </td>
-        <td><input type="text" name="alamat" id="alamat" required=""/></td>
-        </tr>
-
-        <tr>
-        <td>No. Telepon</td><td> : </td>
-        <td><input type="text" name="no_telp" id="no_telp"/></td>
-        </tr>
-
-        <tr>
-        <td>Email</td><td> : </td>
-        <td><input type="text" name="email" id="email"/></td>
-        </tr>
-
-        </table>
-        
-        
-        <button class="btn waves-effect waves-light" type="submit" name="proses">Proses
+            <button class="btn waves-effect waves-light" type="submit" name="proses">Proses
                 <i class="mdi-content-send right"></i>
-              </button>
-       
-        </form> 
+            </button>
+        </div>
+    </form> 
+</main> 
 
-   
-                </div>
-        </main> 
-                    
+<script type="text/javascript">
+$(document).ready(function() {
+    $('select').material_select();
+  });
+</script>   
+
+</body>
+</html>
