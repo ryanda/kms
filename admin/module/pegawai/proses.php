@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "includes/config.php";
 $nip=$_POST['nip'];
 $nama_lengkap=$_POST['nama_lengkap'];
 $jabatan=$_POST['jabatan'];
