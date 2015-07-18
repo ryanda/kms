@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "includes/config.php";
 $nip=$_POST['nip'];
 $nama_lengkap=$_POST['nama_lengkap'];
 $jabatan=$_POST['jabatan'];
@@ -11,7 +11,7 @@ $alamat=$_POST['alamat'];
 $no_telp=$_POST['no_telp'];
 $email=$_POST['email'];
 
-$query=mysql_query("update pegawai_pinmas set nip='$nip',nama_lengkap='nama_lengkap',jabatan='$jabatan', golongan='$golongan', jenis_kelamin='jenis_kelamin',tempat_lahir='$tempat_lahir', tgl_lahir='$tgl_lahir', alamat='alamat',no_telp='$no_telp', email='$email' where nip='$nip'");
+$query=mysql_query("update pegawai_pinmas set nip='$nip',nama_lengkap='$nama_lengkap',jabatan='$jabatan', golongan='$golongan', jenis_kelamin='$jenis_kelamin',tempat_lahir='$tempat_lahir', tgl_lahir='$tgl_lahir', alamat='$alamat',no_telp='$no_telp', email='$email' where nip='$nip'");
 if($query){
 ?><script language="javascript">document.location.href="tampil.php";</script><?php
 }else{
