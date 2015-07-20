@@ -44,3 +44,5 @@ require 'config.php';
 
         <script src="../../../asset/js/jquery.min.js"></script>
         <script src="../../../asset/js/materialize.min.js"></script>
+
+        </body>
