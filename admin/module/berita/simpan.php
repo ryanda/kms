@@ -8,7 +8,7 @@ if (isset($_POST['simpan'])) {
 	$tgl_posting_berita = date('Y-m-d');
 	
  
-$query = mysql_query("insert into berita values('','$judul_berita','$isi','$tgl_posting_berita')") or die(mysql_error());
+$query = mysql_query("INSERT INTO berita VALUES('','$judul_berita','$isi','$tgl_posting_berita')") or die(mysql_error());
  
 if ($query) {
     header('location:tampil.php');
