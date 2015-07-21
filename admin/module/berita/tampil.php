@@ -4,17 +4,17 @@ require "includes/header_berita.php";
 require "includes/config.php";
 ?>
 <body>
-		
-		<div class="container">
-			<div class="hero-unit">	
-				<table class="table table-striped" border="0">
+		<main style="margin-top:30px; margin-bottom:30px;">
+			<div class="container">
+			
+				<table class="hoverable centered responsive-table">
 				<thead>
 				<tr>
-					<th width="10" scope scope="col" bgcolor="#333333"><font color="#CCCCCC"><center>No</th></center>
-					<th width="100"scope scope="col" bgcolor="#333333"><font color="#CCCCCC"><center>Judul</th></center>
-                    <th width="600" scope scope="col" bgcolor="#333333"><font color="#CCCCCC">Isi<center></th>
-					<th width="100"scope scope="col" bgcolor="#333333"><font color="#CCCCCC"><center>Tanggal</th></center>
-                    <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC"><center>Opsi</th></center>
+					<th>No</th>
+					<th>Judul</th>
+                    <th>Isi</th>
+					<th>Tanggal</th>
+                    <th>Opsi</th>
 				</tr>
 				</thead>
 	<?php
@@ -25,21 +25,23 @@ require "includes/config.php";
 			?>
 				<tbody>
 				<tr>
-					<td><center><small><?php echo $no?></small></td></center>
+					<td><?php echo $no?></td>
 					
-					<td><center><small><?php echo $hasil['judul_berita']?></small></td> </center>
-					<td><center><?php echo $hasil['isi']?></center></td> 
-					<td><center><small><?php echo $hasil['tanggal']?></small></td></center>
+					<td><?php echo $hasil['judul_berita']?></td>
+					<td><?php echo $hasil['isi']?></td> 
+					<td><?php echo $hasil['tanggal']?></td>
 		
-					<td><center>&nbsp
-					<a href="edit.php?id=<?php echo $hasil['id_berita'] ?>" title="Edit <?php echo $judul ?>">Ubah</a> &nbsp;|
-					<a href="hapus.php?id=<?php echo $hasil['id_berita'] ?>"title="Hapus <?php echo $judul ?>">Hapus</a></center></td>
+					<td>
+					<a href="edit.php?id=<?php echo $hasil['id_berita'] ?>" title="Edit <?php echo $judul ?>">Ubah</a> | 
+					<a href="hapus.php?id=<?php echo $hasil['id_berita'] ?>"title="Hapus <?php echo $judul ?>">Hapus</a>
+					</td>
 				</tr>	
 				</tbody>
 				<?php $no++; ?>
 				<?php } ?>
 				
 				</table>
+			
 			</div>
-		</div>
+		</main>
 </body>	
