@@ -1,11 +1,11 @@
 <?php 
 //panggil file config.php untuk menghubung ke server
-require"includes/header_berita.php";
-include('includes/config.php');
+require"includes/header_berita_input.php";
+require"includes/config.php";
 ?>
 <?php
 $id_berita= ($_GET['id_berita']);
-$query = "SELECT * from berita&publikasi  WHERE id_berita='$id_berita'";
+$query = "SELECT * from berita  WHERE id_berita='$id_berita'";
 $sql = mysql_query ($query);
 $hasil = mysql_fetch_array ($sql);
 
