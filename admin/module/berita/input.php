@@ -49,34 +49,33 @@ tinyMCE.init({
 </head>
 <body>
 		<div class="container">
-			<div class="hero-unit">
+			
 			<?
 				
 			?>
 				
 				<form name="input_data" action="simpan.php" method="post">
-					<table class="none">	 
+					<table class="hoverable centered responsive-table">	 
 						<thead>	
 						
 							<tr>
 								<td></td>
-								<td><input name="judul_berita" id="judul_berita" type="text" size="40"  placeholder="Judul" required autofocus/></td>
+								<td><input name="judul_berita" id="judul_berita" type="text" placeholder="Judul" required autofocus/></td>
 							</tr>
 							<tr>
-								<td>&nbsp;</td>
-								<td><textarea id="isi" name="isi" rows="15" cols="60" ></textarea></td>
+								<td></td>
+								<td><textarea id="isi" name="isi" rows="15" cols="60"></textarea></td>
 							</tr>
 							<tr>
 							
-								<td>&nbsp;</td>
-								<td><input type="submit" name="simpan" value="Post" class="btn btn-inverse"/>
-								<input type="reset" name="reset" value="Reset" class="btn btn-inverse"></td>
+								<td></td>
+								<td><input type="submit" name="simpan" value="Post" class="btn"/>
+								<input type="reset" name="reset" value="Reset" class="btn"></td>
 							</tr>
-						</thead>
-						
+						</thead>	
 					</table>
-						</form>
-			</div>
+				</form>
+			
 			
 		</div>
 </body>

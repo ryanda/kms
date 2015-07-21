@@ -33,7 +33,7 @@ require "includes/config.php";
 		
 					<td>
 					<a href="edit.php?id=<?php echo $hasil['id_berita'] ?>" title="Edit <?php echo $judul ?>">Ubah</a> | 
-					<a href="hapus.php?id=<?php echo $hasil['id_berita'] ?>"title="Hapus <?php echo $judul ?>">Hapus</a>
+					<a href="hapus.php?id=<?php echo $hasil['id_berita'] ?>" title="Hapus <?php echo $judul ?>">Hapus</a>
 					</td>
 				</tr>	
 				</tbody>
