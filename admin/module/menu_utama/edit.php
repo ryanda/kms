@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-require "includes/header_mu.php";
+require "includes/header_mu_input.php";
 require "includes/config.php";
 ?>
 
@@ -48,35 +48,48 @@ tinyMCE.init({
 </script>
 </head>
 <body>
-		<div class="container">
-			<div class="hero-unit">
+		<main style="margin-top:30px; margin-bottom:30px;">
+        <div class="container">
+			
 			<?
 				
 			?>
 			<?php
-include "koneksi.php";
-$id_menu=$_GET['id_menu'];
-$sql=mysql_query("select * from menu_utama where id_menu='$id_menu'");
-$r=mysql_fetch_array($sql);
-?>
-<h2>Edit Menu Utama</h2>
-<form method="post" action="aksi-editmenu.php">
-<table>
-<tr>
-<td>Nama Menu</td><td> : </td>
-<td><input type="text" name="nama" id="nama" value="<?php echo $r['nama_menu']; ?>"/></td>
-</tr>
-<tr>
-<td>Link</td><td> : </td>
-<td><input type="text" name="link" id="link" value="<?php echo $r['link']; ?>"/></td>
-<tr>
-<input type="hidden" name="id_menu" value="<?php echo $id_menu?>"/>
-<td><input type="submit" value="Update"/>
-    <input type="button" value="Batal" onclick="self.history.back()"/></td>
-</tr>
-</table>
-</form>
-</div>
+            include "koneksi.php";
+            $id_menu=$_GET['id_menu'];
+            $sql=mysql_query("select * from menu_utama where id_menu='$id_menu'");
+            $r=mysql_fetch_array($sql);
+            ?>
+
+            <h4 class="green-text">Edit Menu Utama</h4>
+            
+            <form method="post" action="aksi-editmenu.php">
+            <table class="hoverable responsive-table">
+            <tr>
+            <td>Nama Menu</td><td>:</td>
+            <td><input type="text" name="nama" id="nama" value="<?php echo $r['nama_menu']; ?>"/></td>
+            </tr>
+            <tr>
+            <td>Link</td><td>:</td>
+            <td><input type="text" name="link" id="link" value="<?php echo $r['link']; ?>"/></td>
+           <!--  <tr>
+            <input type="hidden" name="id_menu" value="<?php echo $id_menu?>"/>
+            <td><input type="submit" value="Update"/>
+                <input type="button" value="Batal" onclick="self.history.back()"/></td>
+            </tr> -->
+            </table>
+            
+            <br>
+            <button class="btn waves-effect waves-light" type="submit" name="proses">
+                                Update
+            </button>
+            <button class="btn waves-effect waves-light" type="submit" name="proses" onclick="self.history.back()">
+                                Batal
+            </button>
+
+            </form>
+
 		</div>
+        </main>
 </body>
 </html>

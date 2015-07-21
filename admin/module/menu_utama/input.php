@@ -48,27 +48,34 @@ tinyMCE.init({
 </script>
 </head>
 <body>
-		<div class="container">
-			<div class="hero-unit">
+		<main style="margin-top:30px; margin-bottom:30px;">
+        <div class="container">
+			
 			<?
 				
 			?>
-            <h2>Tambah Menu Utama</h2>
-<table>
-<form action="proses.php" method="post"> 
-<tr>
-<td>Nama Menu</td><td> : </td>
-<td><input type="text" name="nama_menu" id="nama_menu"/></td>
-</tr>
-<tr>
-<td>Link</td><td> : </td>
-<td><input type="text" name="link" id="link"/></td>
-</tr>
-</table>
+            <h4 class="green-text">Tambah Menu Utama</h4>
+            
+            <table class="hoverable responsive-table">
+            <form action="proses.php" method="post"> 
+            <tr>
+            <td>Nama Menu</td><td>:</td>
+            <td><input type="text" name="nama_menu" id="nama_menu"/></td>
+            </tr>
+            <tr>
+            <td>Link</td><td>:</td>
+            <td><input type="text" name="link" id="link"/></td>
+            </tr>
+            </table>
 
-<input type="submit" name="proses" value="proses"/>
-</form> 
-			</div>
+            <button class="btn waves-effect waves-light" type="submit" name="proses">
+                                Proses
+            </button>
+
+            <!-- <input type="submit" name="proses" value="proses"/> -->
+            </form> 
+			
 		</div>
+        </main>
 </body>
 </html>
