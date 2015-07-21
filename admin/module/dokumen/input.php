@@ -49,31 +49,31 @@ tinyMCE.init({
 </head>
 <body>
 		<div class="container">
-			<div class="hero-unit">
+			
 			<?
 				
 			?>
 				
 				<form name="input_data" action="proses.php" method="post">
-					<table class="none">	 
+					<table class="hoverable centered responsive-table">	 
 						<thead>	
 							<tr>
 								<td></td>
 								<td><input name="judul" type="text" size="40"  placeholder="Judul" required autofocus/></td>
 							</tr>
 							<tr>
-								<td>&nbsp;</td>
-								<td><textarea id="elm1" name="isi" rows="15" cols="60" ></textarea></td>
+								<td></td>
+								<td><textarea id="elm1" name="isi" rows="15" cols="60"></textarea></td>
 							</tr>
 							<tr>
-								<td>&nbsp;</td>
-								<td><input type="submit" name="proses" value="Post" class="btn btn-inverse"/>
-								<input type="reset" name="reset" value="Reset" class="btn btn-inverse"></td>
+								<td></td>
+								<td><input type="submit" name="proses" value="Post" class="btn"/>
+								<input type="reset" name="reset" value="Reset" class="btn"></td>
 							</tr>
 						</thead>
 					</table>
 				</form>
-			</div>
+			
 		</div>
 </body>
 </html>

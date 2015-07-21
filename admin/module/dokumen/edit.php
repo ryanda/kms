@@ -52,25 +52,25 @@ tinyMCE.init({
 </head>
 <body>
 		<div class="container">
-			<div class="hero-unit">
-			
-            <br>
-			<FORM ACTION="simpan.php" METHOD="POST" NAME="input" >
-				<table width="100%px" border="0">
-					<tr>
-						<td width="80">Judul :</td>
-						<td width="410"><input name="judul" type="text" size="40" value="<?php echo $hasil['judul'];?>"/></td>
+
+			<form action="simpan.php" method="POST" name="input" >
+				<table class="hoverable responsive-table">
+					
+                    <tr>
+						
+                        <td></td>
+						<td><input name="judul" type="text" value="<?php echo $hasil['judul'];?>"/></td>
 					</tr>
 					<tr>
-						<td>&nbsp;</td>
-						<td><textarea id="elm1" name="isi" rows="15" cols="60" ><?php echo $hasil['isi'];?></textarea></td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>	            
-						<td><input type="hidden" name="id" value="<?php echo $id?>"> 
-						<input type="submit" name="simpan" value="Submit"class="btn btn-inverse"/></td>
+						<td></td>
+						<td><textarea id="elm1" name="isi" rows="50" cols="50"><?php echo $hasil['isi'];?></textarea></td>
 					</tr>
 				</table>
+                        
+                        <button class="btn waves-effect waves-light" type="submit" name="simpan">Submit
+                        <i class="mdi-content-send right"></i>
+                        </button>
+
 			</form>
-			</div>
+			
 		</div>
