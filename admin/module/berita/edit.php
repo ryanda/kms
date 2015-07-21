@@ -62,25 +62,29 @@ tinyMCE.init({
 </head>
 <body>
 		<div class="container">
-			<div class="hero-unit">
-			Edit Artikel
-			<FORM ACTION="update.php" METHOD="POST" NAME="input" >
-				<table width="100%px" border="0">
+			<form action="update.php" method="POST" name="input" >
+				<table class="hoverable responsive-table">
 					
 					<tr>
-						<td width="80">Judul :</td>
-						<td width="410"><input name="judul_berita" id="judul" type="text" size="40" value="<?php echo $hasil['judul_berita'];?>"/></td>
+						<td></td>
+						<td><input name="judul_berita" id="judul" type="text" value="<?php echo $hasil['judul_berita'];?>"/></td>
 					</tr>
 					<tr>
-						<td>&nbsp;</td>
+						<td></td>
 						<td><textarea id="isi" name="isi" rows="15" cols="60" ><?php echo $hasil['isi'];?></textarea></td>
 					</tr>
-					<tr>
-						<td>&nbsp;</td>	            
+				<!-- 	<tr>
+						<td></td>	            
 						<td><input type="hidden" name="id_berita" value="<?php echo $id_berita?>"> 
-						<input type="submit" name="update" value="Submit"class="btn btn-inverse"/></td>
-					</tr>
+						<input type="submit" name="update" value="Submit" class="btn"/></td>
+					</tr> -->
 				</table>
+
+					 <button class="btn waves-effect waves-light" type="submit" name="update">Submit
+                     <i class="mdi-content-send right"></i>
+                     </button>
+ 
 			</form>
-			</div>
+			
 		</div>
+</body>
