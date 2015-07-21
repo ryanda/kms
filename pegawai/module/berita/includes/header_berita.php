@@ -1,52 +1,44 @@
 <?php
 require 'config.php';
-//Including facebook php sdk file
-$path = '../../../../asset/admin/';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title><?php echo $title; ?></title>
-		<link rel="Shortcut Icon" href="../img/logo.png" type="image/x-icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <!-- Le styles -->
-        <link href="<?php echo $path; ?>bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="<?php echo $path; ?>bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-        <script type="text/javascript" src="<?php echo $path; ?>js/jquery-1.7.2.js"></script>
-        <script type="text/javascript" src="<?php echo $path; ?>bootstrap/js/bootstrap.js"></script>
-        <style>
-            body{margin: 0; padding: 0; margin-top: 40px;}
+       <title>KMS Pinmas Kementerian Agama</title>
+       <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
+        <link href="../../../asset/css/materialize.min.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+            main { flex: 1 0 auto }
+            .container{width:90%}            
         </style>
-      
     </head>
-    <body>
-      <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="index.php"></a>
-                        </li>
-                        
-						<ul class="nav nav-pills">
-							<li class="dropdown" id="menu1">
-								
-								</ul>
-                                <li class="dropdown">
-								<a href="../../index.php">Home</a>
-                                </li>
 
-							</li>
-							</ul>
-					</ul>
-					 
-                    <ul class="nav pull-right">
-							<li><a>Selamat Datang, Pegawai Pinmas Kementerian Agama RI</a></li>
-				    </ul>
+    <body>
+        
+        <!-- start header navbar -->
+        <header> 
+            <nav class="green darken-4">
+                <div class="nav-wrapper container">
+                    <a class="brand-logo">Berita & Publikasi</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    
+                        <li><a href="../../index.php"><i class="mdi-action-home left"></i>Home</a></li>
+                        <li><i class="mdi-action-account-child left"></i>Pegawai</li>
+                         
+                    </ul>   
                 </div>
-            </div>
-        </div>
-		<div class="container">
+            </nav>
+        </header>
+        <!-- end header navbar -->
+
+        <script src="../../../asset/js/jquery.min.js"></script>
+        <script src="../../../asset/js/materialize.min.js"></script>
+    
+
+    </body>
