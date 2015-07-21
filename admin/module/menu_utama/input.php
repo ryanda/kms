@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-require "includes/header_mu.php";
+require "includes/header_mu_input.php";
 require "includes/config.php";
 ?>
 
