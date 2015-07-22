@@ -48,95 +48,53 @@
 			</nav>
 		</header>
 	</div><!-- end header wrap -->
+
+	<div id="container">
 	
-	
-<div id="container">
-		<div id="slides">
-			<div class="slides_container">
-				<div>
-					
-					<div class="slide-right">
-						<?php include "koneksi.php";
-					$dataPerPage = 3;
-					if(isset($_GET['page']))
-					{
-				   $noPage = $_GET['page'];
-					} 
-					else $noPage = 1;
+	<h2>Your Search Result is here</h2>
 
-// perhitungan offset
+	<?php 
+	require ("koneksi.php");
 
-$offset = ($noPage - 1) * $dataPerPage;
+	if(isset($_GET['search'])){
 
-// query SQL untuk menampilkan data perhalaman sesuai offset
-error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$query = "SELECT * FROM berita LIMIT $offset, $dataPerPage";
+		$search_id = $_GET['value'];
 
-$result = mysql_query($query) or die('Error');
-while($data = mysql_fetch_array($result))
-					{
-					?>		
-					
-<h3 class="title"><a><strong><?php echo $data['judul'];?></strong></a></h3>				
-<p class="meta">
-					<?php echo substr($data['isi'],0,500);
+		if($search_id==''){
+			echo "<script>alert('Please write a keyword')</script>";
+			echo "<script>window.open('index.php','_self')</script>";
+			exit();
+		}
 
-					
-					?>
-				
-<p style="font-size:10px"><i>Diposting Tanggal : <?php echo $data['tanggal'];?>   jam: <?php echo $data['waktu']; ?></i></p>
-<p><strong><a href="textfull.php?id=<?php echo $data['id'] ?>">Baca Selengkapnya>></strong></a></p>
+	$search_query = "select * from berita where judul_berita like '%$search_id'";
 
-</br>
-</br>
-</br>	
+	$run_query = mysql_query($search_query);
 
- <?php } ?>
-<p align="center">
- <?php					
-$query   = "SELECT COUNT(*) AS jumData FROM berita";
-$hasil  = mysql_query($query);
-$data     = mysql_fetch_array($hasil);
+	while ($search_row = mysql_fetch_array($run_query)){
 
-$jumData = $data['jumData'];
+		$id_berita = $search_row['id_berita'];
+		$judul_berita = $search_row['judul_berita'];
+		$isi = $search_row['isi'];
 
-// menentukan jumlah halaman yang muncul berdasarkan jumlah semua data
 
-$jumPage = ceil($jumData/$dataPerPage);
+	?>
 
-// menampilkan link previous
+	<div class="container">
 
-if ($noPage > 1) echo  "<a href='".$_SERVER['PHP_SELF']."?page=".($noPage-1)."'>&lt;&lt; Prev</a>";
+	<h3>
+		<a href="textfull2.php?id=<?php echo $id_berita;?>">
+		<?php echo $judul_berita; ?>
+		</a>
+	</h3>
 
-// memunculkan nomor halaman dan linknya
-
-for($page = 1; $page <= $jumPage; $page++)
-{
-         if ((($page >= $noPage - 3) && ($page <= $noPage + 3)) || ($page == 1) || ($page == $jumPage)) 
-         {   
-            if (($showPage == 1) && ($page != 2))  echo "..."; 
-            if (($showPage != ($jumPage - 1)) && ($page == $jumPage))  echo "...";
-            if ($page == $noPage) echo " <b>".$page."</b> ";
-            else echo " <a href='".$_SERVER['PHP_SELF']."?page=".$page."'>".$page."</a> ";
-            $showPage = $page;          
-         }
-}
-
-// menampilkan link next
-
-if ($noPage < $jumPage) echo "<a href='".$_SERVER['PHP_SELF']."?page=".($noPage+1)."'>Next &gt;&gt;</a>";
-
-?>
-					</div>
-			  </div>
-				<div>
-			</div><!-- end slies container -->
-		</div><!-- end slides -->
+	<p><?php echo $isi; ?></p>
 		
-				<!-- end #content -->
-				</div><!-- end web -->
-	</div> <!--! end container -->
-	
+	</div>
+
+	<?php } } ?>
+		
+	</div>
+
 	<div id="client-wrap" class="group">
 		<div id="client">
 			<ul>
@@ -178,5 +136,5 @@ if ($noPage < $jumPage) echo "<a href='".$_SERVER['PHP_SELF']."?page=".($noPage+
 		});
 </script>
 
-</body>
-</html>
+	</body>
+	</html>
