@@ -2,7 +2,7 @@
     <head>
         <title>KMS Pinmas Kementerian Agama</title>
         <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
-	    <link href="../../asset/css/materialize.min.css" rel="stylesheet">
+	    <link href="../asset/css/materialize.min.css" rel="stylesheet">
 	    <style type="text/css">
 		    body {
 	            display: flex;
