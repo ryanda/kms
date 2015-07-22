@@ -1,182 +1,163 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>KMS Pinmas</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image"/img.png href="../asset/images/logo-kemenag.png">
+<html>
+    <head>
+        <title>KMS Pinmas Kementerian Agama</title>
+        <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
+	    <link href="../asset/css/materialize.min.css" rel="stylesheet">
+	    <style type="text/css">
+		    body {
+	            display: flex;
+	            min-height: 100vh;
+	            flex-direction: column;
+	        }
+	        main { flex: 1 0 auto }
+	        .container{width:90%}            
+	        #search:hover { background-color:rgba(255,255,255,0.1) }
+			.tabs .tab { text-transform: none }
+			.card .card-action a { text-transform: none }
+			.tabs .tab a { border: 0.1rem solid #ee6e73; border-top: none; border-bottom: none }
+			#gbr div a img { display:block; margin:0 auto; margin-bottom: 5px;}
+        </style>
+    </head>
+    <body>
+    	<!--    header navbar-->
+	    <header>
+	        <nav class="green accent-4" id="top">
+	            <div class="nav-wrapper container">
+	                <a class="brand-logo">Dashboard</a>
+	                <ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
+						<li id="search">
+							<form>
+								<div class="input-field">
+									<input id="search" type="search" required placeholder="pencarian">
+									<label for="search"><i class="mdi-action-search"></i></label>
+									<i class="mdi-navigation-close"></i>
+								</div>
+							</form>
+						</li>
+				    </ul>
+	            </div> 
+	        </nav>
+	    </header>
+	    <!--    end header navbar-->
 
-  <script src="../asset/js/jquery.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> -->
-  <script src="../asset/js/slides.min.jquery.js"></script>
-	
-	<!--[if IE]>
-	<script type="text/javascript">
-	(function(){
-	var html5elmeents = "address|article|aside|audio|canvas|command|datalist|details|dialog|figure|figcaption|footer|header|hgroup|keygen|mark|meter|menu|nav|progress|ruby|section|time|video".split('|');
-	for(var i = 0; i < html5elmeents.length; i++){
-	document.createElement(html5elmeents[i]);
-	}
-	}
-	)();
-	</script>
-	<![endif]-->
-</head>
+	    <!--    main content-->
+	    <main style="margin-top:20px;">
+	        <div class="container section">
+	            <div class="row">
+                	<div class="col s12">
+                		<div class="section">
+	                		<img class="responsive-img" src="../asset/images/logo.png">
+                		</div>
+                	</div>
+                	<div class="col s12 section">
+						<ul class="tabs z-depth-1">
+					        <li class="tab col s2"><a href="module/pegawai/tampil.php">Data Pegawai</a></li>
+					        <li class="tab col s2"><a href="module/peraturan/tampil.php">Peraturan</a></li>
+					        <li class="tab col s2"><a href="module/dokumen/tampil.php">Dokumen Pengetahuan</a></li>
+					        <li class="tab col s2"><a href="module/berita/tampil.php">Berita dan Publikasi</a></li>
+					        <li class="tab col s2"><a href="module/diskusi/tampil.php">Forum Diskusi</a></li>
+					        <li class="tab col s2"><a href="../login/index.php">Logout</a></li>
+					    </ul>
+                	</div>
+                	
+                	<div class="col s12 row section"> <br>
+<?php 
+	include "koneksi.php";
+	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+	$query = "SELECT * FROM berita ";
 
-<body>
-	<div id="header-wrap">
-		<header class="group">
-			<h2><a href="index.html" title="burstudio">KMS Pinmas</a></h2>
-			<div id="call">
-			</div><!-- end call -->
-			<nav class="group">
-				<ul>
-					<li class="home"><a href="index.php" title="">Home</a></li>
-					<li><a href="module/pegawai/tampil.php" title="">Data Pegawai</a></li>
-					<li><a href="module/peraturan/tampil.php" title="">Peraturan</a></li>
-					<li><a href="module/dokumen/tampil.php" title="">Dokumen Pengetahuan</a></li>
-                    <li><a href="module/berita/tampil.php" title="">Berita dan Publikasi</a></li>
-					<li><a href="module/diskusi/tampil.php" title="">Manajemen Forum Diskusi</a></li>
-                    <li><a href="../login/index.php" title="">Logout</a></li>
-					<li class="last">
-						<div>
-							<input type="text" name="search" placeholder="search" />
-							<input type="submit" name="search" value="go" class="search"/>
-						</div>
-					</li>
-			  </ul>
-			</nav>
-		</header>
-	</div><!-- end header wrap -->
-	
-	
-<div id="container">
-		<div id="slides">
-			<div class="slides_container">
-				<div>
-					
-					<div class="slide-right">
-						<?php include "koneksi.php";
-					$dataPerPage = 3;
-					if(isset($_GET['page']))
-					{
-				   $noPage = $_GET['page'];
-					} 
-					else $noPage = 1;
-
-// perhitungan offset
-
-$offset = ($noPage - 1) * $dataPerPage;
-
-// query SQL untuk menampilkan data perhalaman sesuai offset
-error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$query = "SELECT * FROM berita LIMIT $offset, $dataPerPage";
-
-$result = mysql_query($query) or die('Error');
-while($data = mysql_fetch_array($result))
-					{
-					?>		
-					
-<h3 class="title"><a><strong><?php echo $data['judul'];?></strong></a></h3>				
-<p class="meta">
-					<?php echo substr($data['isi'],0,500);
-
-					
-					?>
-				
-<p style="font-size:10px"><i>Diposting Tanggal : <?php echo $data['tanggal'];?>   jam: <?php echo $data['waktu']; ?></i></p>
-<p><strong><a href="textfull.php?id=<?php echo $data['id'] ?>">Baca Selengkapnya>></strong></a></p>
-
-</br>
-</br>
-</br>	
-
- <?php } ?>
-<p align="center">
- <?php					
-$query   = "SELECT COUNT(*) AS jumData FROM berita";
-$hasil  = mysql_query($query);
-$data     = mysql_fetch_array($hasil);
-
-$jumData = $data['jumData'];
-
-// menentukan jumlah halaman yang muncul berdasarkan jumlah semua data
-
-$jumPage = ceil($jumData/$dataPerPage);
-
-// menampilkan link previous
-
-if ($noPage > 1) echo  "<a href='".$_SERVER['PHP_SELF']."?page=".($noPage-1)."'>&lt;&lt; Prev</a>";
-
-// memunculkan nomor halaman dan linknya
-
-for($page = 1; $page <= $jumPage; $page++)
-{
-         if ((($page >= $noPage - 3) && ($page <= $noPage + 3)) || ($page == 1) || ($page == $jumPage)) 
-         {   
-            if (($showPage == 1) && ($page != 2))  echo "..."; 
-            if (($showPage != ($jumPage - 1)) && ($page == $jumPage))  echo "...";
-            if ($page == $noPage) echo " <b>".$page."</b> ";
-            else echo " <a href='".$_SERVER['PHP_SELF']."?page=".$page."'>".$page."</a> ";
-            $showPage = $page;          
-         }
-}
-
-// menampilkan link next
-
-if ($noPage < $jumPage) echo "<a href='".$_SERVER['PHP_SELF']."?page=".($noPage+1)."'>Next &gt;&gt;</a>";
-
+	$result = mysql_query($query) or die('Error');
+	while($data = mysql_fetch_array($result)) {
 ?>
-					</div>
-			  </div>
-				<div>
-			</div><!-- end slies container -->
-		</div><!-- end slides -->
-		
-				<!-- end #content -->
-				</div><!-- end web -->
-	</div> <!--! end container -->
-	
-	<div id="client-wrap" class="group">
-		<div id="client">
-			<ul>
-				<li><a href="http://kemenag.go.id/" target="_blank"><img src="../asset/images/kemenag.go.id1.png" alt="" /></li>
-				<li><a href="http://haji.kemenag.go.id/" target="_blank"><img src="../asset/images/hajiumroh1 copy.png" alt="" /></li>
-				<li><a href="http://lpse.kemenag.go.id/" target="_blank"><img src="../asset/images/lpse.png" alt="" /></li>
-				<li><a href="http://webmail@kemenag.go.id/" target="_blank"><img src="../asset/images/webkemenag.png" alt="" /></li>
-				<li><a href="http://satulayanan.id/" target="_blank"><img src="../asset/images/layanan.png" alt="" /></li>
-			</ul>
-		</div><!-- end client -->
-	</div><!-- end client-wrap -->
-	
-	<footer class="group">
-		<div id="footer-left">
-			<p>Pusat Informasi dan Hubungan Masyarakat</br>
-			 Kementerian Agama Republik Indonesia</p>
-		</div>
-			
-		<div id="footer-right">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Data Pegawai</a></li>
-                <li><a href="#">Peraturan</a></li>
-				<li><a href="#">Dokumen Pengetahuan</a></li>
-				<li><a href="#">Berita dan Publikasi</a></li>
-				<li><a href="#">Forum Diskusi</a></li>
-			</ul>
-		</div>
-				
-		<a href="#header-wrap"><img src="../asset/images/back-top.png" alt="back-top" class="back-top" /></a>	</footer>
-	
-	
-<script>
-		$(function(){
-			$('#slides').slides({
-				preload: true,
-				generateNextPrev: true,	
-			});
-		});
-</script>
+						    <div class="col s4">
+						      <div class="card">
+						        <div class="card-content center-align">
+						          <span class="card-title grey-text"><?php echo $data['judul_berita'];?></span>
+						          <p class="truncate"><?php echo substr($data['isi'],0,500); ?></p>
+						        </div>
+						        <div class="card-action">
+						          <a>Tanggal <?php echo $data['tgl_posting_berita'];?></a>
+						          <a href="textfull.php?id=<?php echo $data['id_berita'] ?>">SELENGKAPNYA</a>
+						        </div>
+						      </div>
+						    </div>
+<?php 
+ 	} 
+?>
+                	</div>
+	            </div>
+	        </div>
 
-</body>
+	        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+				<a class="btn-floating btn-large red" href="#top">
+					<i class="large mdi-hardware-keyboard-arrow-up"></i>
+				</a>
+			</div>
+	    </main>
+	    <!--    end main content-->
+
+	    <!--    footer page-->
+	    <footer class="page-footer green accent-4">
+	        <div class="container row">
+				<div class="col s4">
+	                <h5 class="white-text">Knowledge Management System</h5>
+	                <p class="grey-text text-lighten-4">Pusat Informasi dan Hubungan Masyarakat</br> Kementerian Agama Republik Indonesia
+	                </p>
+                </div>
+                <div class="col s8"> 
+                	<div class="row" id="gbr">
+            		<div class="col s4">
+                		<a href="http://kemenag.go.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/kemenag.go.id1.png" style="">
+            			</a>
+        			</div>
+        			<div class="col s4">
+                		<a href="http://haji.kemenag.go.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/hajiumroh1 copy.png">
+            			</a>
+        			</div>
+        			<div class="col s4">
+                		<a href="http://lpse.kemenag.go.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/lpse.png">
+            			</a>
+        			</div>
+        			<div class="col s4">
+                		<a href="http://webmail@kemenag.go.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/webkemenag.png">
+            			</a>
+        			</div>
+        			<div class="col s4">
+                		<a href="http://satulayanan.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/layanan.png">
+            			</a>
+        			</div>
+        			</div>
+            	</div>
+	        </div>
+	        <div class="footer-copyright">
+                <div class=container>
+                	© 2015 Copyright miftaamelia
+                </div>
+	        </div>
+
+	    </footer>
+	    <!--    end footer page-->
+
+        <script src="../../asset/js/jquery.min.js"></script>
+	    <script src="../../asset/js/materialize.min.js"></script>
+	    <script type="text/javascript">
+		$(document).ready(function(){
+			$('.parallax').parallax();
+			$(".dropdown-button").dropdown();
+	        $('.slider').slider({
+	        	height : 250,
+	        	interval : 1000,
+	        	transition : 500,
+	        	indicators : false
+	        });
+	        $('ul.tabs').tabs();
+	    });
+	    </script>
+    </body>
 </html>
