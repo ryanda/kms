@@ -45,7 +45,7 @@
 						</div>
 					</li>
 			  </ul>
-			</nav>
+			</nav
 		</header>
 	</div><!-- end header wrap -->
 	
