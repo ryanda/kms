@@ -22,7 +22,7 @@
 	        #search:hover { background-color:rgba(255,255,255,0.1) }
 			.tabs .tab { text-transform: none }
 			.card .card-action a { text-transform: none }
-			.tabs .tab a { border: 0.1rem solid #ee6e73 }
+			.tabs .tab a { border: 0.1rem solid #ee6e73; border-top: none; border-bottom: none }
 			#gbr div a img { display:block; margin:0 auto; margin-bottom: 5px;}
         </style>
     </head>
@@ -34,6 +34,8 @@
 	                <a class="brand-logo">Dashboard</a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
+						<li><a><i class="mdi-action-account-child left"></i>Kepala</a></li>
+				        <li><a href="../login/index.php"><i class="mdi-content-reply left"></i>Logout</a></li>
 						<li id="search">
 							<form>
 								<div class="input-field">
@@ -60,12 +62,11 @@
                 	</div>
                 	<div class="col s12 section">
 						<ul class="tabs z-depth-1">
-					        <li class="tab col s2"><a href="module/pegawai/tampil.php">Data Pegawai</a></li>
-					        <li class="tab col s2"><a href="module/peraturan/tampil.php">Peraturan</a></li>
-					        <li class="tab col s2"><a href="module/dokumen/tampil.php">Dokumen Pengetahuan</a></li>
-					        <li class="tab col s2"><a href="module/berita/tampil.php">Berita dan Publikasi</a></li>
-					        <li class="tab col s2"><a href="module/diskusi/tampil.php">Forum Diskusi</a></li>
-					        <li class="tab col s2"><a href="../login/index.php">Logout</a></li>
+					        <li class="tab"><a href="module/pegawai/tampil.php">Data Pegawai</a></li>
+					        <li class="tab"><a href="module/peraturan/tampil.php">Peraturan</a></li>
+					        <li class="tab"><a href="module/dokumen/tampil.php">Dokumen Pengetahuan</a></li>
+					        <li class="tab"><a href="module/berita/tampil.php">Berita dan Publikasi</a></li>
+					        <li class="tab"><a href="module/diskusi/tampil.php">Forum Diskusi</a></li>
 					    </ul>
                 	</div>
                 	

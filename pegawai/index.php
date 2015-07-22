@@ -26,6 +26,8 @@
 	                <a class="brand-logo">Dashboard</a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
+						<li><a><i class="mdi-action-account-child left"></i>Pegawai</a></li>
+				        <li><a href="../login/index.php"><i class="mdi-content-reply left"></i>Logout</a></li>
 						<li id="search">
 							<form>
 								<div class="input-field">
@@ -52,12 +54,11 @@
                 	</div>
                 	<div class="col s12 section">
 						<ul class="tabs z-depth-1">
-					        <li class="tab col s2"><a href="module/pegawai/tampil.php">Data Pegawai</a></li>
-					        <li class="tab col s2"><a href="module/peraturan/tampil.php">Peraturan</a></li>
-					        <li class="tab col s2"><a href="module/dokumen/tampil.php">Dokumen Pengetahuan</a></li>
-					        <li class="tab col s2"><a href="module/berita/tampil.php">Berita dan Publikasi</a></li>
-					        <li class="tab col s2"><a href="module/diskusi/tampil.php">Forum Diskusi</a></li>
-					        <li class="tab col s2"><a href="../login/index.php">Logout</a></li>
+					        <li class="tab"><a href="module/pegawai/tampil.php">Data Pegawai</a></li>
+					        <li class="tab"><a href="module/peraturan/tampil.php">Peraturan</a></li>
+					        <li class="tab"><a href="module/dokumen/tampil.php">Dokumen Pengetahuan</a></li>
+					        <li class="tab"><a href="module/berita/tampil.php">Berita dan Publikasi</a></li>
+					        <li class="tab"><a href="module/diskusi/tampil.php">Forum Diskusi</a></li>
 					    </ul>
                 	</div>
                 	
