@@ -1,112 +1,159 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>KMS Pinmas</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image"/img.png href="images/logo-kemenag.png">
-
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-  <script src="js/slides.min.jquery.js"></script>
-	
-	<!--[if IE]>
-	<script type="text/javascript">
-	(function(){
-	var html5elmeents = "address|article|aside|audio|canvas|command|datalist|details|dialog|figure|figcaption|footer|header|hgroup|keygen|mark|meter|menu|nav|progress|ruby|section|time|video".split('|');
-	for(var i = 0; i < html5elmeents.length; i++){
-	document.createElement(html5elmeents[i]);
-	}
-	}
-	)();
-	</script>
-	<![endif]-->
-</head>
-
-<body>
-	<div id="header-wrap">
-		<header class="group">
-			<h2><a href="index.html" title="burstudio">KMS Pinmas</a></h2>
-			<div id="call">
-			</div><!-- end call -->
-			<nav class="group">
-				<ul>
-					<li class="home"><a href="index.php" title="">Home</a></li>
-					<li><a href="module/pegawai/tampil.php" title="">Data Pegawai</a></li>
-					<li><a href="module/peraturan/tampil.php" title="">Peraturan</a></li>
-					<li><a href="module/dokumen/tampil.php" title="">Dokumen Pengetahuan</a></li>
-                    <li><a href="module/berita/tampil.php" title="">Berita dan Publikasi</a></li>
-					<li><a href="module/diskusi/tampil.php" title="">Forum Diskusi</a></li>
-					<li class="last">
-						<div>
-							<input type="text" name="search" placeholder="search" />
-							<input type="submit" name="search" value="go" class="search"/>
-						</div>
-					</li>
-			  </ul>
-			</nav>
-		</header>
-	</div><!-- end header wrap -->
-	
-<div id="container">
-		<div id="slides">
-
-					<?php
-					include "koneksi.php";
-$id = $_GET['id'];
-$sql = "SELECT * FROM `dokumen` WHERE `id` = $id LIMIT 0, 30 ";
-$q = mysql_query($sql);
-$r=mysql_fetch_array($q);
+<?php
+	include "koneksi.php";
+	$id = $_GET['id'];
+	$sql = "SELECT * FROM berita WHERE id_berita = '$id' ";
+	$q = mysql_query($sql);
+	$r=mysql_fetch_array($q);
 ?>
-<h3 class="title"><a><strong><?php echo $r['judul'];?></strong> </a></h3>				
-<p class="meta">
-					<?php echo $r['isi'];
-					?>
-					<p style="font-size:10px"><i>Diposting Tanggal : <?php echo $r['tanggal'];?>   jam: <?php echo $r['waktu']; ?></i></p>
-					
-</div>
-				</div>
-				<!-- end #content -->
-	<div id="client-wrap" class="group">
-		<div id="client">
-			<ul>
-				<li><a href="http://kemenag.go.id/" target="_blank"><img src="images/kemenag.go.id1.png" alt="" /></li>
-				<li><a href="http://haji.kemenag.go.id/" target="_blank"><img src="images/hajiumroh1 copy.png" alt="" /></li>
-				<li><a href="http://lpse.kemenag.go.id/" target="_blank"><img src="images/lpse.png" alt="" /></li>
-				<li><a href="http://webmail@kemenag.go.id/" target="_blank"><img src="images/webkemenag.png" alt="" /></li>
-				<li><a href="http://satulayanan.id/" target="_blank"><img src="images/layanan.png" alt="" /></li>
-			</ul>
-		</div><!-- end client -->
-	</div><!-- end client-wrap -->
-	
-	<footer class="group">
-		<div id="footer-left">
-			<p>Pusat Informasi dan Hubungan Masyarakat</br>
-			 Kementerian Agama Republik Indonesia</p>
-		</div>
-			
-		<div id="footer-right">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Data Pegawai</a></li>
-                <li><a href="#">Peraturan</a></li>
-				<li><a href="#">Dokumen Pengetahuan</a></li>
-				<li><a href="#">Berita dan Publikasi</a></li>
-				<li><a href="#">Forum Diskusi</a></li>
-			</ul>
-		</div>
-				
-		<a href="#header-wrap"><img src="images/back-top.png" alt="back-top" class="back-top" /></a>	</footer>
-	
-	
-<script>
-		$(function(){
-			$('#slides').slides({
-				preload: true,
-				generateNextPrev: true,	
-			});
-		});
-</script>
 
-</body>
+<html>
+    <head>
+        <title>KMS Pinmas Kementerian Agama</title>
+        <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
+	    <link href="../asset/css/materialize.min.css" rel="stylesheet">
+	    <style type="text/css">
+		    body {
+	            display: flex;
+	            min-height: 100vh;
+	            flex-direction: column;
+	        }
+	        main { flex: 1 0 auto }
+	        .container{width:90%}            
+	        #search:hover { background-color:rgba(255,255,255,0.1) }
+			.tabs .tab { text-transform: none }
+			.card .card-action a { text-transform: none }
+			.tabs .tab a { border: 0.1rem solid #ee6e73 }
+			#gbr div a img { display:block; margin:0 auto; margin-bottom: 5px;}
+        </style>
+    </head>
+    <body>
+    	<!--    header navbar-->
+	    <header>
+	        <nav class="green accent-4" id="top">
+	            <div class="nav-wrapper container">
+	                <a class="brand-logo">Dashboard</a>
+	                <ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
+						<li id="search">
+							<form>
+								<div class="input-field">
+									<input id="search" type="search" required placeholder="pencarian">
+									<label for="search"><i class="mdi-action-search"></i></label>
+									<i class="mdi-navigation-close"></i>
+								</div>
+							</form>
+						</li>
+				    </ul>
+	            </div> 
+	        </nav>
+	    </header>
+	    <!--    end header navbar-->
+
+	    <!--    main content-->
+	    <main style="margin-top:20px;">
+	        <div class="container section">
+	            <div class="row">
+                	<div class="col s12">
+                		<div class="section">
+	                		<img class="responsive-img" src="../asset/images/logo.png">
+                		</div>
+                	</div>
+                	<div class="col s12 section">
+						<ul class="tabs z-depth-1">
+					        <li class="tab col s2"><a href="module/pegawai/tampil.php">Data Pegawai</a></li>
+					        <li class="tab col s2"><a href="module/peraturan/tampil.php">Peraturan</a></li>
+					        <li class="tab col s2"><a href="module/dokumen/tampil.php">Dokumen Pengetahuan</a></li>
+					        <li class="tab col s2"><a href="module/berita/tampil.php">Berita dan Publikasi</a></li>
+					        <li class="tab col s2"><a href="module/diskusi/tampil.php">Forum Diskusi</a></li>
+					        <li class="tab col s2"><a href="../login/index.php">Logout</a></li>
+					    </ul>
+                	</div>
+                	
+                	<div class="col s12 section"> <br>
+					      <div class="card center-align">
+					        <div class="card-content">
+					          <span class="card-title grey-text">
+					          	<h3><?php echo $r['judul_berita'];?></h3>
+					          </span>
+					          <p class="flow-text" style="word-wrap: break-word"><?php echo $r['isi']; ?></p>
+					        </div>
+					        <div class="card-action">
+					          <a>Tanggal <?php echo $r['tgl_posting_berita'];?></a>
+					        </div>
+					      </div>
+                	</div>
+	            </div>
+	        </div>
+
+	        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+				<a class="btn-floating btn-large red" href="#top">
+					<i class="large mdi-hardware-keyboard-arrow-up"></i>
+				</a>
+			</div>
+	    </main>
+	    <!--    end main content-->
+
+	    <!--    footer page-->
+	    <footer class="page-footer green accent-4">
+	        <div class="container row">
+				<div class="col s4">
+	                <h5 class="white-text">Knowledge Management System</h5>
+	                <p class="grey-text text-lighten-4">Pusat Informasi dan Hubungan Masyarakat</br> Kementerian Agama Republik Indonesia
+	                </p>
+                </div>
+                <div class="col s8"> 
+                	<div class="row" id="gbr">
+            		<div class="col s4">
+                		<a href="http://kemenag.go.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/kemenag.go.id1.png" style="">
+            			</a>
+        			</div>
+        			<div class="col s4">
+                		<a href="http://haji.kemenag.go.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/hajiumroh1 copy.png">
+            			</a>
+        			</div>
+        			<div class="col s4">
+                		<a href="http://lpse.kemenag.go.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/lpse.png">
+            			</a>
+        			</div>
+        			<div class="col s4">
+                		<a href="http://webmail@kemenag.go.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/webkemenag.png">
+            			</a>
+        			</div>
+        			<div class="col s4">
+                		<a href="http://satulayanan.id/" target="_blank">
+                			<img class="responsive-img" src="../asset/images/layanan.png">
+            			</a>
+        			</div>
+        			</div>
+            	</div>
+	        </div>
+	        <div class="footer-copyright">
+                <div class=container>
+                	© 2015 Copyright miftaamelia
+                </div>
+	        </div>
+
+	    </footer>
+	    <!--    end footer page-->
+
+        <script src="../../asset/js/jquery.min.js"></script>
+	    <script src="../../asset/js/materialize.min.js"></script>
+	    <script type="text/javascript">
+		$(document).ready(function(){
+			$('.parallax').parallax();
+			$(".dropdown-button").dropdown();
+	        $('.slider').slider({
+	        	height : 250,
+	        	interval : 1000,
+	        	transition : 500,
+	        	indicators : false
+	        });
+	        $('ul.tabs').tabs();
+	    });
+	    </script>
+    </body>
 </html>
