@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING) ^ E_DEPRECATED);
 $query=mysql_query("select * from pegawai_pinmas");
 require "includes/header_user.php";
 require "includes/config.php";
