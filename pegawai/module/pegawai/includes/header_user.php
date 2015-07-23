@@ -26,7 +26,7 @@ require 'config.php';
                     <a class="brand-logo">Data Pegawai</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                     
-                        <li><a href="../../beranda/menu.php"><i class="mdi-action-home left"></i>Home</a></li>
+                        <li><a href="../../index.php"><i class="mdi-action-home left"></i>Home</a></li>
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">
                             <i class="mdi-navigation-arrow-drop-down right"></i>
                             <i class="mdi-action-dashboard left"></i>Post</a></li>
