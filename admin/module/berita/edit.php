@@ -23,6 +23,9 @@ $hasil = mysql_fetch_array ($sql);
         <button class="btn waves-effect waves-light" type="submit" name="update">
           Submit <i class="mdi-content-send right"></i>
         </button>
+        <a class="waves-effect waves-light btn red" href="tampil.php">
+          <i class="mdi-hardware-keyboard-backspace left"></i>Kembali
+        </a>
 			</form>
 		</div>
     </main>

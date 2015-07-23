@@ -50,6 +50,9 @@ require "includes/header_user_input.php";
             <button class="btn waves-effect waves-light" type="submit" name="proses">Proses
                 <i class="mdi-content-send right"></i>
             </button>
+            <a class="waves-effect waves-light btn red" href="tampil.php">
+              <i class="mdi-hardware-keyboard-backspace left"></i>Kembali
+            </a>
         </div>
     </form> 
 </main> 
