@@ -89,29 +89,24 @@
                 	</div>
 
                 	<div class="col s12 row section" id="home"> <br>
-<?php 
-	include "koneksi.php";
-	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-	$query = "SELECT * FROM berita ";
 
-	$result = mysql_query($query) or die('Error');
-	while($data = mysql_fetch_array($result)) {
-?>
+                			<!-- link ke forum  -->
 						    <div class="col s4 ">
 						      <div class="card teal">
-						        <div class="card-content center-align">
-						          <span class="card-title yellow-text"><?php echo $data['judul_berita'];?></span>
-						          <div class="white-text"><p class="truncate"><?php echo substr($data['isi'],0,350); ?></p></div>
+						        <div class="card-image waves-effect waves-block waves-light">
+						          <img class="activator" src="../asset/images/LPSE-Kemenag.jpg">
 						        </div>
-						        <div class="card-action yellow-darken-4-text">
-						          <a>Tanggal <?php echo $data['tgl_posting_berita'];?></a>
-						          <a href="textfull.php?id=<?php echo $data['id_berita'] ?>">SELENGKAPNYA</a>
+						        <div class="card-content">
+						          <span class="card-title activator grey-text text-darken-4">Kaskus <i class="mdi-navigation-more-vert right"></i></span>
+						          <p><a href="#">Menuju Link</a></p>
+						        </div>
+						        <div class="card-reveal">
+						          <span class="card-title grey-text text-darken-4">Kaskus <i class="mdi-navigation-close right"></i></span>
+						          <p>Here is some more information about this product that is only revealed once clicked on.</p>
 						        </div>
 						      </div>
 						    </div>
-<?php 
- 	} 
-?>
+						    
                 	</div>
 	            </div>
 	        </div>
