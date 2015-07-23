@@ -68,7 +68,7 @@
 					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#peraturan">Peraturan</a></li>
 					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#dokumen">Dokumen Pengetahuan</a></li>
 					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#berita">Berita & Publikasi</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#forum">Forum Diskusi</a></li>
+					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn active" target="_blank" href="#forum">Forum Diskusi</a></li>
 					    </ul>
                 	</div>
                 	
@@ -84,15 +84,15 @@
                 	<div class="col s12 row section" id="berita"> <br>
                 		<a href="module/berita/tampil.php"> Dialihkan... </a>
                 	</div>
-                	<div class="col s12 row section" id="forum"> <br>
-                		<a href="module/diskusi/tampil.php"> Dialihkan... </a>
+                	<div class="col s12 row section" id="home"> <br>
+                		<a href="index.php"> Dialihkan... </a>
                 	</div>
 
-                	<div class="col s12 row section" id="home"> <br>
+                	<div class="col s12 row section" id="forum"> <br>
 
                 			<!-- link ke forum  -->
 						    <div class="col s4 ">
-						      <div class="card teal">
+						      <div class="card">
 						        <div class="card-image waves-effect waves-block waves-light">
 						          <img class="activator" src="../asset/images/LPSE-Kemenag.jpg">
 						        </div>
@@ -193,10 +193,10 @@
 				    document.location.href="module/dokumen/tampil.php";
 			    } else if ($('.tabs .tab:eq(4) a').hasClass('active')) {
 				    document.location.href="module/berita/tampil.php";
-			    } else if ($('.tabs .tab:eq(5) a').hasClass('active')) {
-				    document.location.href="forum.php";
-			    } else {
+			    } else if ($('.tabs .tab:eq(0) a').hasClass('active')) {
 				    document.location.href="index.php";
+			    } else {
+				    document.location.href="forum.php";
 			    }
 	        }
 
