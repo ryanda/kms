@@ -19,11 +19,12 @@
         </style>
     </head>
     <body>
-    	<!--    header navbar-->
+    	
+	    <!--    header navbar-->
 	    <header>
-	        <nav class="green accent-4" id="top">
+	        <nav class="green darken-4" id="top">
 	            <div class="nav-wrapper container">
-	                <a class="brand-logo">Dashboard</a>
+	                <a class="brand-logo"><img style="height:100px; padding-top: 5px;" src="../asset/imagelogo/logo.png"></a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
 						<li><a><i class="mdi-action-account-child left"></i>Pegawai</a></li>
@@ -33,7 +34,7 @@
 								<div class="input-field">
 									<input id="search" type="search" required placeholder="pencarian">
 									<label for="search"><i class="mdi-action-search"></i></label>
-									<i class="mdi-navigation-close"></i>
+									<!-- <i class="mdi-navigation-close"></i> -->
 								</div>
 							</form>
 						</li>
@@ -43,22 +44,25 @@
 	    </header>
 	    <!--    end header navbar-->
 
-	    <!--    main content-->
+	     <!--    main content-->
 	    <main style="margin-top:20px;">
-	        <div class="container section">
+	        <div class="container section teal darken-4">
 	            <div class="row">
+                	
                 	<div class="col s12">
-                		<div class="section">
-	                		<img class="responsive-img" src="../asset/images/logo.png">
-                		</div>
-                	</div>
-                	<div class="col s12 section">
-						<ul class="tabs z-depth-1">
-					        <li class="tab"><a href="module/pegawai/tampil.php">Data Pegawai</a></li>
-					        <li class="tab"><a href="module/peraturan/tampil.php">Peraturan</a></li>
-					        <li class="tab"><a href="module/dokumen/tampil.php">Dokumen Pengetahuan</a></li>
-					        <li class="tab"><a href="module/berita/tampil.php">Berita dan Publikasi</a></li>
-					        <li class="tab"><a href="module/diskusi/tampil.php">Forum Diskusi</a></li>
+						<ul class="tabs">
+							
+					        <li class="tab col s12 m6 l3 red accent-2"><a class="white-text waves-effect waves-light btn-large" href="module/pegawai/tampil.php">DATA PEGAWAI</a></li>
+					        <li class="tab col s12 m6 l3 red accent-2 waves-effect waves-light btn-large"><a class="white-text" href="module/peraturan/tampil.php">PERATURAN</a></li>
+					        <li class="tab col s12 m6 l3 red accent-2 waves-effect waves-light btn-large"><a class="white-text" href="module/dokumen/tampil.php">DOKUMEN PENGETAHUAN</a></li>
+					        <li class="tab col s12 m6 l3 red accent-2"><a class="white-text waves-effect waves-light btn-large" href="module/berita/tampil.php">BERITA & PUBLIKASI</a></li>
+							
+					    </ul>
+
+					    <ul class="tabs z-depth-3 ">
+					    	<li class="tab col s12 m4 l4 red accent-2"></li>
+					        <li class="tab col s12 m4 l4 red accent-2"><a class="white-text waves-effect waves-light btn-large" href="module/diskusi/tampil.php">FORUM DISKUSI</a></li>
+					        <li class="tab col s12 m4 l4 red accent-2"></li>
 					    </ul>
                 	</div>
                 	
@@ -71,15 +75,15 @@
 	$result = mysql_query($query) or die('Error');
 	while($data = mysql_fetch_array($result)) {
 ?>
-						    <div class="col s4">
-						      <div class="card">
+						    <div class="col s4 ">
+						      <div class="card teal">
 						        <div class="card-content center-align">
-						          <span class="card-title grey-text"><?php echo $data['judul_berita'];?></span>
-						          <p class="truncate"><?php echo substr($data['isi'],0,500); ?></p>
+						          <span class="card-title yellow-text"><?php echo $data['judul_berita'];?></span>
+						          <div class="white-text"><p class="truncate"><?php echo substr($data['isi'],0,350); ?></p></div>
 						        </div>
 						        <div class="card-action">
-						          <a>Tanggal <?php echo $data['tgl_posting_berita'];?></a>
-						          <a href="textfull.php?id=<?php echo $data['id_berita'] ?>">SELENGKAPNYA</a>
+						          <a class="yellow-darken-4-text">Tanggal <?php echo $data['tgl_posting_berita'];?></a>
+						          <a class="yellow-darken-4-text" href="textfull.php?id=<?php echo $data['id_berita'] ?>">SELENGKAPNYA</a>
 						        </div>
 						      </div>
 						    </div>
@@ -99,7 +103,7 @@
 	    <!--    end main content-->
 
 	    <!--    footer page-->
-	    <footer class="page-footer green accent-4">
+	    <footer class="page-footer green darken-4">
 	        <div class="container row">
 				<div class="col s4">
 	                <h5 class="white-text">Knowledge Management System</h5>
@@ -110,27 +114,27 @@
                 	<div class="row" id="gbr">
             		<div class="col s4">
                 		<a href="http://kemenag.go.id/" target="_blank">
-                			<img class="responsive-img" src="../asset/images/kemenag.go.id1.png" style="">
+                			<img class="circle responsive-img" src="../asset/images/kemenag.go.id1.png" style="">
             			</a>
         			</div>
         			<div class="col s4">
                 		<a href="http://haji.kemenag.go.id/" target="_blank">
-                			<img class="responsive-img" src="../asset/images/hajiumroh1 copy.png">
+                			<img class="circle responsive-img" src="../asset/images/hajiumroh1 copy.png">
             			</a>
         			</div>
         			<div class="col s4">
                 		<a href="http://lpse.kemenag.go.id/" target="_blank">
-                			<img class="responsive-img" src="../asset/images/lpse.png">
+                			<img class=" circle responsive-img" src="../asset/images/lpse.png">
             			</a>
         			</div>
         			<div class="col s4">
                 		<a href="http://webmail@kemenag.go.id/" target="_blank">
-                			<img class="responsive-img" src="../asset/images/webkemenag.png">
+                			<img class=" circle responsive-img" src="../asset/images/webkemenag.png">
             			</a>
         			</div>
         			<div class="col s4">
                 		<a href="http://satulayanan.id/" target="_blank">
-                			<img class="responsive-img" src="../asset/images/layanan.png">
+                			<img class="circle responsive-img" src="../asset/images/layanan.png">
             			</a>
         			</div>
         			</div>
