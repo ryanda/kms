@@ -82,7 +82,7 @@
 						      <div class="card teal">
 						        <div class="card-content center-align">
 						          <span class="card-title yellow-text"><?php echo $data['judul_berita'];?></span>
-						          <div class="white-text"><p class="truncate"><?php echo substr($data['isi'],0,500); ?></p></div>
+						          <div class="white-text"><p class="truncate"><?php echo substr($data['isi'],0,350); ?></p></div>
 						        </div>
 						        <div class="card-action">
 						          <a class="yellow-darken-4-text">Tanggal <?php echo $data['tgl_posting_berita'];?></a>
