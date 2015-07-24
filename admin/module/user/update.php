@@ -1,24 +1,36 @@
 <?php
-error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING) ^ E_DEPRECATED);
+require "includes/header_user_input.php";
 require "includes/config.php";
 $query=mysql_query("select * from user");
-require "includes/header_user_input.php";
-$id_user=$_GET['id_user'];
-$query=mysql_query("select * from user where id_user='$id_user'");
 ?>
 
 <main style="margin-top:30px; margin-bottom: 30px;">
+<div class="container row">
+
+<?php
+  error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+  include "config.php";
+  $id_user=$_GET['id_user'];
+  $query=mysql_query("select * from user where id_user='$id_user'");
+?>
+  
     <form action="simpan.php" method="post"> 
-        <div class="container row">
+        
 <?php
     while($row=mysql_fetch_array($query)){
 ?>
-            <div class="input-field col s4">
-              <input id="username" type="text" name="username" value="<?php echo $row['username'];?>" readonly="readonly" disabled="disabled">
+          <div class="input-field col s3">
+            <input type="text" id="id_user" name="id_user" readonly="readonly" value="<?php echo $row['id_user'];?>">
+            <label for="id_user">Id_User</label>
+          </div>
+
+            <div class="input-field col s3">
+              <input id="username" type="text" name="username" value="<?php echo $row['username'];?>">
               <label for="username">Username</label>
             </div>
 
-            <div class="input-field col s4">
+            <div class="input-field col s3">
                 <select name="level" id="level">
                   <option value="1"
 <?php if($row['level'] == '1') echo 'selected = "selected"' ?>
@@ -33,7 +45,7 @@ $query=mysql_query("select * from user where id_user='$id_user'");
                 <label>Level</label>
             </div>
 
-            <div class="input-field col s4">
+            <div class="input-field col s3">
               <input type="password" name="password" value="" required="" id="password">
               <label for="password">Password</label>
             </div>
@@ -54,16 +66,17 @@ $query=mysql_query("select * from user where id_user='$id_user'");
               <label for="no_telp">No Telp</label>
             </div>
 
-            <button class="btn waves-effect waves-light" type="submit" name="proses">Proses
+          
+<?php
+    }
+?>
+      <button class="btn waves-effect waves-light" type="submit" name="proses">Proses
                 <i class="mdi-content-send right"></i>
             </button>
             <a class="waves-effect waves-light btn red" href="tampil.php">
               <i class="mdi-hardware-keyboard-backspace left"></i>Kembali
             </a>
-        </div>
-<?php
-    }
-?>
+        
     </form> 
 </main> 
 

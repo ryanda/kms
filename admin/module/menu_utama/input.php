@@ -69,7 +69,7 @@ tinyMCE.init({
             </table>
 
             <button class="btn waves-effect waves-light" type="submit" name="proses">
-                                Proses
+                                Proses<i class="mdi-content-send right"></i>
             </button>
 
             <!-- <input type="submit" name="proses" value="proses"/> -->

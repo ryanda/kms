@@ -42,7 +42,7 @@ $no++;
 
 <div class="row">
       <div class="col s12 m5">
-        <div class="card-panel green">
+        <div class="card-panel red">
           <span class="white-text">
           <?php echo "Data pada Menu Utama tidak dapat dihapus, tetapi dapat di non-aktifkan melalui ubah menu utama";?>
           </span>

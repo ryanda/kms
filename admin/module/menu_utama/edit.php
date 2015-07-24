@@ -72,19 +72,15 @@ tinyMCE.init({
             <tr>
             <td>Link</td><td>:</td>
             <td><input type="text" name="link" id="link" value="<?php echo $r['link']; ?>"/></td>
-           <!--  <tr>
-            <input type="hidden" name="id_menu" value="<?php echo $id_menu?>"/>
-            <td><input type="submit" value="Update"/>
-                <input type="button" value="Batal" onclick="self.history.back()"/></td>
-            </tr> -->
+          
             </table>
             
             <br>
             <button class="btn waves-effect waves-light" type="submit" name="proses">
-                                Update
+                                Update<i class="mdi-content-send right"></i>
             </button>
-            <button class="btn waves-effect waves-light" type="submit" name="proses" onclick="self.history.back()">
-                                Batal
+            <button class="btn waves-effect waves-light red" type="submit" name="proses" onclick="self.history.back()">
+                                <i class="mdi-hardware-keyboard-backspace left"></i>Batal
             </button>
 
             </form>
