@@ -6,7 +6,7 @@ require 'config.php';
     <head>
         <meta charset="utf-8">
         <title><?php echo $title; ?></title>
-        <link rel="Shortcut Icon" href="../img/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">

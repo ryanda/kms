@@ -10,7 +10,7 @@ require "includes/config.php";
 
 <?php
     error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-    include "config.php";
+    include "includes/config.php";
     $nip=$_GET['nip'];
     $query=mysql_query("select * from pegawai_pinmas where nip='$nip'");
 ?>
@@ -19,7 +19,7 @@ require "includes/config.php";
     while($row=mysql_fetch_array($query)){
 ?>
         
-        <!-- <input type="hidden" name="nip" value="<?php echo $nip;?>"/> -->
+        
         <div class="input-field col s4">
           <input type="text" id="nip" name="nip" value="<?php echo $row['nip'];?>">
           <label for="nip">NIP</label>
@@ -82,6 +82,9 @@ require "includes/config.php";
         <button class="btn waves-effect waves-light" type="submit" name="simpan">Submit
             <i class="mdi-content-send right"></i>
         </button>
+        <a class="waves-effect waves-light btn red" href="tampil.php">
+          <i class="mdi-hardware-keyboard-backspace left"></i>Kembali
+        </a>
     </form>
 
 </div>
