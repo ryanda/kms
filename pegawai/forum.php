@@ -37,15 +37,15 @@
 						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
 						<li><a><i class="mdi-action-account-child left"></i>Kepala</a></li>
 				        <li><a href="../login/index.php"><i class="mdi-content-reply left"></i>Logout</a></li>
-						<li id="search">
+						<!-- <li id="search">
 							<form>
 								<div class="input-field">
 									<input id="search" type="search" required placeholder="pencarian">
 									<label for="search"><i class="mdi-action-search"></i></label>
-									<!-- <i class="mdi-navigation-close"></i> -->
+									
 								</div>
 							</form>
-						</li>
+						</li> -->
 				    </ul>
 	            </div> 
 	        </nav>
