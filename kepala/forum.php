@@ -54,7 +54,7 @@
 
 	    <!--    main content-->
 	    <main style="margin-top:20px;">
-	        <div class="container section">
+	        <div class="container section teal darken-4">
 	            <div class="row">
                 	<!-- <div class="col s12">
                 		<div class="section">
@@ -100,7 +100,7 @@
 						          <span class="card-title activator grey-text text-darken-4">Kaskus <i class="mdi-navigation-more-vert right"></i></span>
 						          <p><a href="http://kaskus.co.id">Menuju Link</a></p>
 						        </div>
-						        <div class="card-reveal">
+						        <div class="card-reveal teal lighten-2">
 						          <span class="card-title grey-text text-darken-4">Kaskus <i class="mdi-navigation-close right"></i></span>
 						          <p>Kaskus is an Indonesian internet forum site which claims to be the largest Indonesian online community. 
 						          Registration is required for new users to participate in the community, and every registered member has access to more than twenty regional and subject-related sub-forums. 
@@ -120,7 +120,7 @@
 						          <span class="card-title activator grey-text text-darken-4">DetikCom <i class="mdi-navigation-more-vert right"></i></span>
 						          <p><a href="http://forum.detik.com/forum.php?dftforum">Menuju Link</a></p>
 						        </div>
-						        <div class="card-reveal">
+						        <div class="card-reveal teal lighten-2">
 						          <span class="card-title grey-text text-darken-4">DetikCom <i class="mdi-navigation-close right"></i></span>
 						          <p>DetikCom is an online news and article website based in Indonesia. 
 						          DetikCom only has online edition and it relies on advertisements for its profit. 
@@ -140,7 +140,7 @@
 						          <span class="card-title activator grey-text text-darken-4">Kompas <i class="mdi-navigation-more-vert right"></i></span>
 						          <p><a href="http://forum.kompas.com/">Menuju Link</a></p>
 						        </div>
-						        <div class="card-reveal">
+						        <div class="card-reveal teal lighten-2">
 						          <span class="card-title grey-text text-darken-4">Kompas <i class="mdi-navigation-close right"></i></span>
 						          <p>Kompas is an Indonesian national newspaper. Published by Kompas Gramedia, it has been in existence since June 28, 1965.
 									Kompas also manage an online portal KOMPAS.com, which contains updated news and the digital version of the paper

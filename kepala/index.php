@@ -54,7 +54,7 @@
 
 	    <!--    main content-->
 	    <main style="margin-top:20px;">
-	        <div class="container section">
+	        <div class="container section teal darken-4">
 	            <div class="row">
                 	<!-- <div class="col s12">
                 		<div class="section">
