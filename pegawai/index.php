@@ -39,11 +39,11 @@
 						<li><a><i class="mdi-action-account-child left"></i>Pegawai</a></li>
 				        <li><a href="../login/index.php"><i class="mdi-content-reply left"></i>Logout</a></li>
 						<li id="search">
-							<form>
+							<form action="search.php" method="get" enctype="multipart/form-data">
 								<div class="input-field">
-									<input id="search" type="search" required placeholder="pencarian">
+									<input name="value" id="search" type="search" required placeholder="pencarian">
 									<label for="search"><i class="mdi-action-search"></i></label>
-									<!-- <i class="mdi-navigation-close"></i> -->
+									
 								</div>
 							</form>
 						</li>
