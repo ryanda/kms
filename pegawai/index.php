@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>KMS Pinmas Kementerian Agama</title>
-        <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
+        <link rel="shortcut icon" type="image" href="../asset/imagelogo/logo.png">
 	    <link href="../asset/css/materialize.min.css" rel="stylesheet">
 	    <style type="text/css">
 		    body {
@@ -12,10 +12,19 @@
 	        main { flex: 1 0 auto }
 	        .container{width:90%}            
 	        #search:hover { background-color:rgba(255,255,255,0.1) }
-			.tabs .tab { text-transform: none }
+			.tabs .tab a { 
+				text-transform: capitalize;
+				line-height: inherit; 
+				padding: 0;
+			}
 			.card .card-action a { text-transform: none }
-			.tabs .tab a { border: 0.1rem solid #ee6e73; border-top: none; border-bottom: none }
+			.tabs .tab a { 
+				border: 0.1rem solid #ee6e73; 
+				border-top: none; 
+				border-bottom: none; 
+			}
 			#gbr div a img { display:block; margin:0 auto; margin-bottom: 5px;}
+			.tabs .indicator{ height:5px;background-color:rgba(255,255,255,0.5); }
         </style>
     </head>
     <body>
@@ -24,7 +33,7 @@
 	    <header>
 	        <nav class="green darken-4" id="top">
 	            <div class="nav-wrapper container">
-	                <a class="brand-logo"><img style="height:100px; padding-top: 5px;" src="../asset/imagelogo/logo.png"></a>
+	                <a class="brand-logo"><img style="height:60px; padding-top: 5px;" src="../asset/imagelogo/logo.png"></a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
 						<li><a><i class="mdi-action-account-child left"></i>Pegawai</a></li>
@@ -44,29 +53,39 @@
 	    </header>
 	    <!--    end header navbar-->
 
-	     <!--    main content-->
+	     	    <!--    main content-->
 	    <main style="margin-top:20px;">
 	        <div class="container section teal darken-4">
 	            <div class="row">
                 	
                 	<div class="col s12">
-						<ul class="tabs">
-							
-					        <li class="tab col s12 m6 l3 red accent-2"><a class="white-text waves-effect waves-light btn-large" href="module/pegawai/tampil.php">DATA PEGAWAI</a></li>
-					        <li class="tab col s12 m6 l3 red accent-2 waves-effect waves-light btn-large"><a class="white-text" href="module/peraturan/tampil.php">PERATURAN</a></li>
-					        <li class="tab col s12 m6 l3 red accent-2 waves-effect waves-light btn-large"><a class="white-text" href="module/dokumen/tampil.php">DOKUMEN PENGETAHUAN</a></li>
-					        <li class="tab col s12 m6 l3 red accent-2"><a class="white-text waves-effect waves-light btn-large" href="module/berita/tampil.php">BERITA & PUBLIKASI</a></li>
-							
-					    </ul>
-
-					    <ul class="tabs z-depth-3 ">
-					    	<li class="tab col s12 m4 l4 red accent-2"></li>
-					        <li class="tab col s12 m4 l4 red accent-2"><a class="white-text waves-effect waves-light btn-large" href="module/diskusi/tampil.php">FORUM DISKUSI</a></li>
-					        <li class="tab col s12 m4 l4 red accent-2"></li>
+						<ul class="tabs z-depth-1">
+					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#home">Berita</a></li>
+					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#pegawai">Data Pegawai</a></li>
+					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#peraturan">Peraturan</a></li>
+					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#dokumen">Dokumen Pengetahuan</a></li>
+					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#berita">Berita & Publikasi</a></li>
+					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#forum">Forum Diskusi</a></li>
 					    </ul>
                 	</div>
                 	
-                	<div class="col s12 row section"> <br>
+                	<div class="col s12 row section" id="pegawai"> <br>
+                		<a href="module/pegawai/tampil.php"> Dialihkan... </a>
+                	</div>
+                	<div class="col s12 row section" id="peraturan"> <br>
+                		<a href="module/peraturan/tampil.php"> Dialihkan... </a>
+                	</div>
+                	<div class="col s12 row section" id="dokumen"> <br>
+                		<a href="module/dokumen/tampil.php"> Dialihkan... </a>
+                	</div>
+                	<div class="col s12 row section" id="berita"> <br>
+                		<a href="module/berita/tampil.php"> Dialihkan... </a>
+                	</div>
+                	<div class="col s12 row section" id="forum"> <br>
+                		<a href="module/diskusi/tampil.php"> Dialihkan... </a>
+                	</div>
+
+                	<div class="col s12 row section" id="home"> <br>
 <?php 
 	include "koneksi.php";
 	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
@@ -81,9 +100,9 @@
 						          <span class="card-title yellow-text"><?php echo $data['judul_berita'];?></span>
 						          <div class="white-text"><p class="truncate"><?php echo substr($data['isi'],0,350); ?></p></div>
 						        </div>
-						        <div class="card-action">
-						          <a class="yellow-darken-4-text">Tanggal <?php echo $data['tgl_posting_berita'];?></a>
-						          <a class="yellow-darken-4-text" href="textfull.php?id=<?php echo $data['id_berita'] ?>">SELENGKAPNYA</a>
+						       <div class="card-action yellow-darken-4-text">
+						          <a>Tanggal <?php echo $data['tgl_posting_berita'];?></a>
+						          <a href="textfull.php?id=<?php echo $data['id_berita'] ?>">SELENGKAPNYA</a>
 						        </div>
 						      </div>
 						    </div>
@@ -149,9 +168,10 @@
 	    </footer>
 	    <!--    end footer page-->
 
-        <script src="../../asset/js/jquery.min.js"></script>
-	    <script src="../../asset/js/materialize.min.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+	    <script src="../asset/js/materialize.min.js"></script>
 	    <script type="text/javascript">
+
 		$(document).ready(function(){
 			$('.parallax').parallax();
 			$(".dropdown-button").dropdown();
@@ -162,7 +182,27 @@
 	        	indicators : false
 	        });
 	        $('ul.tabs').tabs();
-	    });
+	        $('.tabs').click(function() {
+			    cekaktif();
+	        });
+
+	        function cekaktif() {
+	        	if ($('.tabs .tab:eq(1) a').hasClass('active')) {
+				    document.location.href="module/pegawai/tampil.php";
+			    } else if ($('.tabs .tab:eq(2) a').hasClass('active')) {
+				    document.location.href="module/peraturan/tampil.php";
+			    } else if ($('.tabs .tab:eq(3) a').hasClass('active')) {
+				    document.location.href="module/dokumen/tampil.php";
+			    } else if ($('.tabs .tab:eq(4) a').hasClass('active')) {
+				    document.location.href="module/berita/tampil.php";
+			    } else if ($('.tabs .tab:eq(5) a').hasClass('active')) {
+				    document.location.href="forum.php";
+			    } else {
+				    document.location.href="index.php";
+			    }
+	        }
+
+		});
 	    </script>
     </body>
 </html>
