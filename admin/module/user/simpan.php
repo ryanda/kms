@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "includes/config.php";
 $id_user=$_POST['id_user'];
 $username=$_POST['username'];
 $nama_lengkap=$_POST['nama_lengkap'];
