@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING) ^ E_DEPRECATED);
 require "includes/config.php";
 $query=mysql_query("select * from user");
 require "includes/header_user_input.php";
