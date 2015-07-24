@@ -74,10 +74,9 @@ require "includes/config.php";
              
              <tr>
 
-                    <td><?php echo $no?></td>
-					
+          <td><?php echo $no?></td>
 					<td><?php echo $hasil['judul']?></td>
-                    <td><?php echo $hasil['isi']?></td>
+          <td><?php echo $hasil['isi']?></td>
 					<td><?php echo $hasil['tanggal']?></td>
 					<td><?php echo $hasil['waktu']?></td>
 					<td><?php echo $hasil['baca']?></td> 

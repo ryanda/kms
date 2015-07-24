@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>KMS Pinmas Kementerian Agama</title>
-        <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
+        <link rel="shortcut icon" type="image" href="../asset/imagelogo/logo.png">
 	    <link href="../asset/css/materialize.min.css" rel="stylesheet">
 	    <style type="text/css">
 		    body {
@@ -56,11 +56,7 @@
 	    <main style="margin-top:20px;">
 	        <div class="container section teal darken-4">
 	            <div class="row">
-                	<!-- <div class="col s12">
-                		<div class="section">
-	                		<img class="responsive-img" src="../asset/images/logo.png">
-                		</div>
-                	</div> -->
+                	
                 	<div class="col s12">
 						<ul class="tabs z-depth-1">
 					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#home">Berita</a></li>
