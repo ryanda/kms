@@ -94,15 +94,57 @@
 						    <div class="col s4 ">
 						      <div class="card">
 						        <div class="card-image waves-effect waves-block waves-light">
-						          <img class="activator" src="../asset/images/LPSE-Kemenag.jpg">
+						          <img class="activator" src="../asset/imagelogo/logo-kaskus-1024x1024.png">
 						        </div>
 						        <div class="card-content">
 						          <span class="card-title activator grey-text text-darken-4">Kaskus <i class="mdi-navigation-more-vert right"></i></span>
-						          <p><a href="#">Menuju Link</a></p>
+						          <p><a href="http://kaskus.co.id">Menuju Link</a></p>
 						        </div>
 						        <div class="card-reveal">
 						          <span class="card-title grey-text text-darken-4">Kaskus <i class="mdi-navigation-close right"></i></span>
-						          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+						          <p>Kaskus is an Indonesian internet forum site which claims to be the largest Indonesian online community. 
+						          Registration is required for new users to participate in the community, and every registered member has access to more than twenty regional and subject-related sub-forums. 
+						          .</p>
+						        </div>
+						      </div>
+						    </div>
+
+
+                			<!-- link ke forum  -->
+						    <div class="col s4 ">
+						      <div class="card">
+						        <div class="card-image waves-effect waves-block waves-light">
+						          <img class="activator" src="../asset/imagelogo/logo-bar-detik1.jpg">
+						        </div>
+						        <div class="card-content">
+						          <span class="card-title activator grey-text text-darken-4">DetikCom <i class="mdi-navigation-more-vert right"></i></span>
+						          <p><a href="http://forum.detik.com/forum.php?dftforum">Menuju Link</a></p>
+						        </div>
+						        <div class="card-reveal">
+						          <span class="card-title grey-text text-darken-4">DetikCom <i class="mdi-navigation-close right"></i></span>
+						          <p>DetikCom is an online news and article website based in Indonesia. 
+						          DetikCom only has online edition and it relies on advertisements for its profit. 
+						          While the website focuses on news, it also has many articles about other topics such as sport, automotive, food, health, etc. and they are divided by its own site
+						          .</p>
+						        </div>
+						      </div>
+						    </div>
+
+						    <!-- link ke forum  -->
+						    <div class="col s4 ">
+						      <div class="card">
+						        <div class="card-image waves-effect waves-block waves-light">
+						          <img class="activator" src="../asset/imagelogo/Logo_Kompas_Di_Layar_kaca.png">
+						        </div>
+						        <div class="card-content">
+						          <span class="card-title activator grey-text text-darken-4">Kompas <i class="mdi-navigation-more-vert right"></i></span>
+						          <p><a href="http://forum.kompas.com/">Menuju Link</a></p>
+						        </div>
+						        <div class="card-reveal">
+						          <span class="card-title grey-text text-darken-4">Kompas <i class="mdi-navigation-close right"></i></span>
+						          <p>Kompas is an Indonesian national newspaper. Published by Kompas Gramedia, it has been in existence since June 28, 1965.
+									Kompas also manage an online portal KOMPAS.com, which contains updated news and the digital version of the paper
+									.</p>
 						        </div>
 						      </div>
 						    </div>

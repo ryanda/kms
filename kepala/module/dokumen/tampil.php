@@ -50,7 +50,7 @@ require "includes/config.php";
          Dialihkan... 
 </div>
 
-<div class="col s12 section" id="dokumen"> <br>
+<div class="col s12 section container" id="dokumen"> <br>
         <table class="hoverable centered responsive-table">
           <thead>
               <tr>
@@ -88,7 +88,7 @@ require "includes/config.php";
 			 <?php } ?>
 
           </table>
-        </div></div>
+        </div></div> </div>
     </main>
     <!-- end main content -->
 <script type="text/javascript">
