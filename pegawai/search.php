@@ -95,9 +95,10 @@
                 	</div>
 
                 	<div class="col s12 section" id="home"> <br>
-					      <div class="card teal center-align">
-					        <div class="card-content">
-					          
+					      <div class="center-align">
+									<span class="white-text">
+									<h5>Your Search Result is here</h5>
+									</span>
 					          	
 					          	<?php 
 									require ("koneksi.php");
@@ -116,6 +117,12 @@
 
 									$run_query = mysql_query($search_query);
 
+									?>
+
+								
+								<div class="col s12 section" id="home"> <br>
+									<?php
+
 									while ($search_row = mysql_fetch_array($run_query)){
 
 										$id_berita = $search_row['id_berita'];
@@ -125,27 +132,22 @@
 
 
 									?>
-								
-								<div class="col s12 section" id="home"> <br>
 					      		<div class="card teal center-align">
 					        	<div class="card-content">
-					        	
-									<span class="card-title white-text">
-									<h5>Your Search Result is here</h5>
-									</span>
 					          		<span class="card-title yellow-text">
 					          		<h3><?php echo $judul_berita;?></h3>
 					          		</span>
-					          <p class="flow-text black-text" style="word-wrap: break-word"><?php echo $isi; ?></p>
+					          <p class="flow-text white-text" style="word-wrap: break-word"><?php echo $isi; ?></p>
 					        </div>
 					        <div class="card-action yellow-darken-4-text">
 					          <a>Tanggal <?php echo $tgl_posting_berita;?></a>
+					          <a href="textfull.php?id=<?php echo $search_row['id_berita'] ?>">SELENGKAPNYA</a>
 					        </div>
 					      </div>
-                	</div>
-	            </div>
-
 				<?php } } ?>
+
+                	</div>
+
 
 	        
 
