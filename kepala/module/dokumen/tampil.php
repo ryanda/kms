@@ -60,6 +60,7 @@ require "includes/config.php";
                 <th>Tanggal</th>
                 <th>Waktu</th>
                 <th>Pembaca</th>
+                <th>Opsi</th>
               </tr>
           </thead>
 
@@ -80,6 +81,9 @@ require "includes/config.php";
 					<td><?php echo $hasil['tanggal']?></td>
 					<td><?php echo $hasil['waktu']?></td>
 					<td><?php echo $hasil['baca']?></td> 
+          <td>
+          <a href="laporan.php?id=<?php echo $hasil ['id'];?>">Download</a>
+          </td>
              </tr>
              </tbody>
 
