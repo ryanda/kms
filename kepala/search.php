@@ -45,7 +45,7 @@
 	                <a class="brand-logo"><img style="height:60px; padding-top: 5px;" src="../asset/imagelogo/logo.png"></a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
-						<li><a><i class="mdi-action-account-child left"></i>Pegawai</a></li>
+						<li><a><i class="mdi-action-account-child left"></i>Kepala</a></li>
 				        <li><a href="../login/index.php"><i class="mdi-content-reply left"></i>Logout</a></li>
 						<li id="search">
 							<form action="search.php" method="get" enctype="multipart/form-data">
