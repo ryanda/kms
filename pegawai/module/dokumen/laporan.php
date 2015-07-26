@@ -22,6 +22,7 @@ $pdf->AddPage();
 		//judul
 		$pdf->Cell(30,10,'LAPORAN DOKUMEN KNOWLEDGE MANAJEMEN',0,0,'C');
 		//pindah baris
+		$pdf->Image('logo.jpg',30,null, 10);
 		$pdf->Ln(20);
 		//buat garis horisontal
 		$pdf->Line(10,25,200,25);
