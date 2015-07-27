@@ -1,8 +1,7 @@
 <?php
 
 require "includes/config.php";
-require "includes/fpdf17/fpdf.php";
-
+require "../../../asset/fpdf/fpdf.php";
 
 
 $id=$_GET['id'];
