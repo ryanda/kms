@@ -25,8 +25,8 @@
 ?>
 <html>
   <head>
-      <title>KMS Pinmas Kementerian Agama</title>
-      <link rel="shortcut icon" type="image" href="../asset/imagelogo/logo.png">
+    <title>KMS Pinmas Kementerian Agama</title>
+    <link rel="shortcut icon" type="image" href="../asset/imagelogo/logo.png">
     <link href="../asset/css/materialize.min.css" rel="stylesheet">
     <style type="text/css">
       body {
@@ -43,7 +43,7 @@
     <header>
         <nav class="green darken-4">
             <div class="nav-wrapper container">
-                <a class="brand-logo">Dashboard</a>
+                <a class="brand-logo">Forum Diskusi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <!-- tanda aja -->
           <li><a href="forum.php"><i class="mdi-action-home left"></i>Home</a></li>

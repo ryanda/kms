@@ -24,7 +24,7 @@
 	    <header>
 	        <nav class="green darken-4">
 	            <div class="nav-wrapper container">
-	                <a class="brand-logo">Dashboard</a>
+	                <a class="brand-logo">Forum Diskusi</a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 	                <!-- tanda aja -->
 						<li><a href="forum.php"><i class="mdi-action-home left"></i>Home</a></li>
@@ -50,7 +50,7 @@
 							<div class="card-content white-text center-align">
 								<span class="card-title"><?php echo $hasil['judul']?></span>
 								<p class="truncate"><?php echo $hasil['isi']?></p>
-						</div>
+							</div>
 							<div class="card-action">
 								<a>oleh <?php echo $hasil['user']?>, <?php echo $hasil['jam']?><?php echo $hasil['tgl']?></a>
 								<a href="tampil.php?id=<?php echo $hasil['id'] ?>">link</a>
