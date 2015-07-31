@@ -28,7 +28,7 @@ require "includes/config.php";
 						
 						<td><?php echo $hasil['judul_berita']?></td>
 						<td><?php echo $hasil['isi']?></td> 
-						<td><?php echo $hasil['tanggal']?></td>
+						<td><?php echo $hasil['tgl_posting_berita']?></td>
 			
 						<td>
 						<a href="edit.php?id=<?php echo $hasil['id_berita'] ?>" title="Edit <?php echo $judul ?>">Ubah</a> | 
