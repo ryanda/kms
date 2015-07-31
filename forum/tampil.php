@@ -2,8 +2,8 @@
 <html>
   <head>
       <title>KMS Pinmas Kementerian Agama</title>
-      <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
-    <link href="../../asset/css/materialize.min.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image" href="../asset/imagelogo/logo.png">
+    <link href="../asset/css/materialize.min.css" rel="stylesheet">
     <style type="text/css">
       body {
             display: flex;
@@ -22,9 +22,9 @@
                 <a class="brand-logo">Dashboard</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <!-- tanda aja -->
-          <li><a><i class="mdi-action-home left"></i>Home</a></li>
+          <li><a href="forum.php"><i class="mdi-action-home left"></i>Home</a></li>
           <li class="active"><a><i class="mdi-social-person left"></i><?php echo $user; ?></a></li>
-          <li><a href="../../login/index.php">Logout</a></li> 
+          <li><a href="index.php">Logout</a></li> 
           </ul>
             </div>
         </nav>
@@ -43,7 +43,7 @@ $hasil = mysql_fetch_array ($sql);
     <main style="margin-top:30px;" class="container">
   		<div class="card-panel teal row">
 
-        <div class="card-panel teal lighten-2 white-text col s9 offset-s1">
+        <div class="card-panel red lighten-2 white-text col s9 offset-s1">
           <h4><?php echo $hasil['judul']?></h4>
           <h5><?php echo $hasil['isi']?></h5>
           <p><?php echo $hasil['user']?> | <?php echo $hasil['jam']?>, <?php echo $hasil['tgl']?></p>
@@ -94,8 +94,8 @@ $hasil = mysql_fetch_array ($sql);
     <!--    end footer page-->
 
 
-    <script src="../../asset/js/jquery.min.js"></script>
-    <script src="../../asset/js/materialize.min.js"></script>
+    <script src="../asset/js/jquery.min.js"></script>
+    <script src="../asset/js/materialize.min.js"></script>
     <script type="text/javascript">
       $(".dropdown-button").dropdown();
       $('.modal-trigger').leanModal();
