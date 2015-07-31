@@ -17,3 +17,7 @@ halaman kepala:
 3. 3. search berfungsi
 
 > semua halaman rapikan dan percantik tampilannya
+
+//fitur diskusi
+forum	- id, judul, isi, user, waktu
+trit	- id, forum_id, komentar, user, waktu
