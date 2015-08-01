@@ -5,8 +5,9 @@ new Vue({
         setTimeout(this.fetchData, 500);
     },
     data: {
-        data    : {},
-        detail  : {}
+        data: {},
+        modal: {},
+        modal2: {}
     },
     methods: {
         
@@ -35,14 +36,25 @@ new Vue({
                 url: 'proses.php?id=' + data.id,
                 contentType: 'application/json',
                 success: function(result) {
-                    this.$set('detail', result);
-                    Materialize.toast('Data diload! ' + result['id'] , 10000);
-                    // $('#detail').openModal();
+                    this.$set("modal", result[0]);
                 },
                 error: function(req, status, ex) {
-                    Materialize.toast('Data gagal diload! ' + status + ' ' + ex, 10000);
+                    Materialize.toast('Thread gagal diload! ' + status + ' ' + ex, 10000);
                 },
             });
+            $.ajax({
+                type: 'GET',
+                context: this,
+                url: 'proses.php?komen=' + data.id,
+                contentType: 'application/json',
+                success: function(result) {
+                    this.$set("modal2", result);
+                },
+                error: function(req, status, ex) {
+                    Materialize.toast('Komentar gagal diload! ' + status + ' ' + ex, 10000);
+                },
+            });
+            $('#detail').openModal();
         }
 
     }

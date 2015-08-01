@@ -43,14 +43,15 @@
 	    <!--    end header navbar-->
 
 	    <!--    main content-->
-	    <main style="margin-top:20px">
+	    <main style="margin-top:20px" id="app">
 
-	    	<div class="container row" id="app">
+	    	<div class="container row">
 
+                <!-- get all data -->
                 <div class="col s4" v-repeat="datas:data" stagger="300">
 					<div class="card teal">
 						<div class="card-content white-text center-align">
-							<span class="card-title"> {{datas.id}}</span>
+							<span class="card-title"> {{datas.judul}}</span>
 							<p class="truncate">{{datas.isi}}</p>
 						</div>
 						<div class="card-action">
@@ -60,14 +61,23 @@
 					</div>
                 </div>
 
+				<!-- data detail -->
                 <div id="detail" class="modal modal-fixed-footer">
-				    <div class="modal-content"> <!-- v-model="detail" -->
-						<h3 class="center-align">Data Lokasi {{detail.id}}</h3>
-						<p class="flow-text"> {{detail.id}}</p>
-						<p class="flow-text"> {{detail.judul}}</p>
-						<p class="flow-text"> {{detail.isi}}</p>
-						<p class="flow-text"> {{detail.user}}</p>
-						<p class="flow-text"> {{detail.jam}}, {{detail.tgl}}</p>
+				    <div class="modal-content row"> <!-- v-model="detail" -->
+						<h3 class="center-align">Thread {{modal.judul}}</h3>
+						
+						<div class="card-panel teal lighten-2 white-text col s10 offset-s1">
+				          <h5> {{modal.isi}}</h5>
+				          <p> {{modal.user}} | {{modal.jam}}, {{modal.tgl}}</p>
+				        </div>
+				        
+				        <div v-repeat="data:modal2" class="card-panel red lighten-1 col s6 offset-s2 white-text">
+				          <div class="container" style="margin: 8px 0">
+				            <span> <strong>{{data.user}}</strong>> {{data.komentar}} <br/>
+				             	 <strong>on...</strong> {{data.jam}}, {{data.tgl}}</span>
+				          </div>
+				        </div>
+
 				    </div>
 				    <div class="modal-footer">
 				      	<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
@@ -109,9 +119,9 @@
     </div>		
 </div>
 
+        <script src="../../asset/js/vue.js"></script>
         <script src="../../asset/js/jquery.min.js"></script>
 	    <script src="../../asset/js/materialize.min.js"></script>
-        <script src="../../asset/js/vue.js"></script>
         <script src="../../asset/js/vue-resource.min.js"></script>
         <script src="../../asset/js/app.js"></script>
 	    <script type="text/javascript">
