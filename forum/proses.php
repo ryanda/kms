@@ -1,23 +1,10 @@
 <?php
-  include ('config.php'); 
-  session_start(); 
-  $user = $_SESSION['user'];
+header('content-type: application/json; charset=utf-8');
+include('api.php');
+$db = new Database();
+$db->connect();
+if(!isset($_GET["id"])) $db->select('forum','id,judul,isi,user,tgl,jam'); 
+else $db->select('forum','id,judul,isi,user,tgl,jam'); 
+$res = $db->getResult();
+echo json_encode($res);
 
-    $judul = $_POST['judul'];
-    $isi = $_POST['isi'];
-    $tgl = date('Y-m-d');
-    $jam = date('H:i:s');
-
-    $query = "INSERT INTO forum(id, judul, isi, user, tgl, jam) VALUE('', '$judul', '$isi', '$user', '$tgl', '$jam')";
-    $sql = mysql_query ($query);
-
-    if ($sql) {
-      header('location:forum.php');
-      echo $query;
-    }
-    else { 
-      error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-      echo "gagal buat thread";
-    }
-
-?>
