@@ -38,6 +38,7 @@ require 'config.php';
 
                 <ul id="dropdown1" class="dropdown-content">
                     <li><a href="../dokumen/input.php">Input</a></li>
+                    <li><a href="../dokumen/upload.php">Upload</a></li>
                 </ul>
 
             </nav>
