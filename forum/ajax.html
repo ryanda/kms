@@ -71,7 +71,7 @@
 	    	<div class="container row">
 
                 <!-- get all data -->
-                <div class="col s4" v-repeat="datas:data" stagger="300">
+                <div class="col s4" v-repeat="datas:data" stagger="300" v-transition="fade">
 					<div class="card teal">
 						<div class="card-content white-text center-align">
 							<span class="card-title"> {{datas.judul}}</span>
@@ -86,7 +86,7 @@
 
 				<!-- data detail -->
                 <div id="detail" class="modal modal-fixed-footer">
-				    <div class="modal-content row"> <!-- v-model="detail" -->
+				    <div class="modal-content row"> 
 						<h3 class="center-align">Thread {{modal.judul}}</h3>
 						
 						<div class="card-panel teal lighten-2 white-text col s10 offset-s1">
@@ -96,7 +96,7 @@
 				        
 				        <div v-repeat="data:modal2" class="card-panel red lighten-1 col s6 offset-s2 white-text">
 				          <div class="container" style="margin: 8px 0">
-				            <span> <strong>{{data.user}}</strong>> {{data.komentar}} <br/>
+				            <span> <strong>{{data.user}}</strong> -> {{data.komentar}} <br/>
 				             	 <strong>on...</strong> {{data.jam}}, {{data.tgl}}</span>
 				          </div>
 				        </div>
@@ -106,7 +106,7 @@
 								<div class="container" style="margin: 8px 0">
 									<input type="hidden" v-model="nama" name="nama">
 									<input type="hidden" name="id" v-model="modal.id">
-									<input v-model="komen" type="text" name="komen" placeholder="ketik, enter untuk kirim..." v-on="keyup:komentar(modal.id) | key 'enter'">
+									<input v-model="komen" type="text" name="komen" placeholder="ketik, enter untuk kirim..." v-on="keyup:komentar(modal.id, $event) | key 'enter'">
 								</div>
 							</form>
 				        </div>
@@ -116,6 +116,28 @@
 				      	<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
 				    </div>
 				</div>
+
+				<div id="tambah" class="modal modal-fixed-footer bottom-sheet"> 
+				    <form method="POST" v-on="submit: tambahThread(baru, $event)">
+					    <div class="modal-content row">
+					    	<div class="col m6 offset-m3">
+								<div class="input-field">
+					                <input id="judul" v-model="baru.judul" type="text" placeholder="Judul Thread">
+					            </div>
+					            <div class="input-field">
+					                <textarea id="isi" v-model="baru.isi" class="materialize-textarea" placeholder="Isi Thread"></textarea>
+					            </div>
+					    	</div>
+					    </div>
+					    <div class="modal-footer">
+					      	<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" style="margin: 6px 10px !important;">Batal</a>
+					      	<button class="btn waves-effect waves-light" type="submit" name="action" style="margin-left: 10px">Buat Thread
+					        </button>
+					    </div>
+				    </form>
+				</div>
+
+				
 	    	
 	    	</div>
 
@@ -133,6 +155,13 @@
 				</div>
 			</div>
 			<!-- end input name -->
+
+			<!-- FAB -->
+			<div class="fixed-action-btn" style="bottom: 45px; right: 24px; display:none">
+				<a class="btn-floating btn-large red" v-on="click:tambahModal()">
+					<i class="large mdi-content-add"></i>
+				</a>
+			</div>
 
 	    
 	    </main>

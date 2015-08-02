@@ -14,7 +14,11 @@ new Vue({
         modal2: {},
         komen: '',
         nama: '',
-        modalid:''
+        modalid:'',
+        baru: {
+            judul: '',
+            isi: ''
+        }
     },
     methods: {
         
@@ -92,7 +96,44 @@ new Vue({
             $("#nama").html(this.nama);
             this.fetchData();
             $('#user').closeModal();
-        }
+            $('.fixed-action-btn').show();
+        },
+
+        tambahModal: function(data) {
+            $('#tambah').openModal();
+        },
+
+        tambahThread: function(data, e) {
+            e.preventDefault();
+            json = JSON.stringify({ 
+                judul : data.judul, 
+                isi : data.isi, 
+                nama : this.nama 
+            });
+            
+            $.ajax({
+                type: 'POST',
+                url: 'ajax/post2.php',
+                dataType: 'text',
+                processData: false,
+                data: json,
+                contentType: 'application/json',
+                success: function() {
+                    Materialize.toast('Komentar berhasil ditambah! :D', 1000);
+                    this.fetchData();
+                },
+                error: function(req, status, ex) {
+                    Materialize.toast('Komunikasi dengan server gagal! ' +req+ ' ' +status+ ' ' +ex, 10000);
+                },
+            });
+            // console.log(json);
+            $('#tambah').closeModal();
+            this.baru = {
+                judul: '',
+                isi: ''
+            };
+        },
+
 
     },
     computed: {
