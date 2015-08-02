@@ -39,6 +39,7 @@ require 'config.php';
 
                 <ul id="dropdown1" class="dropdown-content">
                     <li><a href="../berita/input.php">Input</a></li>
+                    <li><a href="../berita/upload.php">Upload</a></li>
                 </ul>
 
             </nav>

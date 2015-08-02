@@ -1,13 +1,58 @@
 <?php
-error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 require "includes/header_peraturan.php";
 require "includes/config.php";
+?> 
+
+    <main style="margin-top:30px; margin-bottom:30px;">
+        <div class="container">
+            <table class="hoverable centered responsive-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Judul</th>
+                        <th>Isi</th>
+                        <th>Tanggal</th>
+                        <th>Opsi</th>
+                    </tr>
+                </thead>
+    <?php
+        $no = 1;
+        $query2 = "SELECT * from peraturan_input";
+        $sql = mysql_query ($query2);
+        while ($hasil = mysql_fetch_array ($sql)) {
+    ?>
+                <tbody>
+                    <tr>
+                        <td><?php echo $no ?></td>
+                        
+                        <td><?php echo $hasil['judul']?></td>
+                        <td><?php echo $hasil['isi']?></td> 
+                        <td><?php echo $hasil['tgl_posting_peraturan']?></td>
+            
+                        <td>
+                        <a href="edit.php?id=<?php echo $hasil['id'] ?>" title="Edit <?php echo $judul ?>">Ubah</a> | 
+                        <a href="delete1.php?id=<?php echo $hasil['id'] ?>" title="Hapus <?php echo $judul ?>">Hapus</a>
+                        </td>
+                    </tr>   
+                </tbody>
+<?php $no++; ?>
+<?php } ?>
+            </table>
+    <!--     </div>
+    </main> -->
+
+<hr><hr>
+
+<?php
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+// require "includes/header_peraturan.php";
+// require "includes/config.php";
 $data = mysql_query("select * from peraturan");
 ?>
 
     <!-- start main content -->
-    <main style="margin-top:30px;">
-        <div class="container">
+    <!-- <main style="margin-top:30px;">
+        <div class="container"> -->
         <table class="hoverable centered responsive-table">
           <thead>
               <tr>

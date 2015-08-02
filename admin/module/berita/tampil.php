@@ -40,6 +40,51 @@ require "includes/config.php";
 <?php } ?>
 			</table>
 		</div>
+
+	
+	<hr><hr>
+
+<?php
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+// require "includes/header_peraturan.php";
+// require "includes/config.php";
+$data = mysql_query("select * from berita_upload");
+?>
+
+    <!-- start main content -->
+    <!-- <main style="margin-top:30px;">
+        <div class="container"> -->
+        <table class="hoverable centered responsive-table">
+          <thead>
+              <tr>
+                <th>No</th>
+                <th>Judul Peraturan</th>
+                <th>Nama File</th>
+                <th>Tipe</th>
+                <th>Ukuran</th>
+                <th>Download</th>
+                <th>Opsi</th>
+             </tr>
+             </thead>
+             <tbody> 
+             <?php while ($row =mysql_fetch_assoc($data)) { ?>
+             <tr>
+                <td><?php echo $c=$c+1;?></td>
+                <td><?php echo $row['judul'] ?></td>
+                <td><?php echo $row['filename'] ?></td>
+                <td><?php echo $row['filetype'] ?></td>
+                <td><?php echo $row['filesize'] ?></td>
+                <td><a href="download.php?id=<?php echo $row['id'] ?>">Download</a></td>
+                <td><a href="delete.php?id=<?php echo $row['id'] ?>">Hapus</a></td>   
+             </tr>
+             <?php } ?>
+             </tbody>
+          </table>
+        </div>
+    </main>
+    <!-- end main content -->
+
+
 	</main>
 </body>	
 </html>

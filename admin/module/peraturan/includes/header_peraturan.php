@@ -36,6 +36,7 @@ require 'config.php';
 
                 <ul id="dropdown1" class="dropdown-content">
                     <li><a href="../peraturan/input.php">Input</a></li>
+                    <li><a href="../peraturan/upload.php">Upload</a></li>
                 </ul>
 
             </nav>
