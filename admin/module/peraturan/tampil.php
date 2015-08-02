@@ -5,6 +5,7 @@ require "includes/config.php";
 
     <main style="margin-top:30px; margin-bottom:30px;">
         <div class="container">
+            <div class="section">
             <table class="hoverable centered responsive-table">
                 <thead>
                     <tr>
@@ -40,8 +41,12 @@ require "includes/config.php";
             </table>
     <!--     </div>
     </main> -->
+      </div>
+      <br>
+      <div class="divider"></div>
+      <br>
+      <div class="section">
 
-<hr><hr>
 
 <?php
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
@@ -79,6 +84,7 @@ $data = mysql_query("select * from peraturan");
              <?php } ?>
              </tbody>
           </table>
+          </div>
         </div>
     </main>
     <!-- end main content -->

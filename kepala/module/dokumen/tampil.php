@@ -51,6 +51,7 @@ require "includes/config.php";
 </div>
 
 <div class="col s12 section container" id="dokumen"> <br>
+  <div class="section">
         <table class="hoverable centered responsive-table">
           <thead>
               <tr>
@@ -91,8 +92,12 @@ require "includes/config.php";
 			 <?php } ?>
 
           </table>
-          
-  <hr><hr>
+      
+      </div>
+      <br>
+      <div class="divider"></div>
+      <br>
+      <div class="section">
 
    <!-- start main content -->
     <!-- <main style="margin-top:30px;">
@@ -125,6 +130,7 @@ require "includes/config.php";
              <?php } ?>
              </tbody>
           </table>
+        </div>
         <!-- </div>
     </main> -->
     <!-- end main content -->

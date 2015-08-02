@@ -52,6 +52,7 @@ require "includes/config.php";
 					</div>
 
 		<div class="col s12 section container" id="dokumen"> <br>
+      <div class="section">
         <table class="hoverable centered responsive-table">
           <thead>
               <tr>
@@ -90,9 +91,11 @@ require "includes/config.php";
 				<?php } ?>
 				
 				 </table>
-
-				 <hr><hr>
-
+      </div>
+      <br>
+      <div class="divider"></div>
+      <br>
+      <div class="section">
    <!-- start main content -->
     <!-- <main style="margin-top:30px;">
         <div class="container"> -->
@@ -118,12 +121,14 @@ require "includes/config.php";
                 <td><?php echo $row['filename'] ?></td>
                 <td><?php echo $row['filetype'] ?></td>
                 <td><?php echo $row['filesize'] ?></td>
-                <td><a href="download.php?id=<?php echo $row['id'] ?>">Download</a></td>
+                <td><a href="download1.php?id=<?php echo $row['id'] ?>">Download</a></td>
                 <!-- <td><a href="delete.php?id=<?php echo $row['id'] ?>">Hapus</a></td>    -->
              </tr>
              <?php } ?>
              </tbody>
           </table>
+      </div>
+
         <!-- </div>
     </main> -->
     <!-- end main content -->
