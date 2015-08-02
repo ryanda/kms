@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>KMS Pinmas Kementerian Agama</title>
-        <link rel="shortcut icon" type="image" href="../../../asset/imagelogo/logo.png">
-	    <link href="../../asset/css/materialize.min.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image" href="../asset/imagelogo/logo.png">
+	    <link href="../asset/css/materialize.min.css" rel="stylesheet">
 	    <style type="text/css">
 		    body {
 	            display: flex;
@@ -56,9 +56,9 @@
 	                <a class="brand-logo">Dashboard</a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 	                <!-- tanda aja -->
-						<li><a><i class="mdi-action-home left"></i>Home</a></li>
+						<li><a href="forum.php"><i class="mdi-action-home left"></i>Home</a></li>
 						<li class="active"><a><i class="mdi-social-person left"></i><span id="nama">anonymouse</span></a></li>
-						<li><a href="../../login/index.php">Logout</a></li>	
+						<li><a href="index.php">Logout</a></li>	
 				    </ul>
 	            </div>
 	        </nav>
@@ -168,11 +168,11 @@
     </div>		
 </div>
 
-        <script src="../../asset/js/vue.js"></script>
-        <script src="../../asset/js/jquery.min.js"></script>
-	    <script src="../../asset/js/materialize.min.js"></script>
-        <script src="../../asset/js/vue-resource.min.js"></script>
-        <script src="../../asset/js/app.js"></script>
+        <script src="../asset/js/vue.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+	    <script src="../asset/js/materialize.min.js"></script>
+        <script src="../asset/js/vue-resource.min.js"></script>
+        <script src="../asset/js/app.js"></script>
 	    <script type="text/javascript">
 	    	$(".dropdown-button").dropdown();
 	    	$('.modal-trigger').leanModal();
