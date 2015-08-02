@@ -11,18 +11,41 @@
 	        }
 	        main { flex: 1 0 auto }
 	        .container { width:90% }            
-.expand-transition {
-  transition: all .3s ease;
-  height: 30px;
-  padding: 10px;
-  background-color: #eee;
-  overflow: hidden;
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  display: table;
+  transition: opacity .3s ease;
 }
-.expand-enter, .expand-leave {
-  height: 0;
-  padding: 0 10px;
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  background-color: #fff;
+  transition: transform .3s ease;
+}
+
+.fade-enter, .fade-leave {
   opacity: 0;
 }
+
+.fade-enter .modal-container {
+  transform: translate3d(0, 30px, 0);
+}
+
+.fade-leave .modal-container {
+  transform: translate3d(0, -30px, 0);
+}
+
         </style>
     </head>
     <body>
@@ -34,7 +57,7 @@
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 	                <!-- tanda aja -->
 						<li><a><i class="mdi-action-home left"></i>Home</a></li>
-						<li class="active"><a><i class="mdi-social-person left"></i>User</a></li>
+						<li class="active"><a><i class="mdi-social-person left"></i><span id="nama">anonymouse</span></a></li>
 						<li><a href="../../login/index.php">Logout</a></li>	
 				    </ul>
 	            </div>
@@ -78,6 +101,16 @@
 				          </div>
 				        </div>
 
+				        <div class="card-panel col s6 offset-s2"> 
+				        	<form method="POST" id="komentar">
+								<div class="container" style="margin: 8px 0">
+									<input type="hidden" v-model="nama" name="nama">
+									<input type="hidden" name="id" v-model="modal.id">
+									<input v-model="komen" type="text" name="komen" placeholder="ketik, enter untuk kirim..." v-on="keyup:komentar(modal.id) | key 'enter'">
+								</div>
+							</form>
+				        </div>
+
 				    </div>
 				    <div class="modal-footer">
 				      	<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
@@ -85,6 +118,22 @@
 				</div>
 	    	
 	    	</div>
+
+	    	<!-- input user name -->
+			<div id="user" class="modal modal-fixed-footer" style="max-height: 250px; max-width: 400px">
+				<div class="modal-content">
+					<h4>Silahkan Input Nama</h4><br>
+					<div class="input-field">
+			          	<input v-on="keyup:username($event) | key 'enter'" id="user" name="user" v-model="nama" type="text" placeholder="Silahkan inputkan nama anda" class="validate">
+			        </div>
+				</div>
+				<div class="modal-footer">
+					<button v-attr="disabled:nama == ''" v-on="click:username($event)" class="btn waves-effect waves-light" type="submit" name="action">Masuk</i>
+			  		</button>
+				</div>
+			</div>
+			<!-- end input name -->
+
 	    
 	    </main>
 	    <!--    end main content-->
@@ -131,6 +180,9 @@
 	    	// 	dismissible: true,
 	    	// 	opacity: .9
 	    	// });
+$("#komentar").submit(function(e) {
+    e.preventDefault();
+});
 	    </script>
     </body>
 </html>

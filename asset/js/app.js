@@ -2,27 +2,30 @@ Vue.config.debug = true;
 new Vue({
     el: '#app',
     ready: function() {
-        setTimeout(this.fetchData, 500);
+        // setTimeout(this.fetchData, 500);
+        $('#user').openModal({
+            dismissible: false,
+            opacity: .9
+        });
     },
     data: {
         data: {},
         modal: {},
-        modal2: {}
+        modal2: {},
+        komen: '',
+        nama: '',
+        modalid:''
     },
     methods: {
         
-        // READ
         fetchData: function() {
             $.ajax({
                 type: 'GET',
                 context: this,
-                url: 'proses.php',
+                url: 'ajax/get.php?all',
                 contentType: 'application/json',
                 success: function(result) {
-                    // $('#ajax').hide();
                     this.$set('data', result);
-                    // this.$set('error', result.error);
-                    // this.$set('jmldata', result.length);
                 },
                 error: function(req, status, ex) {
                     Materialize.toast('Data gagal diload! Status : ' + status + ', Data : ' + ex, 10000);
@@ -33,7 +36,7 @@ new Vue({
             $.ajax({
                 type: 'GET',
                 context: this,
-                url: 'proses.php?id=' + data.id,
+                url: 'ajax/get.php?id=' + data.id,
                 contentType: 'application/json',
                 success: function(result) {
                     this.$set("modal", result[0]);
@@ -42,10 +45,14 @@ new Vue({
                     Materialize.toast('Thread gagal diload! ' + status + ' ' + ex, 10000);
                 },
             });
+            this.loadKomen(data);
+            $('#detail').openModal();
+        },
+        loadKomen: function(data) {
             $.ajax({
                 type: 'GET',
                 context: this,
-                url: 'proses.php?komen=' + data.id,
+                url: 'ajax/get.php?komen=' + data.id,
                 contentType: 'application/json',
                 success: function(result) {
                     this.$set("modal2", result);
@@ -54,8 +61,46 @@ new Vue({
                     Materialize.toast('Komentar gagal diload! ' + status + ' ' + ex, 10000);
                 },
             });
-            $('#detail').openModal();
+        },
+
+        komentar: function(thread) {
+            // e.preventDefault();
+            this.modalid = thread;
+            data = { komen : this.komen, id : this.modalid, nama : this.nama };
+            json = JSON.stringify(data);
+            $.ajax({
+                type: 'POST',
+                url: 'ajax/post.php',
+                dataType: 'text',
+                processData: false,
+                data: json,
+                contentType: 'application/json',
+                success: function() {
+                    Materialize.toast('Komentar berhasil ditambah! :D', 1000);
+                },
+                error: function(req, status, ex) {
+                    Materialize.toast('Komunikasi dengan server gagal! ' +req+ ' ' +status+ ' ' +ex, 10000);
+                },
+            });
+            // console.log(json);
+            $('#detail').closeModal();
+            this.komen = '';
+        },
+
+        username: function(e) {
+            e.preventDefault();
+            $("#nama").html(this.nama);
+            this.fetchData();
+            $('#user').closeModal();
         }
 
+    },
+    computed: {
+        errors: function() {
+            for (var key in this.nama) {
+                if (! this.nama[key]) return true;
+            }
+            return false;
+        }
     }
 });
