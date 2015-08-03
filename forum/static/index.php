@@ -10,8 +10,8 @@
 <html>
     <head>
         <title>KMS Pinmas Kementerian Agama</title>
-        <link rel="shortcut icon" type="image" href="../asset/imagelogo/logo.png">
-	    <link href="../asset/css/materialize.min.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image" href="../../asset/imagelogo/logo.png">
+	    <link href="../../asset/css/materialize.min.css" rel="stylesheet">
 	    <style type="text/css">
 		    body {
 	            display: flex;
@@ -80,8 +80,8 @@
 </div>
 <!-- end input name -->
 
-        <script src="../asset/js/jquery.min.js"></script>
-	    <script src="../asset/js/materialize.min.js"></script>
+        <script src="../../asset/js/jquery.min.js"></script>
+	    <script src="../../asset/js/materialize.min.js"></script>
 	    <script type="text/javascript">
 	    	$(".dropdown-button").dropdown();
 	    	$('.modal-trigger').leanModal();
