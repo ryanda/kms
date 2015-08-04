@@ -18,7 +18,7 @@ require "includes/config.php";
               </div>
               <div class="input-field">
                 <textarea id="judul" name="judul" class="materialize-textarea"></textarea>
-                <label for="judul">Judul Peraturan</label>
+                <label for="judul">Judul Dokumen</label>
               </div>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="mdi-content-send right"></i>
