@@ -196,7 +196,7 @@
 			    } else if ($('.tabs .tab:eq(4) a').hasClass('active')) {
 				    document.location.href="module/berita/tampil.php";
 			    } else if ($('.tabs .tab:eq(5) a').hasClass('active')) {
-				    document.location.href="../forum/index.html";
+				    document.location.href="module/static/index.php";
 			    } else {
 				    document.location.href="index.php";
 			    }
