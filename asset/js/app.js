@@ -120,14 +120,14 @@ new Vue({
                 data: json,
                 contentType: 'application/json',
                 success: function() {
-                    Materialize.toast('Komentar berhasil ditambah! :D', 1000);
-                    this.fetchData();
+                    Materialize.toast('Thread berhasil dibuat! :D', 1000);
                 },
                 error: function(req, status, ex) {
                     Materialize.toast('Komunikasi dengan server gagal! ' +req+ ' ' +status+ ' ' +ex, 10000);
                 },
             });
             // console.log(json);
+            this.fetchData();
             $('#tambah').closeModal();
             this.baru = {
                 judul: '',
