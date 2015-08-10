@@ -55,6 +55,7 @@
 							<div class="card-action">
 								<a>oleh <?php echo $hasil['user']?>, <?php echo $hasil['jam']?><?php echo $hasil['tgl']?></a>
 								<a href="tampil.php?id=<?php echo $hasil['id'] ?>">link</a>
+								<a href="hapus.php?id=<?php echo $hasil['id'] ?>" class="red-text">hapus</a>
 							</div>
 						</div>
 	                </div>

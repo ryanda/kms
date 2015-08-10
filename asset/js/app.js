@@ -87,9 +87,9 @@ new Vue({
                 },
             });
             // console.log(json);
-            this.loadKomen(data);
             // $('#detail').closeModal();
             this.komen = '';
+    		loadKomen(data);
         },
 
         username: function(e) {

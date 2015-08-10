@@ -61,7 +61,7 @@ $hasil = mysql_fetch_array ($sql);
         <div class="card-panel red lighten-1 col s6 offset-s2 white-text">
           <div class="container" style="margin-top: 20px">
             <h5><?php echo $hasil2['komentar']?></h5>
-            <p><?php echo $hasil2['user']?> | <?php echo $hasil2['jam']?>, <?php echo $hasil2['tgl']?></p>
+            <p><?php echo $hasil2['user']?> | <?php echo $hasil2['jam']?>, <?php echo $hasil2['tgl']?> | <a href="hapuskomen.php?id=<?php echo $hasil['id'] ?>&id2=<?php echo $hasil2['id'] ?>" class="black-text">hapus</a></p>
           </div>
         </div>
 
