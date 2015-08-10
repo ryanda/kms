@@ -104,7 +104,7 @@ require "includes/config.php";
             } else if ($('.tabs .tab:eq(0) a').hasClass('active')) {
                     document.location.href="../../index.php";
             } else {
-                    document.location.href="../../../forum/index.html";
+                    document.location.href="../../module/static/index.php";
             }
         }
         });
