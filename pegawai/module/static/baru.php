@@ -1,4 +1,3 @@
-
 <?php
   include ('config.php'); 
   session_start(); 
@@ -48,7 +47,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <!-- tanda aja -->
           <li><a href="forum.php"><i class="mdi-action-home left"></i>Home</a></li>
-          <li class="active"><a><i class="mdi-social-person left"></i><?php echo $user; ?> [Peagawai]</a></li>
+          <li class="active"><a><i class="mdi-social-person left"></i><?php echo $user; ?> [Pegawai]</a></li>
           <li><a href="index.php">Logout</a></li> 
           </ul>
             </div>
