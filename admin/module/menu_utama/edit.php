@@ -55,7 +55,7 @@ tinyMCE.init({
 				
 			?>
 			<?php
-            include "koneksi.php";
+            include "config.php";
             $id_menu=$_GET['id_menu'];
             $sql=mysql_query("select * from menu_utama where id_menu='$id_menu'");
             $r=mysql_fetch_array($sql);

@@ -1,5 +1,5 @@
 <?php
-	include "koneksi.php";
+	include "config.php";
 	$id = $_GET['id'];
 	$sql = "SELECT * FROM berita WHERE id_berita = '$id' ";
 	$q = mysql_query($sql);

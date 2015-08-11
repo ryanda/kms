@@ -86,7 +86,7 @@
 
                 	<div class="col s12 row section" id="home"> <br>
 <?php 
-	include "koneksi.php";
+	include "config.php";
 	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 	$query = "SELECT * FROM berita ";
 
