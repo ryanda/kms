@@ -57,7 +57,7 @@ require "includes/config.php";
             </div>
 
             <div class="input-field col s6">
-              <input type="text" name="email" id="email" required>
+              <input type="email" name="email" id="email" required>
               <label for="email">Email</label>
             </div>
 

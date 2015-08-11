@@ -57,7 +57,7 @@ $query=mysql_query("select * from user");
 
 
             <div class="input-field col s4">
-              <input name="email" id="email" type="text" value="<?php echo $row['email'];?>" required>
+              <input name="email" id="email" type="email" value="<?php echo $row['email'];?>" required>
               <label for="email">Email</label>
             </div>
 

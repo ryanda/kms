@@ -72,7 +72,7 @@ $query = mysql_query("select * from pegawai_pinmas");
         </div>
 
         <div class="input-field col s6">
-          <input type="text" name="email" value="<?php echo $row['email'];?>" required>
+          <input type="email" name="email" value="<?php echo $row['email'];?>" required>
           <label for="email">Email</label>
         </div>
 <?php

@@ -65,7 +65,7 @@ tinyMCE.init({
 <td align="center"><input type="text" name="username" size="10" required></td>
 <td align="center"><input type="text" name="nama_lengkap" size="25" required></td>
 <td align="center"><input type="password" name="password" size="10" required></td>
-<td align="center"><input type="text" name="email" size="25" required></td>
+<td align="center"><input type="email" name="email" size="25" required></td>
 <td align="center"><input type="text" name="no_telp" size="12" required></td>
 </tr>
 </TABLE></body></html>

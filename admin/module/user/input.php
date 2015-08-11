@@ -38,7 +38,7 @@ require "includes/header_user_input.php";
 
 
             <div class="input-field col s4">
-              <input name="email" id="email" required type="text" class="validate">
+              <input name="email" id="email" required type="email" class="validate">
               <label for="email">Email</label>
             </div>
 

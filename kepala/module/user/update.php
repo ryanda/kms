@@ -76,7 +76,7 @@ while($row=mysql_fetch_array($query)){
 <td><input type="text" name="username" value="<?php echo $row['username'];?>" readonly="readonly" disabled="disabled" /></td>
 <td><input type="text" name="nama_lengkap" value="<?php echo $row['nama_lengkap'];?>" required/></td>
 <td><input type="password" name="password" value="" required /></td>
-<td><input type="text" name="email" value="<?php echo $row['email'];?>" required/></td>
+<td><input type="email" name="email" value="<?php echo $row['email'];?>" required/></td>
 <td><input type="text" name="no_telp" value="<?php echo $row['no_telp'];?>" required/></td>
 </TR>
 <?php
