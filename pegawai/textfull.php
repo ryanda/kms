@@ -122,7 +122,7 @@
 	    <!--    end main content-->
 
 	    <!--    footer page-->
-	    <footer class="page-footer green accent-4">
+	    <footer class="page-footer green darken-4">
 	        <div class="container row">
 				<div class="col s4">
 	                <h5 class="white-text">Knowledge Management System</h5>

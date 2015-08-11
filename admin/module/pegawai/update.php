@@ -31,7 +31,7 @@ $query = mysql_query("select * from pegawai_pinmas");
         </div>
 
         <div class="input-field col s4">
-          <input type="password" name="jabatan" value="<?php echo $row['jabatan'];?>">
+          <input type="text" name="jabatan" value="<?php echo $row['jabatan'];?>">
           <label for="jabatan">Jabatan</label>
         </div>
 
@@ -62,7 +62,7 @@ $query = mysql_query("select * from pegawai_pinmas");
         </div>
 
         <div class="input-field col s12">
-          <input type="password" name="alamat" id="alamat" value="<?php echo $row['alamat'];?>">
+          <input type="text" name="alamat" id="alamat" value="<?php echo $row['alamat'];?>">
           <label for="alamat">Alamat</label>
         </div>
 
