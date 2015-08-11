@@ -62,11 +62,11 @@ tinyMCE.init({
 <th scope scope="col" bgcolor="#333333"><font color="#CCCCCC">No Telp</font></th>
 </TR>
 <tr>
-<td align="center"><input type="text" name="username" size="10" required=""></td>
-<td align="center"><input type="text" name="nama_lengkap" size="25" required=""></td>
-<td align="center"><input type="password" name="password" size="10" required=""></td>
-<td align="center"><input type="text" name="email" size="25" required=""></td>
-<td align="center"><input type="text" name="no_telp" size="12" required=""></td>
+<td align="center"><input type="text" name="username" size="10" required></td>
+<td align="center"><input type="text" name="nama_lengkap" size="25" required></td>
+<td align="center"><input type="password" name="password" size="10" required></td>
+<td align="center"><input type="text" name="email" size="25" required></td>
+<td align="center"><input type="text" name="no_telp" size="12" required></td>
 </tr>
 </TABLE></body></html>
 </br><center>

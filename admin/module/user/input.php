@@ -12,12 +12,12 @@ require "includes/header_user_input.php";
         <div class="container row">
 
             <div class="input-field col s4">
-              <input name="username" id="username" required="" type="text" class="validate">
+              <input name="username" id="username" required type="text" class="validate">
               <label for="username">Username</label>
             </div>
 
             <div class="input-field col s4">
-                <select name="level" id="level" required="" class="validate">
+                <select name="level" id="level" required class="validate">
                   <option value="" disabled selected>Pilihan</option>
                   <option value="1">admin</option>
                   <option value="2">pegawai</option>
@@ -27,23 +27,23 @@ require "includes/header_user_input.php";
             </div>
 
             <div class="input-field col s4">
-              <input name="password" id="password" required="" type="password">
+              <input name="password" id="password" required type="password">
               <label for="password">Password</label>
             </div>
 
             <div class="input-field col s6">
-              <input name="nama_lengkap" id="nama_lengkap" required="" type="text" class="validate">
+              <input name="nama_lengkap" id="nama_lengkap" required type="text" class="validate">
               <label for="nama_lengkap">Nama Lengkap</label>
             </div>
 
 
             <div class="input-field col s4">
-              <input name="email" id="email" required="" type="text" class="validate">
+              <input name="email" id="email" required type="text" class="validate">
               <label for="email">Email</label>
             </div>
 
             <div class="input-field col s2">
-              <input name="no_telp" id="no_telp" required="" type="text" class="validate">
+              <input name="no_telp" id="no_telp" required type="text" class="validate">
               <label for="no_telp">No Telp</label>
             </div>
 

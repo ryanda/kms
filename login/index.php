@@ -64,9 +64,9 @@ unset($_POST['login']);
 	                <!-- tanda aja -->
 	                	<form action="index.php" method="post" name="postform">
 	                		<p>Username</p>
-			                <input type="text" required="" name="username"/></br>
+			                <input type="text" required name="username"/></br>
 			                <p>Password</p>
-			                <input type="password" required="" name="password" /></br>
+			                <input type="password" required name="password" /></br>
 			                <button class="btn waves-effect waves-light" type="submit" name="login">Login
 						    	<i class="mdi-content-send right"></i>
 						  	</button>

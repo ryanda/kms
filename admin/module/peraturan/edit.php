@@ -13,11 +13,11 @@ $hasil = mysql_fetch_array ($sql);
 			<form action="update.php" method="POST" name="input" >
         <div class="input-field col s12">
           <input type="hidden" name="id" value="<?php echo $hasil['id'];?>">
-          <input type="text" id="judul" name="judul" value="<?php echo $hasil['judul'];?>">
+          <input type="text" id="judul" name="judul" value="<?php echo $hasil['judul'];?>" required>
           <label for="judul">Judul Peraturan</label>
         </div>
         <div class="input-field col s12">
-          <textarea id="isi" name="isi" rows="9" cols="60" class="materialize-textarea"><?php echo $hasil['isi'];?></textarea>
+          <textarea id="isi" name="isi" rows="9" cols="60" class="materialize-textarea" required><?php echo $hasil['isi'];?></textarea>
           <label for="isi">Isi Peraturan</label>
         </div>
         <button class="btn waves-effect waves-light" type="submit" name="update">

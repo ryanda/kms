@@ -12,12 +12,12 @@ $hasil = mysql_fetch_array ($sql);
 		<div class="container row">
 			<form action="update.php" method="POST" name="input" >
         <div class="input-field col s12">
-          <input type="hidden" name="id" value="<?php echo $hasil['id_berita'];?>">
-          <input type="text" id="judul" name="judul_berita" value="<?php echo $hasil['judul_berita'];?>">
+          <input type="hidden" name="id" value="<?php echo $hasil['id_berita'];?>" required>
+          <input type="text" id="judul" name="judul_berita" value="<?php echo $hasil['judul_berita'];?>" required>
           <label for="judul">Judul Berita</label>
         </div>
         <div class="input-field col s12">
-          <textarea id="isi" name="isi" rows="9" cols="60" class="materialize-textarea"><?php echo $hasil['isi'];?></textarea>
+          <textarea id="isi" name="isi" rows="9" cols="60" class="materialize-textarea" required><?php echo $hasil['isi'];?></textarea>
           <label for="isi">Isi Berita</label>
         </div>
         <button class="btn waves-effect waves-light" type="submit" name="update">

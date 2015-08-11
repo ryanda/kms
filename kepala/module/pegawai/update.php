@@ -21,27 +21,27 @@ require "includes/config.php";
         
         
         <div class="input-field col s4">
-          <input type="text" id="nip" name="nip" value="<?php echo $row['nip'];?>">
+          <input type="text" id="nip" name="nip" value="<?php echo $row['nip'];?>" required>
           <label for="nip">NIP</label>
         </div>
 
         <div class="input-field col s8">
-          <input  type="text" name="nama_lengkap" value="<?php echo $row['nama_lengkap'];?>">
+          <input  type="text" name="nama_lengkap" value="<?php echo $row['nama_lengkap'];?>" required>
           <label for="nama_lengkap">Nama Lengkap</label>
         </div>
 
         <div class="input-field col s4">
-          <input type="text" name="jabatan" value="<?php echo $row['jabatan'];?>">
+          <input type="text" name="jabatan" value="<?php echo $row['jabatan'];?>" required>
           <label for="jabatan">Jabatan</label>
         </div>
 
         <div class="input-field col s4">
-          <input type="text" name="golongan" value="<?php echo $row['golongan'];?>">
+          <input type="text" name="golongan" value="<?php echo $row['golongan'];?>" required>
           <label for="golongan">Golongan</label>
         </div>
 
         <div class="input-field col s4">
-            <select name="jenis_kelamin" >
+            <select name="jenis_kelamin" required>
               <option value="L"
                     <?php if($row['jenis_kelamin'] == 'L') echo 'selected = "selected"' ?>
               >L</option>
@@ -53,26 +53,26 @@ require "includes/config.php";
         </div>
 
         <div class="input-field col s6">
-          <input type="text" name="tempat_lahir" value="<?php echo $row['tempat_lahir'];?>" >
+          <input type="text" name="tempat_lahir" value="<?php echo $row['tempat_lahir'];?>" required>
           <label for="tempat_lahir">Tempat Lahir</label>
         </div>
         
         <div class="input-field col s6">
-          <input type="date" name="tgl_lahir" id="tgl_lahir" value="<?php echo $row['tgl_lahir'];?>">
+          <input type="date" name="tgl_lahir" id="tgl_lahir" value="<?php echo $row['tgl_lahir'];?>" required>
         </div>
 
         <div class="input-field col s12">
-          <input type="text" name="alamat" id="alamat" value="<?php echo $row['alamat'];?>">
+          <input type="text" name="alamat" id="alamat" value="<?php echo $row['alamat'];?>" required>
           <label for="alamat">Alamat</label>
         </div>
 
         <div class="input-field col s6">
-          <input type="text" name="no_telp" value="<?php echo $row['no_telp'];?>">
+          <input type="text" name="no_telp" value="<?php echo $row['no_telp'];?>" required>
           <label for="no_telp">No. Telepon</label>
         </div>
 
         <div class="input-field col s6">
-          <input type="text" name="email" value="<?php echo $row['email'];?>">
+          <input type="text" name="email" value="<?php echo $row['email'];?>" required>
           <label for="email">Email</label>
         </div>
 <?php

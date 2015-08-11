@@ -69,7 +69,7 @@
 		<div class="modal-content">
 			<h4>Silahkan Input Nama</h4><br>
 			<div class="input-field">
-	          	<input id="user" name="user" type="text" placeholder="Silahkan inputkan nama anda" class="validate">
+	          	<input id="user" name="user" type="text" placeholder="Silahkan inputkan nama anda" class="validate" required>
 	        </div>
 		</div>
 		<div class="modal-footer">

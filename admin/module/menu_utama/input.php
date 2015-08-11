@@ -60,11 +60,11 @@ tinyMCE.init({
             <form action="proses.php" method="post"> 
             <tr>
             <td>Nama Menu</td><td>:</td>
-            <td><input type="text" name="nama_menu" id="nama_menu"/></td>
+            <td><input type="text" name="nama_menu" id="nama_menu" required/></td>
             </tr>
             <tr>
             <td>Link</td><td>:</td>
-            <td><input type="text" name="link" id="link"/></td>
+            <td><input type="text" name="link" id="link" required/></td>
             </tr>
             </table>
 

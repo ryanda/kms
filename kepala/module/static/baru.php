@@ -60,11 +60,11 @@
 <form action="" method="post">
   <div class="row">
     <div class="input-field col s8 offset-s2">
-      <input id="judul" name="judul" type="text" class="validate">
+      <input id="judul" name="judul" type="text" class="validate" required>
       <label for="judul">Judul Thread</label>
     </div>
     <div class="input-field col s8 offset-s2">
-      <input id="isi" name="isi" type="tel" class="validate">
+      <input id="isi" name="isi" type="tel" class="validate" required>
       <label for="isi">Isi Thread</label>
     </div>
     <div class="col s8 offset-s2"> <br>

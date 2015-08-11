@@ -13,11 +13,11 @@ require "includes/config.php";
                 <input class="file-path validate" type="text"/>
                 <div class="btn">
                   <span>File</span>
-                  <input type="file" required="" name="berkas"/>
+                  <input type="file" required name="berkas"/>
                 </div>
               </div>
               <div class="input-field">
-                <textarea id="judul" name="judul" class="materialize-textarea"></textarea>
+                <textarea id="judul" name="judul" class="materialize-textarea" required></textarea>
                 <label for="judul">Judul Dokumen</label>
               </div>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit

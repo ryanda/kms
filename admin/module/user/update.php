@@ -21,17 +21,17 @@ $query=mysql_query("select * from user");
     while($row=mysql_fetch_array($query)){
 ?>
           <div class="input-field col s3">
-            <input type="text" id="id_user" name="id_user" readonly="readonly" value="<?php echo $row['id_user'];?>">
+            <input type="text" id="id_user" name="id_user" readonly="readonly" value="<?php echo $row['id_user'];?>" required>
             <label for="id_user">Id_User</label>
           </div>
 
             <div class="input-field col s3">
-              <input id="username" type="text" name="username" value="<?php echo $row['username'];?>">
+              <input id="username" type="text" name="username" value="<?php echo $row['username'];?>" required>
               <label for="username">Username</label>
             </div>
 
             <div class="input-field col s3">
-                <select name="level" id="level">
+                <select name="level" id="level" required>
                   <option value="1"
 <?php if($row['level'] == '1') echo 'selected = "selected"' ?>
                   >admin</option>
@@ -46,23 +46,23 @@ $query=mysql_query("select * from user");
             </div>
 
             <div class="input-field col s3">
-              <input type="password" name="password" value="" required="" id="password">
+              <input type="password" name="password" value="" required id="password">
               <label for="password">Password</label>
             </div>
 
             <div class="input-field col s6">
-              <input type="text" id="nama_lengkap" name="nama_lengkap" value="<?php echo $row['nama_lengkap'];?>">
+              <input type="text" id="nama_lengkap" name="nama_lengkap" value="<?php echo $row['nama_lengkap'];?>" required>
               <label for="nama_lengkap">Nama Lengkap</label>
             </div>
 
 
             <div class="input-field col s4">
-              <input name="email" id="email" type="text" value="<?php echo $row['email'];?>">
+              <input name="email" id="email" type="text" value="<?php echo $row['email'];?>" required>
               <label for="email">Email</label>
             </div>
 
             <div class="input-field col s2">
-              <input name="no_telp" id="no_telp" type="text"  value="<?php echo $row['no_telp'];?>">
+              <input name="no_telp" id="no_telp" type="text"  value="<?php echo $row['no_telp'];?>" required>
               <label for="no_telp">No Telp</label>
             </div>
 

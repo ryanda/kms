@@ -67,11 +67,11 @@ tinyMCE.init({
             <table class="hoverable responsive-table">
             <tr>
             <td>Nama Menu</td><td>:</td>
-            <td><input type="text" name="nama" id="nama" value="<?php echo $r['nama_menu']; ?>"/></td>
+            <td><input type="text" name="nama" id="nama" value="<?php echo $r['nama_menu']; ?>" required/></td>
             </tr>
             <tr>
             <td>Link</td><td>:</td>
-            <td><input type="text" name="link" id="link" value="<?php echo $r['link']; ?>"/></td>
+            <td><input type="text" name="link" id="link" value="<?php echo $r['link']; ?>" required/></td>
           
             </table>
             
