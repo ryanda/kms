@@ -1,11 +1,11 @@
 jobdesk baru 
-1. tambah tampilan home index baru. isi: tampilan home baru tulisannya selamat datang blabla terus ada tombol menu
-2. navbar berita dihapus
+1. tambah tampilan home index baru. isi: tampilan home baru tulisannya selamat datang blabla terus ada tombol menu DONE
+2. navbar berita dihapus 
 3. dok pengetahuan dibagi per divisi
-4. security login logout
-5. tiap input data, validasi (client DONE, server on progres)
+4. security login logout DONE
+5. tiap input data, validasi client DONE
 6. rapikan tabel, input: peraturan, dok pengetahuan, berita dan publikasi
-7. nambah field divisi manajemen user, semua user ada level divisi, ->perubahan database
+7. nambah field divisi manajemen user, semua user ada level divisi, DONE
 
 DONE DONE DONE
 halaman pegawai:
