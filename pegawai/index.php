@@ -1,4 +1,4 @@
-<?php
+<?php 
 include 'config.php';
 ?>
 <html>
@@ -14,25 +14,10 @@ include 'config.php';
 	        }
 	        main { flex: 1 0 auto }
 	        .container{width:90%}            
-	        #search:hover { background-color:rgba(255,255,255,0.1) }
-			.tabs .tab a { 
-				text-transform: capitalize;
-				line-height: inherit; 
-				padding: 0;
-			}
-			.card .card-action a { text-transform: none }
-			.tabs .tab a { 
-				border: 0.1rem solid #ee6e73; 
-				border-top: none; 
-				border-bottom: none; 
-			}
-			#gbr div a img { display:block; margin:0 auto; margin-bottom: 5px;}
-			.tabs .indicator{ height:5px;background-color:rgba(255,255,255,0.5); }
         </style>
     </head>
     <body>
-    	
-	    <!--    header navbar-->
+    	<!--    header navbar-->
 	    <header>
 	        <nav class="green darken-4" id="top">
 	            <div class="nav-wrapper container">
@@ -43,89 +28,35 @@ include 'config.php';
 							<?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
 						</a></li>
 				        <li><a href="../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>
-						<li id="search">
-							<form action="search.php" method="get" enctype="multipart/form-data">
-								<div class="input-field">
-									<input name="value" id="search" type="search" required placeholder="pencarian">
-									<label for="search"><i class="mdi-action-search"></i></label>
-									
-								</div>
-							</form>
-						</li>
 				    </ul>
 	            </div> 
 	        </nav>
 	    </header>
 	    <!--    end header navbar-->
 
-	     	    <!--    main content-->
+	    <!--    main content-->
 	    <main style="margin-top:20px;">
-	        <div class="container section teal darken-4">
+	        <div class="container">
 	            <div class="row">
-                	
-                	<div class="col s12">
-						<ul class="tabs z-depth-1">
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#home">Berita</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#pegawai">Data Pegawai</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#peraturan">Peraturan</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#dokumen">Dokumen Pengetahuan</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#berita">Berita & Publikasi</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#forum">Forum Diskusi</a></li>
-					    </ul>
-                	</div>
-                	
-                	<div class="col s12 row section" id="pegawai"> <br>
-                		<a href="module/pegawai/tampil.php"> Dialihkan... </a>
-                	</div>
-                	<div class="col s12 row section" id="peraturan"> <br>
-                		<a href="module/peraturan/tampil.php"> Dialihkan... </a>
-                	</div>
-                	<div class="col s12 row section" id="dokumen"> <br>
-                		<a href="module/dokumen/tampil.php"> Dialihkan... </a>
-                	</div>
-                	<div class="col s12 row section" id="berita"> <br>
-                		<a href="module/berita/tampil.php"> Dialihkan... </a>
-                	</div>
-                	<div class="col s12 row section" id="forum"> <br>
-                		<a href="module/diskusi/tampil.php"> Dialihkan... </a>
-                	</div>
-
-                	<div class="col s12 row section" id="home"> <br>
-<?php 
-	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-	$query = "SELECT * FROM berita ";
-
-	$result = mysql_query($query) or die('Error');
-	while($data = mysql_fetch_array($result)) {
-?>
-						    <div class="col s4 ">
-						      <div class="card teal">
-						        <div class="card-content center-align">
-						          <span class="card-title yellow-text"><?php echo $data['judul_berita'];?></span>
-						          <div class="white-text"><p class="truncate"><?php echo substr($data['isi'],0,350); ?></p></div>
-						        </div>
-						       <div class="card-action yellow-darken-4-text">
-						          <a>Tanggal <?php echo $data['tgl_posting_berita'];?></a>
-						          <a href="textfull.php?id=<?php echo $data['id_berita'] ?>">SELENGKAPNYA</a>
-						        </div>
-						      </div>
-						    </div>
-<?php 
- 	} 
-?>
-                	</div>
+	                <div class="col s5 offset-s3">
+	                	<h4>Selamat Datang <?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?></h4>
+						<p>Silahkan klik menu untuk lanjut</p>
+						<a href="home.php" class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click Me!">Menu</a>
+	                </div>
 	            </div>
 	        </div>
+			
+			<!-- menu icon -->
+		<!-- 	<div class="fixed-action-btn" style="bottom: 30%; right: 24px;">
+				<a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Hover me!</a>
+			</div> -->
 
-	        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-				<a class="btn-floating btn-large red" href="#top">
-					<i class="large mdi-hardware-keyboard-arrow-up"></i>
-				</a>
-			</div>
+			<!-- menu icon -->
+
 	    </main>
 	    <!--    end main content-->
 
-	    <!--    footer page-->
+	   <!--    footer page-->
 	    <footer class="page-footer green darken-4">
 	        <div class="container row">
 				<div class="col s4">
@@ -147,12 +78,12 @@ include 'config.php';
         			</div>
         			<div class="col s4">
                 		<a href="http://lpse.kemenag.go.id/" target="_blank">
-                			<img class=" circle responsive-img" src="../asset/images/lpse.png">
+                			<img class="circle responsive-img" src="../asset/images/lpse.png">
             			</a>
         			</div>
         			<div class="col s4">
                 		<a href="http://webmail@kemenag.go.id/" target="_blank">
-                			<img class=" circle responsive-img" src="../asset/images/webkemenag.png">
+                			<img class="circle responsive-img" src="../asset/images/webkemenag.png">
             			</a>
         			</div>
         			<div class="col s4">
@@ -176,37 +107,10 @@ include 'config.php';
 	    <script src="../asset/js/materialize.min.js"></script>
 	    <script type="text/javascript">
 
-		$(document).ready(function(){
-			$('.parallax').parallax();
-			$(".dropdown-button").dropdown();
-	        $('.slider').slider({
-	        	height : 250,
-	        	interval : 1000,
-	        	transition : 500,
-	        	indicators : false
-	        });
-	        $('ul.tabs').tabs();
-	        $('.tabs').click(function() {
-			    cekaktif();
-	        });
-
-	        function cekaktif() {
-	        	if ($('.tabs .tab:eq(1) a').hasClass('active')) {
-				    document.location.href="module/pegawai/tampil.php";
-			    } else if ($('.tabs .tab:eq(2) a').hasClass('active')) {
-				    document.location.href="module/peraturan/tampil.php";
-			    } else if ($('.tabs .tab:eq(3) a').hasClass('active')) {
-				    document.location.href="module/dokumen/tampil.php";
-			    } else if ($('.tabs .tab:eq(4) a').hasClass('active')) {
-				    document.location.href="module/berita/tampil.php";
-			    } else if ($('.tabs .tab:eq(5) a').hasClass('active')) {
-				    document.location.href="module/static/index.php";
-			    } else {
-				    document.location.href="index.php";
-			    }
-	        }
-
-		});
+	    $(document).ready(function(){
+    		$('.tooltipped').tooltip({delay: 50});
+  		});
+	    
 	    </script>
     </body>
 </html>
