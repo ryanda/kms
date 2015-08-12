@@ -42,7 +42,7 @@
 						<li><a><i class="mdi-action-account-child left"></i>
 							<?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
 						</a></li>
-				        <li><a href="/logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>
+				        <li><a href="../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>
 						<li id="search">
 							<form action="search.php" method="get" enctype="multipart/form-data">
 								<div class="input-field">

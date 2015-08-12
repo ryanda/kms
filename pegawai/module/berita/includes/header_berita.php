@@ -29,7 +29,10 @@ require 'config.php';
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                     
                         <li><a href="../../index.php"><i class="mdi-action-home left"></i>Home</a></li>
-                        <li><i class="mdi-action-account-child left"></i>Pegawai</li>
+                        <li><i class="mdi-action-account-child left"></i>
+                        <?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
+                        </li>
+                        <li><a href="../../../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>                         
                          
                     </ul>   
                 </div>

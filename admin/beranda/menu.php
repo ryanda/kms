@@ -1,3 +1,6 @@
+<?php
+include 'config.php';
+?>
 <html>
     <head>
         <title>KMS Pinmas Kementerian Agama</title>
@@ -27,7 +30,11 @@
 						<li><a class="dropdown-button" href="#!" data-activates="dropdown1">
 							<i class="mdi-navigation-arrow-drop-down right"></i>
 							<i class="mdi-action-dashboard left"></i>Manajemen Modul</a></li>
-						<li><a href="../../login/index.php">Logout</a></li>	
+						<li><i class="mdi-action-account-child left"></i>
+                        <?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
+                        </li>
+                        <li><a href="../../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>                         
+                        
 				    </ul>
 	            </div>
 
