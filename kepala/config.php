@@ -1,11 +1,7 @@
 <?php
-
-// Sebelumnya
-// error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-
-// Setelahnya
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING) ^ E_DEPRECATED);
-  session_start(); 
+  	session_start(); 
+
 	if(!isset($_SESSION['username'])){
 		$_SESSION['error'] = 'Anda belum login';
 		header('Location:/login/index.php');
@@ -14,7 +10,8 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING) ^ E_DEPRECATED);
 		$_SESSION['error'] = 'Anda tidak memiliki akses Kepala';
 		header('Location:/login/index.php');
 	}  
+	// return var_dump($_SESSION['level'].$_SESSION['username']);
 
-mysql_connect("localhost","root","");
-mysql_select_db("kms");
+	mysql_connect("localhost","root","") or die("Koneksi Gagal");
+	mysql_select_db("kms") or die("Database Tidak Ditemukan");
 ?>

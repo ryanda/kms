@@ -1,3 +1,7 @@
+<?php 
+	include "config.php";
+	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+?>
 <html>
     <head>
         <title>KMS Pinmas Kementerian Agama</title>
@@ -35,8 +39,10 @@
 	                <a class="brand-logo"><img style="height:60px; padding-top: 5px;" src="../asset/imagelogo/logo.png"></a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
-						<li><a><i class="mdi-action-account-child left"></i>Kepala</a></li>
-				        <li><a href="../login/index.php"><i class="mdi-content-reply left"></i>Logout</a></li>
+						<li><a><i class="mdi-action-account-child left"></i>
+							<?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
+						</a></li>
+				        <li><a href="/logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>
 						<li id="search">
 							<form action="search.php" method="get" enctype="multipart/form-data">
 								<div class="input-field">
@@ -85,9 +91,7 @@
                 	</div>
 
                 	<div class="col s12 row section" id="home"> <br>
-<?php 
-	include "config.php";
-	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+<?php
 	$query = "SELECT * FROM berita ";
 
 	$result = mysql_query($query) or die('Error');

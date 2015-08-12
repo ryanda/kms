@@ -1,33 +1,36 @@
 <?php
+  	session_start(); 
 include "config.php";
 if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    $query = mysql_query("Select * from user where username='$username' and password='$password'");
-    $cekdata = mysql_num_rows($query);
-    if ($cekdata > 0) {
-        $data = mysql_fetch_array($query);
-        $level = $data['level'];
-        echo $level;
-        if ($level == "1") {
-?><script language="javascript">document.location.href="../admin/beranda/menu.php";</script><?php
-}
-else if ($level == "2") {
-?><script language="javascript">document.location.href="../pegawai/index.php";</script><?php
-}
-else {
-?><script language="javascript">document.location.href="../kepala/index.php";</script><?php
-}
-}
-else {
-header('Location:index.php?login=Maaf password atau username anda salah!');
-}
-}
-else {
-unset($_POST['login']);
-}
-?>
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$query = mysql_query("Select * from user where username='$username' and password='$password'");
+$cekdata = mysql_num_rows($query);
+if ($cekdata == 1) {
+    $data = mysql_fetch_array($query);
+    echo 'dialihkan...'; 
+
+	$_SESSION['id_user'] = $data['id_user'];
+	$_SESSION['username'] = $data['username'];
+	$_SESSION['nama_lengkap'] = $data['nama_lengkap'];
+    $_SESSION['level'] = $data['level'];
+        
+    if ($data['level'] == "1") { ?> <!-- admin -->
+		<script language="javascript">document.location.href="../admin/beranda/menu.php";</script>
+	<?php } ?> 
+	<?php if ($data['level'] == "2") { ?> <!-- pegawai -->
+		<script language="javascript">document.location.href="../pegawai/index.php";</script>
+	<?php } ?> 
+	<?php  if ($data['level'] == "3") { ?> <!-- kepala -->
+		<script language="javascript">document.location.href="../kepala/index.php";</script>
+	<?php } 
+	$_SESSION['error'] = 'Maaf tidak ditemukan user yang sesuai!';
+	 } else { 
+	$_SESSION['error'] = 'Username atau password anda salah!';
+		} 
+	} ?> 
+
 
 <html>
     <head>
@@ -70,12 +73,16 @@ unset($_POST['login']);
 			                <button class="btn waves-effect waves-light" type="submit" name="login">Login
 						    	<i class="mdi-content-send right"></i>
 						  	</button>
-							</br>
-							</br>
-			                <?php
-				            if (isset($_GET['login'])) {
-				                echo $_GET['login'];
-				            } ?>
+						  	<br>
+						  	<br>
+						  	<br>
+						  	<?php if(isset($_SESSION['error'])) { 
+						  		echo "
+								<div class='card-panel red lighten-2 white-text'> 
+									<span>".$_SESSION['error']." </span>  
+								</div>";
+						  		unset($_SESSION['error']); 
+						  	} ?>
 		                </form>
 	                </div>
 	            </div>
