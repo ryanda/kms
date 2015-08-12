@@ -38,20 +38,19 @@ include 'config.php';
 	            <div class="nav-wrapper container">
 	                <a class="brand-logo"><img style="height:60px; padding-top: 5px;" src="../asset/imagelogo/logo.png"></a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
-						<li><a><i class="mdi-action-account-child left"></i>
-							<?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
-						</a></li>
-				        <li><a href="../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>
 						<li id="search">
 							<form action="search.php" method="get" enctype="multipart/form-data">
 								<div class="input-field">
 									<input name="value" id="search" type="search" required placeholder="pencarian">
 									<label for="search"><i class="mdi-action-search"></i></label>
-									
 								</div>
 							</form>
 						</li>
+						<li><a href="index.php"><i class="mdi-action-home left"></i>Home</a></li>
+						<li><a><i class="mdi-action-account-child left"></i>
+							<?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
+						</a></li>
+				        <li><a href="../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>
 				    </ul>
 	            </div> 
 	        </nav>
