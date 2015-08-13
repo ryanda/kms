@@ -88,12 +88,35 @@ CREATE TABLE IF NOT EXISTS `divisi` (
 -- Dumping data for table kms.divisi: ~5 rows (approximately)
 /*!40000 ALTER TABLE `divisi` DISABLE KEYS */;
 INSERT INTO `divisi` (`id`, `nama`) VALUES
-	(1, 'Vel voluptatem soluta aut aliquam officia deleniti'),
-	(2, 'Deleniti ut et placeat autem aspernatur consequunt'),
-	(3, 'Hic distinctio ex ullam et fuga consequatur tempor'),
-	(4, 'Nulla inventore assumenda porro tempore voluptatum'),
-	(5, 'In et eveniet quo porro molestiae aut.');
+	(1, 'Subbagian Tata Usaha'),
+	(2, 'Kelompok Jabatan Fungsional'),
+	(3, 'Bidang Data'),
+	(4, 'Bidang Teknologi Komunikasi dan Informatika'),
+	(5, 'Bidang Hubungan Masyarakat');
 /*!40000 ALTER TABLE `divisi` ENABLE KEYS */;
+
+
+-- Dumping structure for table kms.divisi_sub
+DROP TABLE IF EXISTS `divisi_sub`;
+CREATE TABLE IF NOT EXISTS `divisi_sub` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_div` int(11) DEFAULT NULL,
+  `nama` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table kms.divisi_sub: ~7 rows (approximately)
+/*!40000 ALTER TABLE `divisi_sub` DISABLE KEYS */;
+INSERT INTO `divisi_sub` (`id`, `id_div`, `nama`) VALUES
+	(1, 1, 'Subbagian Tata Usaha'),
+	(2, 2, 'Kelompok Jabatan Fungsional'),
+	(3, 3, 'Subbidang Data Keagamaan'),
+	(4, 3, 'Subbidang Data Pendidikan'),
+	(5, 4, 'Subbidang Pengembangan Teknologi Informasi dan Komunikasi'),
+	(6, 4, 'Subbidang Media Informasi Elektronik'),
+	(7, 5, 'Subbidang Hubungan Kelembagaan Negara'),
+	(8, 5, 'Subbidang Layanan Informasi Publik');
+/*!40000 ALTER TABLE `divisi_sub` ENABLE KEYS */;
 
 
 -- Dumping structure for table kms.dokumen
@@ -108,32 +131,52 @@ CREATE TABLE IF NOT EXISTS `dokumen` (
   `gambar` varchar(100) NOT NULL,
   `divisi` char(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
 
--- Dumping data for table kms.dokumen: 21 rows
+-- Dumping data for table kms.dokumen: 41 rows
 /*!40000 ALTER TABLE `dokumen` DISABLE KEYS */;
 INSERT INTO `dokumen` (`id`, `judul`, `isi`, `tanggal`, `waktu`, `baca`, `gambar`, `divisi`) VALUES
 	(12, 'knowledge management', '<p>Manajemen pengetahuan merupakan pengelolaan pengetahuan perusahaan dalam menciptakan nilai bisnis <em>(business value)</em> dan menghasilkan keunggulan kompetitif yang berkesinambungan <em>(sustainable competitive advantage)</em> dengan mengoptimalkan proses penciptaan, komunikasi dan implementasi semua pengetahuan yang dibutuhkan dalam rangka pencapaian tujuan bisnis (Tiwana, 2001).</p>\r\n<p>&ldquo;Manajemen pengetahuan merupakan suatu pendekatan yang sistematik untuk mengelola aset intelektual dan informasi lain sehingga memberikan keunggulan bersaing bagi perusahaan&rdquo; (Batgerson, 2003).</p>\r\n<p>Manajemen pengetahuan dapat didefinisikan sebagai disiplin ilmu yang sistematis dan serangkaian pendekatan untuk mendapatkan informasi dan pengetahuan untuk mengembangkan dan memberi nilai pada organisasi. Manajemen pengetahuan melibatkan orang, informasi, alur kerja, penggunaan <em>tools, best practices</em>, dan <em>community of practice</em> (Rao, 2004).</p>\r\n<p>Manajemen pengetahuan adalah pelaksanaan penciptaan, penangkapan, pentransferan dan pengaksesan pengetahuan dan informasi yang tepat ketika dibutuhkan untuk membuat keputusan yang lebih baik, bertindak dengan tepat, serta memberikan hasil dalam rangka mendukung strategis bisnis. Manajemen pengetahuan juga didefinisikan sebagai sistem yang memungkinkan perusahaan menyerap pengetahuan, pengalaman, dan kreativitas para stafnya untuk perbaikan kinerja perusahaan. Manajemen pengetahuan merupakan suatu proses yang menyediakan cara sehingga perusahaan dapat mengenali di mana aset intelektual kunci berada, menangkap ukuran aset intelektual yang relevan untuk dikembangkan (Sangkala, 2007).</p>\r\n<p>Dapat disimpulkan bahwa manajemen pengetahuan adalah pendekatan untuk pengelolaan aset pengetahuan yang dapat mendukung pengambilan keputusan, mengembangkan dan memberi nilai pada organisasi serta mendukung strategi bisnis&nbsp; organisasi.</p>', '2015-06-09', '18:25:27', 0, '', NULL),
-	(13, 'Officiis repellendus molestiae', 'Rerum deleniti explicabo non dolorem earum qui. Dolores occaecati voluptates illo.', '2013-08-19', '13:45:43', 159, 'gambar', '2'),
-	(14, 'At quidem voluptatibus corpori', 'Id eius totam dolore. Accusamus ullam iusto quia inventore a.', '1977-01-25', '10:03:38', 794, 'gambar', '3'),
-	(15, 'Eius ut voluptatum voluptas na', 'Odio ut tenetur maiores illo. Voluptatem dolore voluptates eligendi.', '1985-08-12', '07:25:52', 817, 'gambar', '4'),
-	(16, 'Est at et consequatur voluptat', 'Sit praesentium delectus voluptas iure. Itaque dicta quia facere eius ab et.', '1994-08-24', '13:47:05', 182, 'gambar', '1'),
-	(17, 'Deleniti id aut deserunt.', 'Maxime maiores in sint quo. Dolores optio et et.', '1998-11-02', '17:59:32', 174, 'gambar', '3'),
-	(18, 'Inventore vel harum est in qui', 'Velit reiciendis ratione et. Enim iure sit occaecati. Et a id in qui rem. A id dolorem illum.', '1976-01-20', '16:57:53', 958, 'gambar', '4'),
-	(19, 'Dolor eos voluptatum velit ab ', 'Sit ut aut qui error veritatis. Voluptas laboriosam unde quo facilis. Est aut illo sint.', '1984-09-11', '12:39:19', 267, 'gambar', '4'),
-	(20, 'Et sunt similique assumenda be', 'Voluptate et optio vel et sed aut. Tempora fugit qui ea nisi. Maiores quo earum at quia.', '1995-02-14', '01:29:14', 933, 'gambar', '3'),
-	(21, 'Rerum magnam omnis velit.', 'Qui modi dolorem aut in veniam consectetur fuga. Nemo quia assumenda sequi laborum quia.', '1976-11-11', '22:27:05', 867, 'gambar', '3'),
-	(22, 'Quidem nisi voluptas animi dol', 'Tempore deleniti quis officiis. Iste quod voluptatibus numquam et.', '1985-07-17', '01:22:43', 691, 'gambar', '3'),
-	(23, 'Error id tempora quibusdam ill', 'Vel nihil culpa consequatur eum minus saepe. Magni quae porro sed. Id atque sint eaque labore.', '2006-01-17', '00:20:16', 764, 'gambar', '4'),
-	(24, 'Aut vel voluptatem quia dolore', 'Voluptates quaerat sit est expedita sint. Et et eum id consequatur.', '1984-08-24', '17:22:16', 150, 'gambar', '2'),
-	(25, 'Quaerat nam animi quia sequi n', 'Aut aut nihil dolor optio sit. Delectus ipsa fugiat sequi aut. Et minima maxime aut velit.', '1994-05-04', '23:15:24', 913, 'gambar', '2'),
-	(26, 'Repellendus saepe et odit inve', 'Tempore ipsa non labore aut. Incidunt omnis ut officia ut qui nam labore.', '1994-08-17', '18:57:44', 108, 'gambar', '4'),
-	(27, 'Harum et ut est ullam.', 'Ut sit delectus voluptas est qui facilis id recusandae. Ad cum et totam nam optio velit.', '1995-09-14', '07:22:03', 821, 'gambar', '1'),
-	(28, 'Sapiente iusto blanditiis qui.', 'Saepe molestias labore harum iusto. Placeat nesciunt sunt nam dolorem ut beatae omnis.', '1990-11-21', '15:31:42', 977, 'gambar', '2'),
-	(29, 'Porro animi quod optio odio du', 'Est mollitia maxime facere. Eos inventore recusandae ea ea occaecati sapiente incidunt.', '1984-02-24', '09:47:00', 246, 'gambar', '5'),
-	(30, 'Vitae voluptas est non tempora', 'Dolores maxime consequatur quia repudiandae. Rerum expedita sint vitae cumque ut.', '1992-05-06', '08:10:00', 171, 'gambar', '3'),
-	(31, 'Quo iure omnis rerum suscipit ', 'Et et fugiat in. Aut nostrum aut ratione architecto deleniti aut animi sit.', '1990-01-26', '03:21:41', 454, 'gambar', '4'),
-	(32, 'Hic provident quos aliquid sus', 'Voluptatem illo facilis sit. Quasi voluptatum quas magnam sed.', '1979-10-23', '07:13:56', 465, 'gambar', '2');
+	(49, 'Iste est voluptas voluptas sim', 'Voluptas voluptatem assumenda harum aliquam. Id eaque quaerat quia quidem.', '1991-09-04', '03:46:17', 227, 'gambar', '1'),
+	(48, 'Deleniti voluptatem sit commod', 'Non saepe delectus possimus alias. Ut ad numquam provident omnis et omnis.', '1994-04-12', '03:34:34', 214, 'gambar', '5'),
+	(47, 'Magni ad voluptatum ut perfere', 'Exercitationem corporis nobis vel. Tempora rem hic nostrum aut.', '1982-04-05', '15:04:32', 996, 'gambar', '6'),
+	(46, 'Officia eos quia voluptas.', 'Ab neque error sed. Ut consequuntur sint mollitia voluptatibus. Sint ut similique sit rerum.', '1993-09-25', '02:22:27', 69, 'gambar', '6'),
+	(45, 'Et in quisquam facere et eveni', 'Ut iure dolores atque voluptas sed iste. Et aut culpa facilis quaerat ut.', '2005-12-21', '22:29:31', 196, 'gambar', '5'),
+	(44, 'Omnis dicta rem ipsam necessit', 'Dolores quia est modi quas maxime non. Quo sunt libero facilis animi consequuntur alias eos.', '1999-03-30', '11:54:35', 129, 'gambar', '7'),
+	(43, 'Velit quos provident sit ipsam', 'Et ullam dolores voluptatem nobis placeat. Dolore similique ad harum ratione.', '1980-12-01', '09:57:44', 303, 'gambar', '1'),
+	(42, 'Explicabo aut commodi ipsam re', 'Qui placeat sit accusamus ipsum quia. Non quia necessitatibus autem veritatis eaque perferendis ut.', '1979-01-03', '06:35:51', 845, 'gambar', '4'),
+	(41, 'Quis dolorum sit vel necessita', 'Iusto incidunt optio iure tenetur. Perferendis rerum eum voluptates autem.', '1988-01-06', '13:21:52', 385, 'gambar', '2'),
+	(40, 'Ut pariatur voluptas omnis rat', 'Ipsam ipsum aut voluptatem dolor blanditiis magnam. Illum dolorum nam pariatur dolor.', '1998-09-25', '00:02:58', 222, 'gambar', '8'),
+	(39, 'Necessitatibus similique rerum', 'Eum cupiditate velit aut earum aliquid. Architecto non tempora libero.', '2004-07-10', '20:05:42', 2, 'gambar', '2'),
+	(38, 'Ut veniam voluptatem officiis ', 'Eaque aut voluptas ullam sed in. Modi est delectus aliquid et id provident.', '2009-07-18', '07:31:19', 961, 'gambar', '2'),
+	(37, 'Amet ratione deleniti occaecat', 'Quis velit officiis sunt temporibus. Tempora ducimus assumenda aut. Et excepturi sit cum minus.', '1985-09-06', '14:11:14', 885, 'gambar', '4'),
+	(36, 'Velit voluptate delectus eum d', 'Error ipsa sint ea. Praesentium quia vitae ut eaque at. Non quidem nulla enim qui.', '2013-03-29', '13:39:26', 962, 'gambar', '6'),
+	(35, 'Earum dicta expedita consequat', 'Nobis eum numquam hic. In non nihil illum eius. Aut reprehenderit mollitia omnis nulla.', '2000-02-10', '08:27:13', 293, 'gambar', '8'),
+	(34, 'Ullam nisi corrupti cupiditate', 'Eaque labore inventore ab. Et et est quod possimus. Consequatur temporibus sunt eum.', '1973-08-30', '11:40:40', 951, 'gambar', '1'),
+	(33, 'Et repellendus sequi ea et sae', 'Et quidem aut adipisci aut rerum dolorum incidunt nesciunt. Quia ut et molestiae rerum animi hic.', '1980-08-28', '11:39:20', 948, 'gambar', '3'),
+	(50, 'Eum in non veniam et temporibu', 'Qui aperiam necessitatibus nesciunt ut. Optio aperiam sit nostrum autem et quis earum.', '1983-02-03', '01:23:17', 82, 'gambar', '5'),
+	(51, 'Ea corrupti sit autem earum et', 'Corrupti voluptatem impedit voluptatem optio nam. Voluptate illo rem aliquid voluptatem.', '1975-11-08', '19:25:40', 897, 'gambar', '8'),
+	(52, 'Blanditiis inventore id enim c', 'Quia voluptatem ut accusamus illum autem commodi. Praesentium ut nihil facilis quo dignissimos est.', '1970-10-19', '14:43:27', 340, 'gambar', '7'),
+	(53, 'Ut ex nobis unde ut.', 'Velit iure quo et placeat ut. Corporis quos eligendi eius neque ipsum.', '2011-07-24', '01:51:47', 964, 'gambar', '6'),
+	(54, 'A sunt enim id cumque iste ut.', 'Atque et fuga qui nostrum delectus quod vel. Dolorem cupiditate expedita vero deserunt nisi maxime.', '2011-09-25', '08:50:52', 242, 'gambar', '1'),
+	(55, 'Quia totam illo magni autem su', 'Itaque consequuntur est facilis laboriosam similique. Dolor quia rerum minima animi vel id ut.', '1987-12-27', '19:33:33', 943, 'gambar', '4'),
+	(56, 'Eaque quas aut sit officia mol', 'Sunt et beatae accusantium hic. Excepturi soluta delectus sed.', '1985-08-20', '08:40:47', 690, 'gambar', '4'),
+	(57, 'Nesciunt quia minima cum deser', 'Architecto libero deserunt ut doloribus. Aut fugiat repellat repellendus vel sapiente iusto.', '2003-03-31', '07:05:28', 192, 'gambar', '4'),
+	(58, 'Odio labore vel provident enim', 'Aliquid sunt minus qui. Nam sit mollitia est. Neque ea beatae voluptatem et dolorem est nobis ea.', '1992-03-07', '22:04:54', 86, 'gambar', '7'),
+	(59, 'Eius eos culpa aut vel.', 'Et dolores voluptate eaque qui. Et ipsam odio assumenda sit nulla quasi.', '1992-09-01', '00:49:04', 27, 'gambar', '3'),
+	(60, 'Qui pariatur quae voluptas qua', 'Non qui eum error praesentium et saepe. Eum sequi et ab architecto occaecati quasi dolores.', '2000-01-09', '14:14:22', 495, 'gambar', '3'),
+	(61, 'Aut natus quia nihil omnis rer', 'Hic cupiditate odio expedita autem quia iusto soluta. Sit qui dolores ad.', '1971-12-30', '08:00:58', 489, 'gambar', '7'),
+	(62, 'Nobis unde ipsa ea voluptatum.', 'Sed nulla voluptatem vero. Officia et quibusdam non quae ut officia.', '2000-11-11', '01:21:14', 727, 'gambar', '3'),
+	(63, 'Quae quod tenetur vel sapiente', 'Perferendis adipisci quaerat voluptas incidunt eveniet quia et. Est cum eligendi dolorum pariatur.', '2010-07-21', '17:31:44', 968, 'gambar', '3'),
+	(64, 'Et sunt quibusdam dicta quia u', 'Et assumenda optio inventore assumenda quia quos. Tenetur ex in delectus a dolorum quis voluptatum.', '1993-04-30', '21:36:11', 344, 'gambar', '1'),
+	(65, 'Sint deleniti consequatur corp', 'Error itaque et cum veniam fuga. Possimus eos voluptatibus et et repellendus.', '1984-10-04', '00:22:29', 628, 'gambar', '7'),
+	(66, 'Occaecati harum quis ratione e', 'Eaque eligendi modi fuga maxime consequatur reiciendis ea et. Facere beatae rem dolorum eaque.', '2005-04-04', '09:12:29', 667, 'gambar', '4'),
+	(67, 'Magnam amet a at harum sint.', 'Sunt odio sit omnis. Veniam quam sit optio voluptate quia non in.', '1977-02-26', '05:34:11', 658, 'gambar', '8'),
+	(68, 'Sunt error sunt dolores necess', 'Sed minus incidunt numquam facilis aspernatur. Et id nulla et dolorum nihil.', '1989-09-20', '19:24:37', 322, 'gambar', '2'),
+	(69, 'Nam consequuntur voluptatum un', 'Porro ut qui est minus deserunt. Quae fuga quam eveniet. Illo quo deleniti quis non.', '1980-04-19', '15:37:11', 220, 'gambar', '3'),
+	(70, 'Aliquid deleniti ut rerum.', 'Dolorem et tempora voluptas et. Pariatur expedita ea id. Quasi iste soluta asperiores nisi itaque.', '1977-04-08', '08:12:30', 324, 'gambar', '3'),
+	(71, 'Aut aliquid laudantium nihil.', 'Debitis natus accusamus quo nemo ea dolores error. Similique et molestiae velit.', '1996-06-03', '04:40:29', 600, 'gambar', '8'),
+	(72, 'Accusantium velit eos neque qu', 'Non occaecati et quia ipsum. Harum quia qui cumque quo.', '1982-03-01', '01:39:57', 972, 'gambar', '5');
 /*!40000 ALTER TABLE `dokumen` ENABLE KEYS */;
 
 
@@ -148,28 +191,43 @@ CREATE TABLE IF NOT EXISTS `dokumen_upload` (
   `filesize` bigint(20) NOT NULL,
   `divisi` char(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
--- Dumping data for table kms.dokumen_upload: ~17 rows (approximately)
+-- Dumping data for table kms.dokumen_upload: ~32 rows (approximately)
 /*!40000 ALTER TABLE `dokumen_upload` DISABLE KEYS */;
 INSERT INTO `dokumen_upload` (`id`, `judul`, `filetype`, `filedata`, `filename`, `filesize`, `divisi`) VALUES
 	(1, '', 'text/x-markdown', _binary 0x23206B6D730A0A4B6E6F776C65646765204D616E616A656D656E2053697374656D0A, 'README.md', 34, NULL),
 	(2, '1', 'image/png', _binary 0x89504E470D0A1A0A0000000D49484452000002800000019008060000003EF3D12500000006624B474400D5001C001CB96B4D0D000000097048597300000B1300000B1301009A9C180000000774494D4507DF070C170501C45316D40000001974455874436F6D6D656E74004372656174656420776974682047494D5057810E1700001A304944415478DAEDDDEB761BC7A1A6E1AFAAC1A30E9664D99EECC95E73FF173457305999BD7D926D49A444A0ABE607AA2998B12579E28404F03C6B714989281B28B48197D5DD55E57FFFF5AF3D00001C8D6A080000042000000210000001080080000400400002002000010010800000084000000420000002100000010800800004004000020008400000042000000210000001080080000400400002002000010010800000084000000420000002100000010800800004004000020008400000042000000210000001080080000400400002002000010010800000084000000420000002100000010807AEF79EDEBB81C03108084038C60F6170DC0102108E4829C520E0B8033ECBCA10800F60700C820004F654EF3D9B24739279FCBEF59E76F703DB50F1A963E9CEFFAE496A295925994AC9343E40C41F0840E09EB52437BDE7BAF75CF59EEBD6723362B0EFC49F6B3FF89C6369F798994AC969928B5A73594A2E4A491D21080840E01ECD49DEF59E9F5BCB4FE3EBED88C0D6FB36FE4A498D59407E5F1F01D8C60F0E75C4DFA35AF3ACF73CAB35A5D69C08401080C0FD6B3B01F85FF39C6FE739AF5ACBBBD6328FE85B4EE309403E16809B9D009C929CD79AE7B5E6DD34A524392F258F0C150840E0010460EF79D77B7E6A2DFF3DCFF93F9B4DBE9DE75CF59ECD98015C2D01E8DA2D7E2F00C7F5A39B1180AB5272594ABE9EA6F42417A5E48B5AD37A4F1C472000817B0EC024EF7BCFEBD6F2FD3CE7EF9B4DFE3ECFF9A5B56CB2BDF66F953875C747CD49D6CB4D44E398795A6B36BDE7A2947C596BDEFFC6CD45800004EE2900D7E306909F5BCBF7E354F0D59DC57AA7B811848F1F47F39DFFEFAAF79C969297ADE5AAF7AC05200840E06158AEDD5AEE047E333EACEF9A7FE3031E3EE66A1C4FD7BDE766CC0EDA0304F697490038C0085C6602D786833FD17A1C574DFC8100041E6604F66C6F0A813FCB7257B0A30A0420F0002D8B3D4FEED0E44F345943120420F0F0E3CF9DBEFCA90128024100020F33FE6E0330DBF5DBE0CFB21A3F54D49D630D1080C04389C0F1413DC5ADFEFC49F1378EA7691C5FE20FF6FFBF69E09063F0337E0A2CF9F8AC4EDFB3E7FC5B8FFFF6C698F1F5393F1DEF8EC9218F4BDBF9F59F3996000108EC8129C96929392D2567E3F7CB355E7723615FC3B72599C79238EFC71A76CB3A761F7B63BC1D97527292FC6A5CF67D4C76C7E5A6F7BC4F6EC7C5FA90200081237803B82C254F6ACD9352F2A8D69C8DD3C725BF9E21DAB7D0A93B8FFD7DEF793B1632FEA5B5ED82D91F5922E764EC7DFBB4D63CAE358F46082E33826D0F23707736B367BB10F8FBDEF3B6B5BC1EDB07360108021038823780113A2F6ACD57D394E7B5E651AD39DD099D79099E3D5853B08C485B6E82597646B96A2D3FB696EF4B494B7233CFB9FEC83FE724C9E35AF3E534E565AD79516B2E6BCD6A8CCB3226FB362ED34E18DF2479DB5A5EB596EFE63973EF79574ADE5B3B12042070F801F86884CE5FA6297F59ADF2C532DB554AE63123348F05801F7CE824A9A56C6F582825ADF7DC2479DD5A2EE739D96C72DD5A5E9792F23BCFA9643B03F8B894BCAC357F5DADF2CD34E5C908E3655C36F9B030F23E8CCBB22CD0322EEF7BCFCFBDE77CB349CB76ABB75F7A4F04200840E0B09D647B0AF879ADF9CB34E57F4D535E4C532EC68CD19CEDD65F9B3D7A4ED308B8553E9CFE7DD55AEA889C1F5BCB49FBF849ED9311C62F4618FFE76A95E7E3F478CD765671BD67A74B57E3794D635CAE7BCF8FF39CF49EABDEF3C3B8D6111080C0819B4AC9F9B8D6EDE59801FC6A9AF2E84EE8AC93FD98191AE177BA1380EF7ACFF93CE75DEFF9BEB55CDEB9C6F11FFE1123222F4BC917E3D4F85FA6295F4D53CE77C6E5F646923D1997933B61FCB6F79C9592B7BDE7BBD6723E6E0002042070E0EA88A5E5469067B5E68BFAE11EE0D3F1E7FBFCFC1E97924D721B7FA79FB143CA74675C9E4F531E1FD8B87C514AD6BDE749ADB7E362615838AEF77FE0482D77CBAEC6757F17073A0374B12CE7B2CCFE7DE2792E0B699F1CC9B8AC6CEF06021038B23781DD3B670F3474961D2C3E770BB3BB5BEA1DEA9ECAD3CE6B5F9DFE0501081C8FDD654CFA81DE017A77CDBEFE19DFFF7B7FD76B0F0840E020E26859EFEF5017019EB35DB2A5F5FED98B5AB79DBF73C8E372BBCEA3FF14400002C7137F3DDB75FEE6DE3FBA3BC63EDB8C3B763F377676A378931CF4B82CAFFD21CF74020210F848ECAC0FF4396EC62CDEEDECDFA7826EFCF96D041E6800AE630610042070B401D80F3C0296D3B97F6496EB765CFEC069E37D8D7FB37F2000010010800000084000000420000002100000010800800004004000020020000100108000000840000004200000021000400002002000010010800000084000000420000002100000010800800004004000020020000100108000000840000004200000021000400002002000010010800000084000000420000002100000010800800004004000020020000100108000000840000004200080000400400002002000010010800000084000000420000002100000010800800004004000020020000100108000000840E0C1E9BDA7F76E208C09200081638C1E8C03200001B1637C00042000000210D85BA51483607C807BB43204C0438A9C3F7AFAF321C5D23FF3D8451F200081A333F79E4D9275EFD98CDFB724ADF7EC66552D2535C99464554A4E7ACFAA94ACEE29A2FA78AC9BDEB31EBFCE3B8FFD36F0761EFB6A79ECE3F793F8030420708C3649AE5BCBDBDEF3B6F7BC6B2D3723A87A929EED352B75C4D37929B92C258F6ACDE588ABE91E1E774B72D37BAE7ACFDBD672D57BDE8D886DE3CFCBF85A9592D324E7B5E6512979544A2E6ABD97C70D084080FB0FC0117E3FB49657F39C9F474CADC70C5BEEC4DF9352F27C9A3227996ACDD93DCDA2F524EF7BCF2FADE5C7F1D85FDF89C0E5CDF66444EB17B5E6F93425B5E6A4F77B7BEC800004B857EB246F5ACB0FF39CFF3BCFF96E9EF34B6B793F22B0677BAAF474CC9CBDA83537D99E0ABE2CE536B4FEDDDA08C09F5BCB7FCF73FE6BB3C98F6326F3A6F7CCBDA78CF83B2B254F6BCD57D39496E42CC9A3EA5E3C400002C71A806306F0C7D6F2F7CD267F9FE7FC30CFB7B3802D3BB37FB5E66A9A329592C72306EF6BE5BCDD19C0EFE6397F1B01FBBAB5DB59C09A0FB37F5F4E53D663D6EF8B5AB3B6E61F2000816335F79EEB3193F6DD3CE76F9B4DBE9DE7BCED3DEF47009E24B9A835CFC7ACD9E352F2D534E526E3868B7B3895DA7ACF4D9237BDDFCE5EFE6DB3C9ABD672DD5AD6D99EBA3E1B3397D7BDE724C98B69CAF59821041080C0710660B633696F5ACBABD6F27D6BF9AEFDFAC4EE4D929BD6B2EE3D8F4AC9EB69CA756BB7378ADC879EEDF58BD7ADE575EF7935CFF976CC5CEE3EB7AB71A3482D25CF5ACB9B717A7BF6D203F7C0C527C083D04648BD1F3381AFDBEF5FD577B573A7F03ADB3B88EF3500B3BD86F1DDB8F6EFEA23B37AAF5BCBF5789EBB3789000840E0E8F41181EB7107EDBB4F9C1A7D3F4EBD6E7ABFF7BD73FB88B99BF1B83E66796ECB758D4E0003021038FA009CC7D7A766C6D63B3368FD813CF6CD08BB8FB9FB1C0520200081A38FC0FE9951D4EFFCFA101E7BFEC063EF117F800004D86E97F6996F4C351FB6567B286FA69FFB7896E768F967400002471F7FB7FBFB66BBE4CBC79C8EFD7FA707F04676BB37F1785C1FB33CB7D5D8BA4E0402021038EA37A369C4DF79ADB9FCC80E1935C9F9D85963554A6A29F7165225DB99BFD5783CE79F9805BCAC35E7B5E6643C5F6FC28000048EFACD6859E8F9F1D825E3EC77BEF759AD795A6B2EC7D670F73993B6CC5C9E8E9D3E9ED69A67BF13AF6749BE18CFEF6244A03761E03E58081A7810A6317BF6746C97F6A6F74C49DEB6969B6C975A5995928B11875F4D539ED59A47A5E4A49494723F0958C6BFFF512979361ED74DEFB91CBB7E6C7A4F2925A7D9EEFBFB729AF2E534E5E978BE537112181080C011BF195DD69A67D3946FC6DA7E4F4644ADC74E1FCB69D627630BB897D39427B5E6EC1E4FA52EDBBC3D1971B76CF5F67A67B1E792ED5EC017A5E479ADF9669AF26C9A7259AB3761400002C76B99457B596BE669CA452979B9B35D5ACFF654EB6E487D354D793A02F03E9D8D53BF5F4F534A9227B5DE86EB9C0FA78997507C516B5EEECC5E020840E068DF8C1ED79A4DB6337D4F5BCBBB3183B604601D7FB69C4E7D5AEBF65AC1073003F8C5B8EEEFBC94BC18A7AD9785AA77EF703E1F11F8B4D63C3603080840E0A8DF8C4AC96592326EEE785EEBEDA9DF65579032BE96083C2B25E70FE814F0499227A5E4669AB65BD4E5C362CFCBBA7F27E334F6D998C95C990104042070CC6F4675DCD53B8F99B325FC7677CC283B5FCB322AF77D17F0C978ECE7D3947927FCEE3EEE2504EBCE63771730200081A3F5AB5D34F66856AC8C6568A63D7CEC800004F8B7EABDFF2AA28C87F100FE8D3F741B02E03E6307E30308400000042070689CE2343EC0FD720D2020728C077064CC0002000840000004200000021000000108008000040040000200200001001080000008400000042000000210000001080080000400108000000840000004200000021000000108008000040040000200200001001080000008400000042000000210000001080080000400108000000840000004200000021000000108008000040040000200200001001080000008400000042000000210000001080020000100108000000840000004200000021000000108008000040040000200200001001080000008400000042000000210F86D65BC114CE3EB104DA5642A25653CDF94F28941F9F0BDCBDF3DC871195F751917400002C71780AB030D9DD54EEC943F302ECBDF591DE86BBF2A45008200048E36FE4AC9AA94830D9D93318B574BF9ACD859C6A58EBF7772C061BC5AC646048200048E2802EF9CEE3CD437BADD99AECF09C072E7EF1DA2DDD3E2A5C83F1080C0D1E8BDFFE6EF0FEA398EAF7FF7DFF5DA030210789061D4926C7ACFA6F7AC0FF479AEC7F39B7B4FFB8CA05BC6655EC6E540E368BDF3DA7FCEB80087636508E0B803704E7293E4BAF7BC692D8F7EE3AED74DEF7B110725BF7D23CBDBDE73DD7BDEF79E4D92F689A06BE3FBDE8FBFF7B6F75CFEC6F7EDF3B8CCE3F5BEEE3D37E338108020008123308F287ADB5A5EB596EF5B4B925CD69A3A42E8660F43E724DBEBDBDA88B81FE6393FB69637BDE75DEF993F352E49DEF59E37BDE7C7D6F2DD3CA725391B374BCC63B674DFC6E534DB1B5B5A92ABF17ABF6A2D6F5BCBFB31430A0840E0D00330DB99BF9F5ACBB7F39CB35272556BCE97D049B219A1B32F96E56C56C96D002ECF6F899DF547C2AD677BCA7889E26FE739AB24AF5BBB0DC0654CE63D7AAD973199C6B8BCEBFDF6F9FD34660267FF498000040EDF6684CE8FADE56C9E3327F9A1949C8EBB43DB88C0B647335D75676DBB9EED756E6F5ACBF7F39C1FE639579F71ADE33AC9D598393C4D72D37B1ED79A93F1EF388471B9E93DAF7BCFB76376F46D6B7B15FA800004FE7F03702774FA88C18B3BA1B37CEDC35DA265CCD0D59DD0D9643BCBF94B6B7935CF79FD993380AF5BCBC908BD5F7ACFC598413B94715927B96E2D3F8F1F00AEC6758F8000040EDCBAF75C8DEBFE9653A5A723169618DAB765504A7EBDD65F1BCFF3BAF75C8D1B3A3E7557EF7A5CFFD7C7A9D1576331E8431B979B9D71B91A610C0840E0C0CDD9CE00AE5BCBDB6CAF13BBBB23C4BE2641D979FCCB922EB7CB9E7CE2EF6EB29D1D5B9792B7C93FEC94B1EF63B23B2ECB78AC5D03080210380ECB69CCDB991F3340B7E37293ED0C9971010E9185A001000420000002100000010800800004004000020020000100B857D601842356924CCBD7CE5EB12963C9E09DF5EFAC84B7DFAFF387FFF1E1B55DF6349EC722D0B3D7190420701C6F0067A5E4627C9DED6C7956F261BBB366A8F6DEF29A969DD774DD7BDE8FEDE0AEC7EFD7860A042070E06F00A5E4B2943C9BA63CAB354F4608AE4A49C9879D427AEF6686F658495246D8D711809B117DAFC71ED0659E3327F6030601081CC31BC0A35AF3A2D6FC8F69CACB69CAE352727A27006701B8F70138DD09C09BDEF3A6F77C3FCFA923FCAE67BB018300040EFF0DA0943C2A255FD69AFF98A6FCC76A9567B5E662270037BD6713D786ED7B00AEC6EBBD04E0F598F93B1DF1F7A6B5FC548A7D8F410002876E4A72516B9E4D53BE59ADF29FAB555ED69ACB5A53B29DF95B8F0894057B1E80A5E424DB99C09EE4AAB57CDF5AE6243FF79E6F5BCB640610042070046F00E3C68F27A5E445ADF97A9AF2CD34E5AC7CB86F7489C06E66687F037027FE16EF6B4D9DE7FCD25A9E8CE360558AC10201081C7C182439C9F64EE0CB52F2B4D65FC55FF261799888838372365EEFCBE5EEEFDC592E063868168286237F0398C64D1FE72302391E97E3753F2DE5F626114000024760CAF654C0C908018EC7E958F771358E0340000247E036F7CCFE1CF787C0087FF90F02103826635B308E4F1BAF3F20008163E9BE110073B64BBDD805E2B8AC7BCF66EC03DC62AD471080C051683BE1B7EC09CBF1B8DDFF7784A05960381E96818123D6936C92BCEF3D57633788CBDF580F6E6D21E8BD56B2BDC967D766BCDE572302EDF6020210381273EFB77BC2BE6A2DDFCD737AB6CB839452D2C69F8B83FD0FC055B677FDD652D247F07F3FCF79D55ADE8CD77936030C02103882004C7235F684FD769E73524ADEF69EF39DBD80D7E31A3169B0DF0138653B0BB8EC05FCAEF7FC385EF79FC64CA08DE04000024760D37BAE5ACB8FF39CB352B2E93D3FEEEC06B29C223633B4FFA6B1DEDF7222F87DEF79DD5ABE1BAFFF556BD9789D41000247108049DEF69E1F5A4BDB6CF2A6D65C8C6B004B76EE1216060711807504601FF17FDD7B7E6E2DAF5ACBDB71AA1F1080C0815B8F19C0643B23F4536B3959F6FE1D2C0F72184A7EBDECC33C5EFF77E37AC0ABD62C03040210380673B64B81AC5BCBDB6C6789A6FC7A47887EE757F633FEF21BAFEB9CEDECEE26B95D0F101080C0816BF970A3C7B60A641EC031B0103400800004004000020020000100108000000840000004200000F7CA3A8070C4CA78135816809E9294B10DDC2EAB031EC66B7DF735ED63F1E7DD05A1BDD6200081237803382F2517A5E4A2D69C97929324B5940FE1D7FB36160CD75EC75F49929DB86FBD679DE45DEFB96E2DD7E3F76BC305021038F037805272596B9E8DAFA7B5E6A294DB37869E0FBB85B0DFEAF85A027093ED3680BFB4969F4A49692D1BFB018300048EE30DE05129F9B2D67C334DF96A9AF2A4D69C264929E9E3B4A0003C8C005C657B8A3FBDE726C9EBD6F2DD3C67CA763BC02BC3040210388237805272594A5ED49AFF58ADF23FA729CFC7A9E052CAED7561F3380DCC7E2AD95EE7B95CEFD97BCFBBDEF3AAB59C9492F598095C8D3804042070E06F0097B5E6D934E59B69CA5F57ABBC9CA65C96929AEDCD01EBDEB311807B1F80AB5272326EF66949AE7ACFA379CE26C9CFADE5B2B5ACE6D9608100040EDD544A4E4BC99352F2BCD67C3D42F0B47CB867B4B93BF43002301F6EEE49929BDE5347FC3D19C7C1548AC1020108ECBB4FDDBD5B929C24391DA7829FD4FAABF8CB8886534379704EC7EB7D39E2EF24FFB854CC1F399680FD62216838C4E8DB59DF6DF391EF6D3B6F042742EFF82270BCEEF5CEF1F05B36E3789AC7F125064100020F29FEC607F99C64F3890BFA3777EEF27502F0B8949DF0DB7CE6F1328FEF3723080210786011D8B2BD73F75397F46F7ABFFDBE4DEF967B39326D27EAE671B3CFC72CDFD7C41F0840E06147E0273FD0F3611B30BB401C977572BBCCCF722C7CF478117F200081876BD9FAAB7EC65D9DB7BB7D7CC60C108765D37BDA1F88BA3AB69273A9000840E001C6DF7253C7C927BEF7742C0E5C774290E3B184DFB24BC8E9277E6038C9879B4644200840E001C5DFF2417E514A1E8F653E7EEFC3FCF1F8BE650D381FEAC777BC2C6B415E9492C71FF9A1E1721C4FCBF1B21281B0D7AC030807F613DDC958D3EF8B5AF3B2D6DC4C537E692D57E3868F5A4ACEC6E2CF2FA729CFA7298F6ACDD9CE72201CCFF172564A1ED59AE7D39497ADA52779DD7BDE8FD3C3D3389E9E8EE3E98BF143C589E3050420F0B03ED09FD49A97D394EBDEB32A256F5ACBFB6C2FE22FE37B2E4BC997D394AF6BCDB331B33319C2A33225B92825CF6ACDD7B566BD5AE5B2945C8D00ECD9CE109E25793C768A79394D79E207061080C0030AC052723E3ED0BF99A694244F6ACD756B59EF04E0C9F8BEA7B5E6AB69CA8B31ABB3B215D8717D008C1F045ED49AF7AB5556634BC077BD67BD138027492E6ABDDD2EF059AD392FE5B36E32020420F0AF0EC024E7E3F46F1FBFFFB2B5BCDF59C0B7643BF3B37BAAF859ADB9ACD50CE09199925CD69AE7E307834763F66F3D8E97E50691291F4E153F1BA781CFCD008200041ECE07FA128027E3A2FE9B69FA87459EEB4E045E94928B31033899D139AEE3A5945C26C934DD1E37EB9D1F16768F97D5D82A703956CE5D3200021078186A727B47EF45EFD9D4FA9BEBBCEDAE13388D378269DCD9C9917D008CD7FD729AB6E1374EFDDE3D5EEA385E9663658A65244000020F4219D76B9D8C0F76F8E80F0C6356CFB1020210D8337DECDE51FEC40FF1BEB3234811070777ACFCAB8E17C70AECD10F8086000EEFC37D1FFEB9383E000108FC93FE55B32F66751C1F8E0F383C4E01830F761FEA8E15C70B1C19338000000210000001080080000400400002002000010010800000084000000420000002100000010800800004004000020020000100042000000210000001080080000400400002002000010010800000084000000420000002100000010800800004004000020020000100042000000210000001080080000400400002002000010010800000084000000420000002100000010800800004004000020008400000042000000210000001080080000400400002002000010010800000084000000420000002100000010800800004004000020008400000042000000210000001080080000400400002002000010010800000084000000420000002100000010800800004001080000008400000042000000210000001080080000400400002002000010010800000084000000420000002100000010800800004001080000008400000042000000210000001080080000400400002002000010010800000084000000420000002100000010800800004001080000008400000042000000210000001080080000400400002002000010010800000084000000420000002100000010800200001001080000008400000042000007BE6FF01D27F27E11AD6F4110000000049454E44AE426082, 'lemari nyonya.png', 6856, NULL),
-	(3, 'Officia qui quis enim mol', 'text/vnd.curl.scurl', _binary 0x64756D6D79, 'sxm', 809, '5'),
-	(4, 'Doloribus ea minima dolor', 'application/vnd.sus-calendar', _binary 0x64756D6D79, 'odm', 319, '2'),
-	(5, 'Molestiae doloribus eum s', 'image/vnd.adobe.photoshop', _binary 0x64756D6D79, 'sv4crc', 890, '4'),
-	(6, 'Fugiat mollitia hic et es', 'text/vnd.curl.scurl', _binary 0x64756D6D79, 'ahead', 404, '4'),
-	(7, 'Dolores voluptatum dolori', 'application/x-glulx', _binary 0x64756D6D79, 'uvvu', 69, '4'),
-	(8, 'Mollitia corporis perspic', 'image/png', _binary 0x64756D6D79, 'odi', 853, '1'),
-	(9, 'Consequatur quod similiqu', 'application/yang', _binary 0x64756D6D79, 'xz', 698, '3'),
-	(10, 'Ut soluta dolorem quia ni', 'text/vnd.dvb.subtitle', _binary 0x64756D6D79, 'ktx', 727, '5'),
-	(11, 'Sunt sed nisi aut consect', 'application/vnd.openxmlformats-officedocument.spre', _binary 0x64756D6D79, 'xo', 263, '2'),
-	(12, 'Quod fugit distinctio sus', 'application/x-x509-ca-cert', _binary 0x64756D6D79, 'uvvf', 139, '1'),
-	(13, 'Reprehenderit optio offic', 'video/x-sgi-movie', _binary 0x64756D6D79, 'kia', 5, '5'),
-	(14, 'At necessitatibus et perf', 'video/vnd.vivo', _binary 0x64756D6D79, 'hal', 393, '4'),
-	(15, 'Voluptas et quidem unde d', 'application/x-zmachine', _binary 0x64756D6D79, 'pyv', 558, '2'),
-	(16, 'Ut reprehenderit deleniti', 'application/pkix-pkipath', _binary 0x64756D6D79, 'docx', 989, '4'),
-	(17, 'Expedita modi deleniti et', 'application/vnd.ms-pki.stl', _binary 0x64756D6D79, 'ogg', 152, '4');
+	(18, 'Repudiandae corrupti rem', 'text/vnd.fly', _binary 0x64756D6D79, 'sgi', 750, '7'),
+	(19, 'Dolorem reiciendis modi i', 'application/zip', _binary 0x64756D6D79, '3ds', 267, '7'),
+	(20, 'Illo voluptatum sed ea be', 'application/vnd.ms-officetheme', _binary 0x64756D6D79, 'mseq', 111, '1'),
+	(21, 'Suscipit quos eveniet et', 'application/x-msbinder', _binary 0x64756D6D79, 'fbs', 749, '6'),
+	(22, 'Voluptatem corrupti volup', 'image/vnd.fpx', _binary 0x64756D6D79, 'bat', 16, '4'),
+	(23, 'Doloribus a magnam non vo', 'application/x-sh', _binary 0x64756D6D79, '3g2', 281, '3'),
+	(24, 'Nulla error fugiat esse n', 'application/x-font-woff', _binary 0x64756D6D79, 'xbm', 366, '3'),
+	(25, 'Quam earum exercitationem', 'image/vnd.djvu', _binary 0x64756D6D79, 'ras', 644, '6'),
+	(26, 'Ipsam quia et quae optio', 'application/vnd.openofficeorg.extension', _binary 0x64756D6D79, 'mp3', 102, '1'),
+	(27, 'Autem quisquam et vero qu', 'image/vnd.dece.graphic', _binary 0x64756D6D79, 'utz', 769, '7'),
+	(28, 'Veniam aut laborum qui mo', 'application/rtf', _binary 0x64756D6D79, 'pptm', 879, '7'),
+	(29, 'Non delectus sed fuga ten', 'application/vnd.tao.intent-module-archive', _binary 0x64756D6D79, 'cil', 64, '1'),
+	(30, 'Ut rem ab qui architecto', 'application/vnd.lotus-approach', _binary 0x64756D6D79, 'thmx', 350, '6'),
+	(31, 'Id sunt voluptas vitae re', 'audio/x-matroska', _binary 0x64756D6D79, 'ipk', 280, '1'),
+	(32, 'Consequatur sit labore ip', 'video/vnd.fvt', _binary 0x64756D6D79, 'dwg', 486, '1'),
+	(33, 'Eveniet voluptates a est', 'application/vnd.fluxtime.clip', _binary 0x64756D6D79, 'ipk', 623, '7'),
+	(34, 'Hic quod voluptatem minim', 'text/vnd.in3d.spot', _binary 0x64756D6D79, 'rmvb', 521, '3'),
+	(35, 'Inventore quaerat archite', 'application/vnd.ms-excel.sheet.macroenabled.12', _binary 0x64756D6D79, 'rif', 747, '8'),
+	(36, 'Iste dolor eum placeat cu', 'application/vnd.unity', _binary 0x64756D6D79, 'sxg', 330, '7'),
+	(37, 'Est vel ut aut autem.', 'image/vnd.dece.graphic', _binary 0x64756D6D79, 'tsv', 17, '2'),
+	(38, 'Omnis voluptatem autem ea', 'image/vnd.dxf', _binary 0x64756D6D79, 'pas', 432, '8'),
+	(39, 'Et dolorem fugit sapiente', 'image/vnd.dvb.subtitle', _binary 0x64756D6D79, 'pki', 322, '6'),
+	(40, 'Dolores sint neque dolore', 'text/vnd.graphviz', _binary 0x64756D6D79, 'sxg', 851, '3'),
+	(41, 'Dolor libero et aut quaer', 'video/vnd.dvb.file', _binary 0x64756D6D79, 'ogx', 338, '1'),
+	(42, 'Error sed quo et suscipit', 'application/omdoc+xml', _binary 0x64756D6D79, 'gam', 806, '4'),
+	(43, 'Sed tenetur fugiat ut qua', 'application/emma+xml', _binary 0x64756D6D79, 't3', 289, '5'),
+	(44, 'Accusantium eos consectet', 'application/sbml+xml', _binary 0x64756D6D79, 'aac', 45, '4'),
+	(45, 'Laboriosam id aut at sit', 'application/vnd.wordperfect', _binary 0x64756D6D79, 'uvvz', 290, '5'),
+	(46, 'Officia qui nihil dolorem', 'text/prs.lines.tag', _binary 0x64756D6D79, 'gph', 871, '1'),
+	(47, 'Quia iure blanditiis est', 'application/vnd.epson.esf', _binary 0x64756D6D79, 'pgn', 117, '6');
 /*!40000 ALTER TABLE `dokumen_upload` ENABLE KEYS */;
 
 
@@ -188,10 +246,10 @@ CREATE TABLE IF NOT EXISTS `forum` (
 -- Dumping data for table kms.forum: ~5 rows (approximately)
 /*!40000 ALTER TABLE `forum` DISABLE KEYS */;
 INSERT INTO `forum` (`id`, `judul`, `isi`, `user`, `tgl`, `jam`) VALUES
-	(1, 'Ipsa iste ea porro.', 'Rem perferendis inventore placeat tempore.', 'Ms. Mackenzie Gusikowski', '2012-01-26', '22:04:44'),
+	(1, 'Ipsa iste ea porro.', 'Rem perferendis inventore placeat tempore.', 'Gusikowski', '2012-01-26', '22:04:44'),
 	(2, 'Voluptas incidunt est.', 'Aliquam omnis est enim placeat occaecati quo corporis.', 'Jaylon Davis', '1970-02-15', '20:33:23'),
 	(3, 'Soluta distinctio error.', 'Sit et autem quis fuga libero dolores. Est hic natus sunt.', 'Federico Morar', '1979-02-22', '14:12:01'),
-	(4, 'Magni facilis sed.', 'Et animi et neque exercitationem a aspernatur ut reiciendis.', 'Mrs. Kasandra Cassin Sr.', '2005-08-05', '18:18:48'),
+	(4, 'Magni facilis sed.', 'Et animi et neque exercitationem a aspernatur ut reiciendis.', 'Cassin Sr.', '2005-08-05', '18:18:48'),
 	(5, 'Natus hic quam.', 'Voluptatem sint perspiciatis libero eaque culpa. Assumenda quia cum et.', 'Richmond Muller', '1999-06-15', '04:14:54');
 /*!40000 ALTER TABLE `forum` ENABLE KEYS */;
 
@@ -206,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `forum2` (
   `tgl` date DEFAULT NULL,
   `jam` time DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table kms.forum2: ~79 rows (approximately)
 /*!40000 ALTER TABLE `forum2` DISABLE KEYS */;
@@ -289,7 +347,9 @@ INSERT INTO `forum2` (`id`, `forum_id`, `komentar`, `user`, `tgl`, `jam`) VALUES
 	(76, 5, 'Officiis ipsum.', 'Alisha McClure', '2014-03-31', '22:59:45'),
 	(77, 5, 'Non cum id.', 'Leo Ankunding', '1985-09-02', '05:19:58'),
 	(78, 4, 'Similique.', 'Elliott Kilback', '2004-01-24', '10:51:13'),
-	(79, 2, 'Cumque praesentium.', 'Ms. Leola Bayer', '2004-04-12', '00:56:18');
+	(79, 2, 'Cumque praesentium.', 'Ms. Leola Bayer', '2004-04-12', '00:56:18'),
+	(80, 2, 'asdasds.', '', '2015-08-13', '09:12:27'),
+	(81, 2, 'ted', 'pegawai', '2015-08-13', '09:17:33');
 /*!40000 ALTER TABLE `forum2` ENABLE KEYS */;
 
 
@@ -477,110 +537,24 @@ CREATE TABLE IF NOT EXISTS `user` (
   `level` char(2) NOT NULL,
   `divisi` char(2) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
 
--- Dumping data for table kms.user: 99 rows
+-- Dumping data for table kms.user: 13 rows
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id_user`, `username`, `nama_lengkap`, `password`, `email`, `no_telp`, `level`, `divisi`) VALUES
-	(1, 'bogan.caro', 'Joey Dare', '1234', 'ondricka.lauriane@ruecker', '1-512-741-51', '2', '4'),
-	(2, 'keebler.ot', 'Cielo Powlowski DVM', '1234', 'sgerlach@gmail.com', '05365119535', '1', '1'),
-	(3, 'lebsack.ce', 'Earline Yost Sr.', '1234', 'zboncak.rocky@keelingosin', '(927)189-972', '1', '2'),
-	(4, 'ressie30', 'Flavio Trantow', '1234', 'bethel.mccullough@dietric', '614-113-0693', '2', '2'),
-	(5, 'mariam.yos', 'Miss Kathlyn Christiansen', '1234', 'samson.koss@gmail.com', '(988)868-243', '3', '1'),
-	(6, 'hosea21', 'Ms. Gaetano Sipes', '1234', 'jairo.harvey@yahoo.com', '109-229-9194', '1', '1'),
-	(7, 'storphy', 'Walter Leffler Sr.', '1234', 'hgutkowski@gmail.com', '1-713-653-40', '3', '1'),
-	(8, 'rahsaan.bo', 'Augustus Adams', '1234', 'rshanahan@brownmante.com', '075-789-4665', '2', '1'),
-	(9, 'admin', 'AdMiN', 'admin', '', '', '1', NULL),
-	(10, 'pegawai', 'PeGaWaI', 'pegawai', '', '', '2', NULL),
-	(11, 'kepala', 'KePaLa', 'kepala', '', '', '3', NULL),
-	(12, 'euna55', 'Cicero Sauer Jr.', '1234', 'morgan.heidenreich@gmail.', '443.251.3707', '2', '3'),
-	(13, 'hardy52', 'Donna Morar DVM', '1234', 'waelchi.tatum@yahoo.com', '304.334.6782', '2', '2'),
-	(14, 'webster.je', 'Marquise Wuckert', '1234', 'schaden.dorcas@hilpert.or', '661.316.3700', '1', '3'),
-	(15, 'tdubuque', 'Dr. Melba Kessler II', '1234', 'jaleel.williamson@gmail.c', '839-856-0577', '1', '1'),
-	(16, 'rath.karle', 'Mauricio Abernathy', '1234', 'rath.jorge@strosin.com', '1-569-355-93', '2', '5'),
-	(17, 'earline.la', 'Tad Turner', '1234', 'madelynn01@gmail.com', '(679)303-333', '1', '2'),
-	(18, 'vkuphal', 'William Koch', '1234', 'schroeder.haleigh@yahoo.c', '172-171-5929', '3', '3'),
-	(19, 'mayert.syl', 'Dr. Alvena Senger', '1234', 'alisa15@yahoo.com', '1-790-491-08', '3', '1'),
-	(20, 'pouros.mel', 'Mr. Pat Lebsack', '1234', 'nstracke@kuphalstrosin.co', '194.152.2100', '2', '5'),
-	(21, 'catherine3', 'Dana Schroeder', '1234', 'liza.shields@hotmail.com', '00372826288', '1', '3'),
-	(22, 'reinger.ev', 'Tyrell Conn Sr.', '1234', 'adriana02@yahoo.com', '1-966-792-21', '2', '3'),
-	(23, 'christophe', 'Esteban Ebert', '1234', 'jenkins.corene@weissnat.o', '+30(2)370747', '3', '1'),
-	(24, 'heaney.nov', 'Alda Huel', '1234', 'cummings.einar@rice.info', '1-180-556-05', '1', '3'),
-	(25, 'zchristian', 'Nya Goodwin', '1234', 'eosinski@hotmail.com', '(080)941-337', '1', '4'),
-	(26, 'frowe', 'Carol Hegmann', '1234', 'estella88@yahoo.com', '1-978-095-97', '3', '2'),
-	(27, 'catherine.', 'Jewel Hudson', '1234', 'stamm.jeremie@jenkins.com', '(318)393-319', '1', '2'),
-	(28, 'lcollins', 'Carson Lueilwitz', '1234', 'treutel.addison@bogisichd', '113.857.7646', '3', '3'),
-	(29, 'darion20', 'Herman Hettinger', '1234', 'sandrine69@gmail.com', '892.943.1681', '3', '1'),
-	(30, 'lyric.shan', 'Aubree Toy V', '1234', 'schimmel.aidan@yahoo.com', '1-807-815-69', '2', '1'),
-	(31, 'tsipes', 'Myrtle Kihn', '1234', 'fschmeler@hotmail.com', '1-163-713-70', '1', '5'),
-	(32, 'emills', 'Maximo Lowe I', '1234', 'baby76@hammes.org', '1-256-212-90', '2', '1'),
-	(33, 'trantow.fr', 'Ms. Merle Veum', '1234', 'crooks.princess@hotmail.c', '+04(4)832558', '1', '2'),
-	(34, 'hrippin', 'Anabelle Emmerich', '1234', 'bosco.rosa@gmail.com', '695-870-3702', '3', '1'),
-	(35, 'lacey.zeml', 'Landen Beatty', '1234', 'brakus.riley@gmail.com', '(855)558-850', '1', '1'),
-	(36, 'emerson37', 'Mrs. Bettye Kilback', '1234', 'becker.lilliana@kassulke.', '399-664-0126', '1', '3'),
-	(37, 'darby59', 'Xavier Osinski', '1234', 'kunze.jay@gmail.com', '(507)530-845', '1', '5'),
-	(38, 'vprosacco', 'Alvah Beahan V', '1234', 'john.cruickshank@ornlockm', '634-730-7976', '2', '2'),
-	(39, 'reichel.da', 'Loren Haley', '1234', 'karli.heaney@hotmail.com', '1-897-574-21', '1', '4'),
-	(40, 'lemke.misa', 'Ewald Crona', '1234', 'bernhard.saul@hotmail.com', '1-501-854-25', '1', '1'),
-	(41, 'berge.gaet', 'Mr. Meredith Rippin DVM', '1234', 'alivia11@blanda.com', '1-275-196-91', '3', '5'),
-	(42, 'emily.lark', 'Lavon Cartwright', '1234', 'otho11@treutel.com', '04889411652', '2', '1'),
-	(43, 'aufderhar.', 'Connie Windler', '1234', 'cronin.melvina@gmail.com', '06687934711', '1', '2'),
-	(44, 'phauck', 'Ethan Kemmer I', '1234', 'kirlin.rylee@hauck.biz', '439-930-4346', '3', '4'),
-	(45, 'grunte', 'Mozell Schiller', '1234', 'jenkins.avis@hilll.com', '599.217.7864', '2', '2'),
-	(46, 'bergnaum.d', 'Meghan Schamberger', '1234', 'shayna.hermann@bodemckenz', '05567083435', '1', '5'),
-	(47, 'alyce.mant', 'Francisca Cummings', '1234', 'ospencer@heathcoterowe.co', '(309)502-981', '3', '3'),
-	(48, 'lmuller', 'Solon Osinski III', '1234', 'prince.zboncak@stroman.or', '982.397.3919', '1', '2'),
-	(49, 'wkris', 'Soledad Walter', '1234', 'rhoda82@gmail.com', '(235)315-908', '3', '1'),
-	(50, 'kendra64', 'Miss Odie Howe', '1234', 'keith84@ondricka.com', '1-540-887-98', '3', '4'),
-	(51, 'izabella.l', 'Yvonne Huel', '1234', 'uhackett@gmail.com', '05897427274', '1', '3'),
-	(52, 'pouros.eth', 'Margarita Kessler', '1234', 'nikolaus.zechariah@runtes', '794-844-1926', '1', '3'),
-	(53, 'dlittel', 'Jerome Stamm MD', '1234', 'welch.peyton@gmail.com', '+76(4)818613', '1', '5'),
-	(54, 'stephania.', 'Estevan Kemmer', '1234', 'alphonso.roob@langosh.com', '1-423-674-85', '2', '2'),
-	(55, 'noemie71', 'Tracey Carter Sr.', '1234', 'wschuppe@gislason.info', '717-200-4785', '1', '5'),
-	(56, 'aniya92', 'Ms. Kian Jerde', '1234', 'casimer.simonis@yahoo.com', '1-765-556-77', '2', '3'),
-	(57, 'fkeeling', 'Alivia Klocko', '1234', 'hamill.mohamed@hotmail.co', '713.820.0472', '2', '4'),
-	(58, 'schultz.ge', 'Bruce Bogisich', '1234', 'botsford.barton@hoegergre', '1-970-235-02', '1', '2'),
-	(59, 'senger.lur', 'Paris Hermann', '1234', 'jeramy.marquardt@yahoo.co', '1-899-702-90', '1', '3'),
-	(60, 'alexane56', 'Hobart Harris I', '1234', 'casper.eliezer@yahoo.com', '745-820-9129', '2', '1'),
-	(61, 'kylee47', 'Madaline Miller', '1234', 'florian.lynch@yahoo.com', '419-039-6161', '3', '1'),
-	(62, 'kirlin.emm', 'Jada Moen', '1234', 'leo.kuhlman@yahoo.com', '06005176276', '2', '3'),
-	(63, 'dicki.dayt', 'Mr. Gustave Kunze IV', '1234', 'treutel.nola@gmail.com', '(237)108-020', '1', '3'),
-	(64, 'dessie.sip', 'Ms. Kory Schneider Jr.', '1234', 'sturcotte@hotmail.com', '(296)202-010', '2', '4'),
-	(65, 'alba.moris', 'Onie Stiedemann', '1234', 'sylvan.mcdermott@hotmail.', '+50(2)529809', '1', '1'),
-	(66, 'zkunze', 'Mr. Alejandrin Kassulke', '1234', 'charlotte.moen@hotmail.co', '1-293-502-97', '1', '2'),
-	(67, 'morton88', 'Jarred Pacocha', '1234', 'rachel.deckow@abernathy.c', '1-366-594-88', '1', '3'),
-	(68, 'dessie97', 'Susanna Lehner', '1234', 'howell.treutel@wunsch.com', '635-069-2445', '2', '3'),
-	(69, 'mckenzie.r', 'Sammy McKenzie', '1234', 'fadel.doyle@schimmelkerlu', '501.603.3226', '1', '3'),
-	(70, 'heloise.lo', 'Kaley Leannon', '1234', 'gbosco@hotmail.com', '1-099-762-95', '1', '4'),
-	(71, 'daniel.che', 'Bessie Langworth', '1234', 'durgan.ava@hotmail.com', '160.904.6430', '1', '5'),
-	(72, 'wlittel', 'Chaz Mohr PhD', '1234', 'ayden88@kunde.com', '988.052.2894', '1', '2'),
-	(73, 'gaylord.ca', 'Alycia Daugherty', '1234', 'nfriesen@hotmail.com', '791.128.4371', '2', '2'),
-	(74, 'lennie.kuv', 'Sylvia Zboncak', '1234', 'yebert@gmail.com', '016-539-2848', '2', '5'),
-	(75, 'wschulist', 'Claudie Bergstrom', '1234', 'heaney.lonie@huel.com', '898.289.4355', '2', '5'),
-	(76, 'schiller.d', 'Keegan Howell', '1234', 'ilene.graham@gottliebhauc', '+25(2)312895', '2', '4'),
-	(77, 'kebert', 'Consuelo Schmeler', '1234', 'edmund73@yahoo.com', '1-264-148-79', '3', '4'),
-	(78, 'langosh.ma', 'Penelope Hammes', '1234', 'oweimann@parker.com', '1-901-716-86', '1', '5'),
-	(79, 'prohaska.g', 'Vergie Watsica', '1234', 'royce06@hotmail.com', '+89(8)281185', '1', '1'),
-	(80, 'kuphal.sea', 'Dr. Dana Kutch III', '1234', 'jacobs.garret@gmail.com', '07819008864', '2', '2'),
-	(81, 'qschiller', 'Mrs. Josiah Ziemann DDS', '1234', 'stewart.mertz@gmail.com', '853.300.1102', '3', '5'),
-	(82, 'steuber.ti', 'Monique Lesch', '1234', 'ebeatty@brakus.biz', '058-172-6967', '2', '2'),
-	(83, 'ernestine.', 'Noah Lakin Jr.', '1234', 'nstreich@gmail.com', '838.420.3095', '1', '5'),
-	(84, 'jon65', 'Carson Klocko DVM', '1234', 'viva74@smithbernier.com', '135.503.4324', '3', '4'),
-	(85, 'blebsack', 'Mr. Elliott Quigley V', '1234', 'karlee27@watsica.com', '378.313.1328', '3', '1'),
-	(86, 'hoppe.nata', 'Noah Mertz', '1234', 'cathy53@hotmail.com', '(726)821-784', '3', '3'),
-	(87, 'pansy.star', 'Lisandro Paucek', '1234', 'estell.greenfelder@pacoch', '+67(5)687283', '1', '2'),
-	(88, 'cesar70', 'Miss Janet Stoltenberg', '1234', 'edooley@yahoo.com', '351-918-7056', '3', '5'),
-	(89, 'eliezer.de', 'Garland Cronin', '1234', 'lane.reynolds@zemlak.net', '348.769.9836', '3', '3'),
-	(90, 'julius.ber', 'Christian Stroman', '1234', 'mack.baumbach@hotmail.com', '(264)169-636', '1', '1'),
-	(91, 'nigel.kass', 'Karli Hansen', '1234', 'georgianna.boyer@whiteveu', '(158)966-050', '1', '2'),
-	(92, 'smitham.el', 'Shanel Bartoletti', '1234', 'carroll.rubie@zulauf.com', '(853)953-026', '1', '4'),
-	(93, 'ifarrell', 'Dr. Victor Lueilwitz II', '1234', 'breitenberg.aurelia@hotma', '01941645952', '3', '1'),
-	(94, 'ikunze', 'Hank Crona', '1234', 'gottlieb.elian@hotmail.co', '1-112-495-26', '2', '1'),
-	(95, 'hiram.wild', 'Anibal Schaden', '1234', 'walker.amelie@vonrueden.c', '595.897.6814', '3', '2'),
-	(96, 'krussel', 'Mrs. Virgil McClure MD', '1234', 'marion.ziemann@fadel.org', '(364)905-557', '2', '5'),
-	(97, 'funk.jalen', 'Mariano Langworth', '1234', 'sim.gaylord@yahoo.com', '(006)605-650', '1', '3'),
-	(98, 'brant.abbo', 'Mr. Eli Okuneva IV', '1234', 'lizzie23@bauch.com', '166.270.5718', '2', '3'),
-	(99, 'marvin.yes', 'Bernhard Kling', '1234', 'koepp.henriette@yahoo.com', '+32(0)127769', '3', '5');
+	(9, 'admin', 'AdMiN', '123', '', '', '1', NULL),
+	(10, 'pegawai', 'PeGaWaI', '123', '', '', '2', NULL),
+	(11, 'kepala', 'KePaLa', '123', '', '', '3', NULL),
+	(109, 'homenick.r', 'Virgie Breitenberg', '1234', 'gjakubowski@kuphalkautzer', '+55(1)821898', '2', '2'),
+	(108, 'keon48', 'Gabriella Fadel', '1234', 'lorena.renner@yahoo.com', '(670)195-745', '1', '7'),
+	(107, 'tmurphy', 'Reina Marvin Sr.', '1234', 'geovanni.feil@fadelking.c', '705.198.6795', '3', '2'),
+	(106, 'katlynn.sc', 'Alayna DuBuque', '1234', 'deja56@hotmail.com', '04541937784', '2', '8'),
+	(105, 'vkeebler', 'Jamar Purdy', '1234', 'madalyn92@berge.com', '967-450-1173', '1', '2'),
+	(104, 'murl.stark', 'Miss Audreanne West I', '1234', 'gjenkins@nienow.com', '750-788-8772', '1', '3'),
+	(103, 'shanelle.w', 'Vida Balistreri', '1234', 'jasen01@hegmannborer.net', '325-683-9651', '2', '1'),
+	(102, 'gutmann.my', 'Dino Cartwright', '1234', 'tessie.bashirian@hotmail.', '143.588.9633', '3', '4'),
+	(101, 'asia60', 'Mrs. Aileen McDermott', '1234', 'zwiza@leffler.com', '824.056.9806', '3', '4'),
+	(100, 'saige.brei', 'Colt Hyatt', '1234', 'lorine.block@gmail.com', '212.949.6927', '3', '1');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
