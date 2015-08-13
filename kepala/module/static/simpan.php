@@ -1,7 +1,6 @@
 <?php 
 include('config.php');
-session_start(); 
-$user = $_SESSION['user'];
+$user = $_SESSION['username'];
 $komentar = $_POST['komentar'];
 $forum_id = $_POST['forum_id'];
 $tgl = date('Y-m-d');

@@ -1,7 +1,6 @@
 <?php
   include ('config.php'); 
-  session_start(); 
-  $user = $_SESSION['user'];
+  $user = $_SESSION['username'];
 
   if(isset($_POST['submit'])) {
     $judul = $_POST['judul'];
@@ -13,7 +12,7 @@
     $sql = mysql_query ($query);
 
     if ($sql) {
-      header('location:forum.php');
+      header('location:index.php');
       echo $query;
     }
     else { 
@@ -46,10 +45,13 @@
                 <a class="brand-logo">Forum Diskusi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <!-- tanda aja -->
-          <li><a href="forum.php"><i class="mdi-action-home left"></i>Home</a></li>
-          <li class="active"><a><i class="mdi-social-person left"></i><?php echo $user; ?> [Pegawai]</a></li>
-          <li><a href="index.php">Logout</a></li> 
-          </ul>
+                  <li><a href="../../home.php"><i class="mdi-action-home left"></i>Home</a></li>
+                  <li><i class="mdi-action-account-child left"></i>
+                  <?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
+                  </li>
+                  <li><a href="../../../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>                         
+                  
+                </ul>
             </div>
         </nav>
     </header>

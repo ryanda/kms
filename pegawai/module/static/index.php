@@ -1,10 +1,5 @@
 <?php
 	require "config.php";
-	session_start();
-	if(isset($_POST['action'])) {
-		$_SESSION['user'] = $_POST['user'];	
-      	header('location:forum.php');
-	}
 ?> 
 
 <html>
@@ -30,9 +25,12 @@
 	                <a class="brand-logo">Forum Diskusi</a>
 	                <ul id="nav-mobile" class="right hide-on-med-and-down">
 	                <!-- tanda aja -->
-						<li><a><i class="mdi-action-home left"></i>Home</a></li>
-						<li class="active"><a><i class="mdi-social-person left"></i>User</a></li>
-						<li><a href="index.php">Logout</a></li>	
+						<li><a href="../../home.php"><i class="mdi-action-home left"></i>Home</a></li>
+						<li><i class="mdi-action-account-child left"></i>
+                        <?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
+                        </li>
+                        <li><a href="../../../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>                         
+                        
 				    </ul>
 	            </div>
 	        </nav>
@@ -42,6 +40,29 @@
 	    <!--    main content-->
 	    <main style="margin-top:20px;">
 	        <div class="container">
+	            <div class="row">
+	<?php
+		$q = "SELECT * from forum";
+		$sql = mysql_query ($q);
+		while ($hasil = mysql_fetch_array ($sql)) {
+	?>
+	                <div class="col s4">
+						<div class="card teal">
+							<div class="card-content white-text center-align">
+								<span class="card-title"><?php echo $hasil['judul']?></span>
+								<p class="truncate"><?php echo $hasil['isi']?></p>
+							</div>
+							<div class="card-action">
+								<a>oleh <?php echo $hasil['user'].', '.$hasil['tgl']?></a>
+								<a href="tampil.php?id=<?php echo $hasil['id'] ?>">link</a>
+								<?php if ($hasil['user'] == $_SESSION['username']) {  ?> 
+									<a href="hapus.php?id=<?php echo $hasil['id'] ?>" class="red-text">hapus</a>
+								<?php } ?>
+							</div>
+						</div>
+	                </div>
+	<?php } ?>
+	            </div>
 	        </div>
 	    </main>
 	    <!--    end main content-->
@@ -63,37 +84,21 @@
 	    </footer>
 	    <!--    end footer page-->
 
-<!-- input user name -->
-<div id="user" class="modal modal-fixed-footer" style="max-height: 250px; max-width: 400px">
-	<form action="" method="post">
-		<div class="modal-content">
-			<h4>Silahkan Input Nama</h4><br>
-			<div class="input-field">
-	          	<input id="user" name="user" type="text" placeholder="Silahkan inputkan nama anda" class="validate" required>
-	        </div>
-		</div>
-		<div class="modal-footer">
-			<button class="btn waves-effect waves-light" type="submit" name="action">Masuk</i>
-	  		</button>
-
-	  		<a class="left waves-effect waves-light btn red" href="../../index.php">
-                Kembali
-             </a>
-		</div>
-			  
-	</form>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	<a class="btn-floating btn-large red" href="baru.php">
+		<i class="large mdi-content-add"></i>
+	</a>
 </div>
-<!-- end input name -->
 
         <script src="../../../asset/js/jquery.min.js"></script>
 	    <script src="../../../asset/js/materialize.min.js"></script>
 	    <script type="text/javascript">
 	    	$(".dropdown-button").dropdown();
 	    	$('.modal-trigger').leanModal();
-	    	$('#user').openModal({
-	    		dismissible: false,
-	    		opacity: .9
-	    	});
+	    	// $('#user').openModal({
+	    	// 	dismissible: false,
+	    	// 	opacity: .9
+	    	// });
 	    </script>
     </body>
-    </html>
+</html>

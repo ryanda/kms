@@ -1,6 +1,5 @@
 <?php 
-session_start(); 
-$user = $_SESSION['user']; 
+require"config.php";
 ?>
 <html>
   <head>
@@ -25,17 +24,19 @@ $user = $_SESSION['user'];
                 <a class="brand-logo">Forum Diskusi</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <!-- tanda aja -->
-          <li><a href="forum.php"><i class="mdi-action-home left"></i>Home</a></li>
-          <li class="active"><a><i class="mdi-social-person left"></i><?php echo $user; ?> [Pegawai]</a></li>
-          <li><a href="index.php">Logout</a></li> 
-          </ul>
+                  <li><a href="../../home.php"><i class="mdi-action-home left"></i>Home</a></li>
+                  <li><i class="mdi-action-account-child left"></i>
+                  <?php echo (isset($_SESSION['nama_lengkap']) ? $_SESSION['nama_lengkap'] : 'anonym' )?>
+                  </li>
+                  <li><a href="../../../logout.php"><i class="mdi-content-reply left"></i>Logout</a></li>                         
+                  
+                </ul>
             </div>
         </nav>
     </header>
     <!--    end header navbar-->
 
 <?php 
-require"config.php";
 
 $id= ($_GET['id']);
 $query = "SELECT * FROM forum INNER JOIN forum2 ON forum.id = forum2.forum_id WHERE forum.id='$id' Order BY forum2.user, forum2.komentar";
@@ -49,7 +50,13 @@ $hasil = mysql_fetch_array ($sql);
         <div class="card-panel teal lighten-2 white-text col s9 offset-s1">
           <h4><?php echo $hasil['judul']?></h4>
           <h5><?php echo $hasil['isi']?></h5>
-          <p><?php echo $hasil['user']?> | <?php echo $hasil['jam']?>, <?php echo $hasil['tgl']?></p>
+          <p>
+            <?php echo $hasil['user']?> | 
+            <?php echo $hasil['jam']?>, <?php echo $hasil['tgl']?> |
+            <?php if ($hasil['user'] == $_SESSION['username']) {  ?> 
+              <a href="hapus.php?id=<?php echo $hasil['id'] ?>" class="red-text">hapus</a>
+            <?php } ?>
+          </p>
         </div>
 
   <?php
@@ -61,7 +68,13 @@ $hasil = mysql_fetch_array ($sql);
         <div class="card-panel red lighten-1 col s6 offset-s2 white-text">
           <div class="container" style="margin-top: 20px">
             <h5><?php echo $hasil2['komentar']?></h5>
-            <p><?php echo $hasil2['user']?> | <?php echo $hasil2['jam']?>, <?php echo $hasil2['tgl']?></p>
+            <p>
+              <?php echo $hasil2['user']?> | 
+              <?php echo $hasil2['jam']?>, <?php echo $hasil2['tgl']?> |
+              <?php if ($hasil2['user'] == $_SESSION['username']) {  ?> 
+                <a href="hapuskomen.php?id=<?php echo $hasil['id'] ?>&id2=<?php echo $hasil2['id'] ?>" class="black-text">hapus</a>
+              <?php } ?>
+            </p>
           </div>
         </div>
 
@@ -95,7 +108,11 @@ $hasil = mysql_fetch_array ($sql);
         </div>
     </footer>
     <!--    end footer page-->
-
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a href="index.php" class="btn-floating btn-large red">
+    <i class="large mdi-hardware-keyboard-arrow-left"></i>
+    </a>
+    </div>
 
     <script src="../../../asset/js/jquery.min.js"></script>
     <script src="../../../asset/js/materialize.min.js"></script>

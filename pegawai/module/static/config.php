@@ -5,7 +5,7 @@
 		$_SESSION['error'] = 'Anda belum login';
 		header('Location:/login/index.php');
 	} 
-	if($_SESSION['level']!='1'){
+	if($_SESSION['level']!='2'){
 		$_SESSION['error'] = 'Anda tidak memiliki akses Pegawai';
 		header('Location:/login/index.php');
 	}  

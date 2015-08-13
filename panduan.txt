@@ -1,6 +1,6 @@
 jobdesk baru 
 1. tambah tampilan home index baru. isi: tampilan home baru tulisannya selamat datang blabla terus ada tombol menu DONE
-2. navbar berita dihapus 
+2. navbar berita dihapus DONE
 3. dok pengetahuan dibagi per divisi
 4. security login logout DONE
 5. tiap input data, validasi client DONE
