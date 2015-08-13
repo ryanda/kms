@@ -71,7 +71,7 @@
                 	</div> -->
                 	<div class="col s12">
 						<ul class="tabs z-depth-1">
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#home">Berita</a></li>
+					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#home">Home</a></li>
 					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#pegawai">Data Pegawai</a></li>
 					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#peraturan">Peraturan</a></li>
 					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#dokumen">Dokumen Pengetahuan</a></li>
@@ -196,7 +196,7 @@
 			    } else if ($('.tabs .tab:eq(5) a').hasClass('active')) {
 				    document.location.href="../forum/index.html";
 			    } else {
-				    document.location.href="index.php";
+				    document.location.href="home.php";
 			    }
 	        }
 	    });

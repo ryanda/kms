@@ -21,7 +21,7 @@ $data = mysql_query("select * from peraturan");
 <div class="row">
         <div class="col s12">
                 <ul class="tabs z-depth-1">
-                        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#home">Berita</a></li>
+                        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#home">Home</a></li>
                         <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#pegawai">Data Pegawai</a></li>
                         <li class="tab col s12 m2 l2 teal"><a class="white-text btn active" href="#peraturan">Peraturan</a></li>
                         <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#dokumen">Dokumen Pengetahuan</a></li>
@@ -92,7 +92,7 @@ $data = mysql_query("select * from peraturan");
             } else if ($('.tabs .tab:eq(4) a').hasClass('active')) {
                     document.location.href="../../module/berita/tampil.php";
             } else if ($('.tabs .tab:eq(0) a').hasClass('active')) {
-                    document.location.href="../../index.php";
+                    document.location.href="../../home.php";
             } else {
                     document.location.href="../../module/static/index.php";
             }
