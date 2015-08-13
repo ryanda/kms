@@ -52,10 +52,9 @@ $hasil = mysql_fetch_array ($sql);
           <h5><?php echo $hasil['isi']?></h5>
           <p>
             <?php echo $hasil['user']?> | 
-            <?php echo $hasil['jam']?>, <?php echo $hasil['tgl']?> |
-            <?php if ($hasil['user'] == $_SESSION['username']) {  ?> 
-              <a href="hapus.php?id=<?php echo $hasil['id'] ?>" class="red-text">hapus</a>
-            <?php } ?>
+            <?php echo $hasil['jam']?>, 
+            <?php echo $hasil['tgl']?> |
+            <a href="hapus.php?id=<?php echo $hasil['id'] ?>" class="red-text">hapus</a>
           </p>
         </div>
 
@@ -70,10 +69,9 @@ $hasil = mysql_fetch_array ($sql);
             <h5><?php echo $hasil2['komentar']?></h5>
             <p>
               <?php echo $hasil2['user']?> | 
-              <?php echo $hasil2['jam']?>, <?php echo $hasil2['tgl']?> |
-              <?php if ($hasil2['user'] == $_SESSION['username']) {  ?> 
-                <a href="hapuskomen.php?id=<?php echo $hasil['id'] ?>&id2=<?php echo $hasil2['id'] ?>" class="black-text">hapus</a>
-              <?php } ?>
+              <?php echo $hasil2['jam']?>, 
+              <?php echo $hasil2['tgl']?> |
+              <a href="hapuskomen.php?id=<?php echo $hasil['id'] ?>&id2=<?php echo $hasil2['id'] ?>" class="black-text">hapus</a>
             </p>
           </div>
         </div>

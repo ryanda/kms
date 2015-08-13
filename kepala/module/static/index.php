@@ -55,9 +55,7 @@
 							<div class="card-action">
 								<a>oleh <?php echo $hasil['user'].', '.$hasil['tgl']?></a>
 								<a href="tampil.php?id=<?php echo $hasil['id'] ?>">link</a>
-								<?php if ($hasil['user'] == $_SESSION['username']) {  ?> 
-									<a href="hapus.php?id=<?php echo $hasil['id'] ?>" class="red-text">hapus</a>
-								<?php } ?>
+								<a href="hapus.php?id=<?php echo $hasil['id'] ?>" class="red-text">hapus</a>
 							</div>
 						</div>
 	                </div>
