@@ -154,7 +154,7 @@ require "includes/config.php";
       <div class="collapsible-body" style="padding:20px">
         <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header">
+              <div class="collapsible-header teal">
                 <i class="mdi-image-filter-drama"></i><?php echo $data2['nama'] ?>
               </div>
               <div class="collapsible-body">
