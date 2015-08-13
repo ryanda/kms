@@ -69,14 +69,14 @@ require "includes/config.php";
     <!-- deskripsi -->
     
     <li class="active">
-      <div class="collapsible-header active teal darken-3"><i class="mdi-av-subtitles"></i>Deskripsi</div>
-      <div class="collapsible-body teal" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
+      <div class="collapsible-header active teal white-text"><i class="mdi-av-subtitles"></i>Deskripsi</div>
+      <div class="collapsible-body" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
     </li>
     
     <!-- dokumen -->
     
     <li>
-      <div class="collapsible-header cyan darken-3"><i class="mdi-action-description"></i>Dokumen</div>
+      <div class="collapsible-header cyan white-text"><i class="mdi-action-description"></i>Dokumen</div>
       
 <?php
   $dok2 = "select * from divisi_sub where id_div='$id'";
@@ -102,7 +102,7 @@ require "includes/config.php";
       <div class="collapsible-body" style="padding:20px">
         <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header teal">
+              <div class="collapsible-header teal white-text">
                 <i class="mdi-image-filter-drama"></i><?php echo $data2['nama'] ?>
               </div>
               <div class="collapsible-body">
@@ -129,7 +129,7 @@ require "includes/config.php";
     </li>
     <!-- file -->
     <li>
-      <div class="collapsible-header orange darken-4"><i class="mdi-action-assignment-returned"></i>File</div>
+      <div class="collapsible-header orange white-text"><i class="mdi-action-assignment-returned"></i>File</div>
 
 <?php
   $file2 = "select * from divisi_sub where id_div='$id'";
@@ -155,7 +155,7 @@ require "includes/config.php";
       <div class="collapsible-body" style="padding:20px">
         <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header teal">
+              <div class="collapsible-header teal white-text">
                 <i class="mdi-image-filter-drama"></i><?php echo $data2['nama'] ?>
               </div>
               <div class="collapsible-body">
