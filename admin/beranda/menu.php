@@ -26,7 +26,7 @@ include 'config.php';
 	                <!-- tanda aja -->
 						<li class="active"><a href="menu.php"><i class="mdi-action-home left"></i>Home</a></li>
 						<li><a href="../module/user/tampil.php"><i class="mdi-action-account-child left"></i>Manajemen User</a></li>
-						<li><a href="../module/menu_utama/tampil.php"><i class="mdi-action-description left"></i>Manajemen Menu Utama</a></li>
+						<li><a href="../module/menu_utama/tampil.php"><i class="mdi-action-description left"></i>Manajemen Menu</a></li>
 						<li><a class="dropdown-button" href="#!" data-activates="dropdown1">
 							<i class="mdi-navigation-arrow-drop-down right"></i>
 							<i class="mdi-action-dashboard left"></i>Manajemen Modul</a></li>
