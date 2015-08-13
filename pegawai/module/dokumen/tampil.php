@@ -52,88 +52,140 @@ require "includes/config.php";
 					</div>
 
 		<div class="col s12 section container" id="dokumen"> <br>
-      <div class="section">
-        <table class="hoverable centered responsive-table">
-          <thead>
-              <tr>
-                <th>No</th>
-                <th>Judul</th>
-                <th>Isi</th>
-                <th>Tanggal</th>
-                <th>Waktu</th>
-                <th>Pembaca</th>
-                <th>Opsi</th>
-              </tr>
-          </thead>
+  <div class="section row">
 
-	<?php
-	$no = 1;
-	$query2 = "SELECT * from dokumen ";
-	$sql = mysql_query ($query2);
-	while ($hasil = mysql_fetch_array ($sql)) {
-			?>
-				<tbody>
-				<tr>
-					<td><?php echo $no?></td>
-					
-					<td><?php echo $hasil['judul']?></td>
-                    <td><?php echo $hasil['isi']?></td>
-					<td><?php echo $hasil['tanggal']?></td>
-					<td><?php echo $hasil['waktu']?></td>
-					<td><?php echo $hasil['baca']?></td> 
-					<td>
-					<a href="laporan.php?id=<?php echo $hasil ['id'];?>">Download</a>
-					</td>
 
-				</tr>	
-				</tbody>
-				<?php $no++; ?>
-				<?php } ?>
-				
-				 </table>
+<!-- start of management knowledge -->
+<?php
+  $dvs = mysql_query ("SELECT * from divisi ");
+  while ($data = mysql_fetch_array ($dvs)) {
+    $id = $data['id'];
+?>  
+<div class="col s6">
+<!-- START ACCORDION -->
+  <!-- LEVEL 1 -->
+  <ul class="collapsible popout" data-collapsible="accordion">
+    <!-- deskripsi -->
+    <li class="active">
+      <div class="collapsible-header active"><i class="mdi-av-subtitles"></i>Deskripsi</div>
+      <div class="collapsible-body" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
+    </li>
+    <!-- dokumen -->
+    <li>
+      <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>Dokumen</div>
+      
+<?php
+  $dok2 = "select * from divisi_sub where id_div='$id'";
+  $sql2 = mysql_query ($dok2);
+  while ($data2 = mysql_fetch_array ($sql2)) {
+    $id2 = $data2['id'];
+  if (mysql_num_rows($sql2) == 1) { 
+?>
+      <div class="collapsible-body">
+        <p style="font-size: 17px">
+  <?php
+    $dok3 = "select * from dokumen where divisi='$id2'";
+    $sql3 = mysql_query ($dok3);
+    while ($data3 = mysql_fetch_array ($sql3)) {
+  ?>
+          <i class="mdi-file-file-download left"></i>
+          <?php echo $data3['judul'] ?> 
+          <a href="laporan.php?id=<?php echo $data3['id'] ?>">Download</a><br>
+  <?php } ?>
+        </p>
       </div>
-      <br>
-      <div class="divider"></div>
-      <br>
-      <div class="section">
-   <!-- start main content -->
-    <!-- <main style="margin-top:30px;">
-        <div class="container"> -->
-        <table class="hoverable centered responsive-table">
-          <thead>
-              <tr>
-                <th>No</th>
-                <th>Judul</th>
-                <th>Nama File</th>
-                <th>Tipe</th>
-                <th>Ukuran</th>
-                <th>Download</th>
-                <!-- <th>Opsi</th> -->
-             </tr>
-             </thead>
-             <tbody> 
-             <?php 
-             $data = mysql_query("select * from dokumen_upload");
-             while ($row =mysql_fetch_assoc($data)) { ?>
-             <tr>
-                <td><?php echo $c=$c+1;?></td>
-                <td><?php echo $row['judul'] ?></td>
-                <td><?php echo $row['filename'] ?></td>
-                <td><?php echo $row['filetype'] ?></td>
-                <td><?php echo $row['filesize'] ?></td>
-                <td><a href="download1.php?id=<?php echo $row['id'] ?>">Download</a></td>
-                <!-- <td><a href="delete.php?id=<?php echo $row['id'] ?>">Hapus</a></td>    -->
-             </tr>
-             <?php } ?>
-             </tbody>
-          </table>
+<?php } else { ?>
+      <div class="collapsible-body" style="padding:20px">
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header">
+                <i class="mdi-image-filter-drama"></i><?php echo $data2['nama'] ?>
+              </div>
+              <div class="collapsible-body">
+                <p> 
+
+  <?php
+    $dok4 = "select * from dokumen where divisi='$id2'";
+    $sql4 = mysql_query ($dok4);
+    while ($data4 = mysql_fetch_array ($sql4)) {
+  ?>
+          <i class="mdi-file-file-download left"></i>
+          <?php echo $data4['judul'] ?> 
+          <a href="laporan.php?id=<?php echo $data4['id'] ?>">Download</a><br>
+  <?php } ?>
+
+                </p>
+              </div>
+            </li>
+        </ul>
       </div>
+<?php } //end while 
+ } //end if ?>
 
-        <!-- </div>
-    </main> -->
-    <!-- end main content -->
+    </li>
+    <!-- file -->
+    <li>
+      <div class="collapsible-header"><i class="mdi-maps-place"></i>File</div>
 
-        </div></div> </div>
+<?php
+  $file2 = "select * from divisi_sub where id_div='$id'";
+  $sql2 = mysql_query ($file2);
+  while ($data2 = mysql_fetch_array ($sql2)) {
+    $id2 = $data2['id'];
+  if (mysql_num_rows($sql2) == 1) { 
+?>
+      <div class="collapsible-body">
+        <p style="font-size: 17px">
+  <?php
+    $file3 = "select * from dokumen_upload where divisi='$id2'";
+    $sql3 = mysql_query ($file3);
+    while ($data3 = mysql_fetch_array ($sql3)) {
+  ?>
+          <i class="mdi-file-file-download left"></i>
+          <?php echo $data3['judul'] ?> 
+          <a href="download.php?id=<?php echo $data3['id'] ?>">Download</a><br>
+  <?php } ?>
+        </p>
+      </div>
+<?php } else { ?>
+      <div class="collapsible-body" style="padding:20px">
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header">
+                <i class="mdi-image-filter-drama"></i><?php echo $data2['nama'] ?>
+              </div>
+              <div class="collapsible-body">
+                <p> 
+
+  <?php
+    $file4 = "select * from dokumen_upload where divisi='$id2'";
+    $sql4 = mysql_query ($file4);
+    while ($data4 = mysql_fetch_array ($sql4)) {
+  ?>
+          <i class="mdi-file-file-download left"></i>
+          <?php echo $data4['judul'] ?> 
+          <a href="download.php?id=<?php echo $data4['id'] ?>">Download</a><br>
+  <?php } ?>
+
+                </p>
+              </div>
+            </li>
+        </ul>
+      </div>
+<?php } //end while 
+ } //end if ?>
+
+    </li>
+  </ul>
+  </div>
+<!-- END ACCORDION -->
+<?php } ?>
+
+
+
+</div>
+          </div>
+          </div> </div>
     </main>
     <!-- end main content -->
 <script type="text/javascript">
