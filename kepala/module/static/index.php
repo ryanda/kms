@@ -14,7 +14,19 @@
 	            flex-direction: column;
 	        }
 	        main { flex: 1 0 auto }
-	        .container{width:90%}            
+	        .container{width:90%}  
+	        .tabs .tab a { 
+	        text-transform: capitalize;
+	        line-height: inherit; 
+	        padding: 0;
+			}
+			.card .card-action a { text-transform: none }
+			.tabs .tab a { 
+			        border: 0.1rem solid #ee6e73; 
+			        border-top: none; 
+			        border-bottom: none; 
+			}
+			.tabs .indicator{ height:5px;background-color:rgba(255,255,255,0.5); }          
         </style>
     </head>
     <body>
@@ -41,6 +53,32 @@
 	    <main style="margin-top:20px;">
 	        <div class="container">
 	            <div class="row">
+
+				<div class="col s12">
+                <ul class="tabs z-depth-1">
+                        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#home">Home</a></li>
+                        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#pegawai">Data Pegawai</a></li>
+                        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#peraturan">Peraturan</a></li>
+                        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#dokumen">Dokumen Pengetahuan</a></li>
+                        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" href="#berita">Berita & Publikasi</a></li>
+                        <li class="tab col s12 m2 l2 teal"><a class="white-text btn active" href="#forum">Forum Diskusi</a></li>
+                </ul>
+        </div>
+
+<div class="col s12 section" id="home"> <br>
+         Dialihkan... 
+</div>
+<div class="col s12 section" id="pegawai"> <br>
+         Dialihkan... 
+</div>
+<div class="col s12 section" id="dokumen"> <br>
+         Dialihkan... 
+</div>
+<div class="col s12 section" id="berita"> <br>
+         Dialihkan... 
+</div>
+<div class="col s12 section" id="forum"> <br>
+         
 	<?php
 		$q = "SELECT * from forum";
 		$sql = mysql_query ($q);
@@ -61,6 +99,9 @@
 	                </div>
 	<?php } ?>
 	            </div>
+	        
+			</div>
+
 	        </div>
 	    </main>
 	    <!--    end main content-->
@@ -97,6 +138,30 @@
 	    	// 	dismissible: false,
 	    	// 	opacity: .9
 	    	// });
+			
+			$(document).ready(function() {
+	        $('ul.tabs').tabs();
+	        $('.tabs').click(function() {
+	            cekaktif();
+	        });
+
+	        function cekaktif() {
+	        if ($('.tabs .tab:eq(1) a').hasClass('active')) {
+	                    document.location.href="../../module/pegawai/tampil.php";
+	            } else if ($('.tabs .tab:eq(2) a').hasClass('active')) {
+	                    document.location.href="../../module/peraturan/tampil.php";
+	            } else if ($('.tabs .tab:eq(3) a').hasClass('active')) {
+	                    document.location.href="../../module/dokumen/tampil.php";
+	            } else if ($('.tabs .tab:eq(4) a').hasClass('active')) {
+	                    document.location.href="../../module/berita/tampil.php";
+	            } else if ($('.tabs .tab:eq(0) a').hasClass('active')) {
+	                    document.location.href="../../home.php";
+	            } else {
+	                    document.location.href="../../module/static/index.php";
+	            }
+	        }
+	        });
+
 	    </script>
     </body>
 </html>
