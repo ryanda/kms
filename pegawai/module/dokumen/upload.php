@@ -45,8 +45,9 @@ if ($_POST)
   $ukuran = $_FILES['berkas']['size'];
   $nama_file = $_FILES['berkas']['name'];
   $judul = $_POST['judul'];
+  $divisi = $_SESSION['divisi'];
 
-  $result = mysql_query ("insert into dokumen_upload values ('','$judul','$tipe','$filedata','$nama_file',$ukuran)") 
+  $result = mysql_query ("insert into dokumen_upload values ('','$judul','$tipe','$filedata','$nama_file','$ukuran','$divisi')") 
                           or die(mysql_error());
  
   if ($result){

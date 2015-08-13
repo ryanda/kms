@@ -14,6 +14,7 @@ if ($cekdata == 1) {
 	$_SESSION['username'] = $data['username'];
 	$_SESSION['nama_lengkap'] = $data['nama_lengkap'];
     $_SESSION['level'] = $data['level'];
+    $_SESSION['divisi'] = $data['divisi'];
         
     if ($data['level'] == "1") { ?> <!-- admin -->
 		<script language="javascript">document.location.href="../admin/beranda/menu.php";</script>
