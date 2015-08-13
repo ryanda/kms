@@ -75,7 +75,7 @@ require "includes/config.php";
     <!-- dokumen -->
     
     <li>
-      <div class="collapsible-header cyan darken-3"><i class="mdi-image-filter-drama"></i>Dokumen</div>
+      <div class="collapsible-header cyan darken-3"><i class="mdi-action-description"></i>Dokumen</div>
       
 <?php
   $dok2 = "select * from divisi_sub where id_div='$id'";
@@ -128,7 +128,7 @@ require "includes/config.php";
     </li>
     <!-- file -->
     <li>
-      <div class="collapsible-header orange darken-4"><i class="mdi-maps-place"></i>File</div>
+      <div class="collapsible-header orange darken-4"><i class="mdi-action-assignment-returned"></i>File</div>
 
 <?php
   $file2 = "select * from divisi_sub where id_div='$id'";
