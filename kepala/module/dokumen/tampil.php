@@ -64,14 +64,18 @@ require "includes/config.php";
 <!-- START ACCORDION -->
   <!-- LEVEL 1 -->
   <ul class="collapsible popout" data-collapsible="accordion">
+    
     <!-- deskripsi -->
+    
     <li class="active">
-      <div class="collapsible-header active"><i class="mdi-av-subtitles"></i>Deskripsi</div>
-      <div class="collapsible-body" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
+      <div class="collapsible-header active teal darken-3"><i class="mdi-av-subtitles"></i>Deskripsi</div>
+      <div class="collapsible-body teal" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
     </li>
+    
     <!-- dokumen -->
+    
     <li>
-      <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>Dokumen</div>
+      <div class="collapsible-header cyan darken-3"><i class="mdi-image-filter-drama"></i>Dokumen</div>
       
 <?php
   $dok2 = "select * from divisi_sub where id_div='$id'";
@@ -97,7 +101,7 @@ require "includes/config.php";
       <div class="collapsible-body" style="padding:20px">
         <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header">
+              <div class="collapsible-header teal">
                 <i class="mdi-image-filter-drama"></i><?php echo $data2['nama'] ?>
               </div>
               <div class="collapsible-body">
@@ -124,7 +128,7 @@ require "includes/config.php";
     </li>
     <!-- file -->
     <li>
-      <div class="collapsible-header"><i class="mdi-maps-place"></i>File</div>
+      <div class="collapsible-header orange darken-4"><i class="mdi-maps-place"></i>File</div>
 
 <?php
   $file2 = "select * from divisi_sub where id_div='$id'";
