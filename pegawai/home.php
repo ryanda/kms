@@ -59,37 +59,36 @@ include 'config.php';
 
 	     	    <!--    main content-->
 	    <main style="margin-top:20px;">
-	        <div class="container section teal darken-4">
-	            <div class="row">
-                	
-                	<div class="col s12">
-						<ul class="tabs z-depth-1">
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#home">Berita</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#pegawai">Data Pegawai</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#peraturan">Peraturan</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#dokumen">Dokumen Pengetahuan</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#berita">Berita & Publikasi</a></li>
-					        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#forum">Forum Diskusi</a></li>
-					    </ul>
-                	</div>
-                	
-                	<div class="col s12 row section" id="pegawai"> <br>
+	        <div class="container row">
+            	<div class="col s12" style="margin-bottom: 30px">
+					<ul class="tabs z-depth-1">
+				        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#home">Berita</a></li>
+				        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#pegawai">Data Pegawai</a></li>
+				        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#peraturan">Peraturan</a></li>
+				        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#dokumen">Dokumen Pengetahuan</a></li>
+				        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#berita">Berita & Publikasi</a></li>
+				        <li class="tab col s12 m2 l2 teal"><a class="white-text btn" target="_blank" href="#forum">Forum Diskusi</a></li>
+				    </ul>
+            	</div>
+
+	            <div class="col s12 section teal darken-4">
+                	<div class="section" id="pegawai"> <br>
                 		<a href="module/pegawai/tampil.php"> Dialihkan... </a>
                 	</div>
-                	<div class="col s12 row section" id="peraturan"> <br>
+                	<div class="section" id="peraturan"> <br>
                 		<a href="module/peraturan/tampil.php"> Dialihkan... </a>
                 	</div>
-                	<div class="col s12 row section" id="dokumen"> <br>
+                	<div class="section" id="dokumen"> <br>
                 		<a href="module/dokumen/tampil.php"> Dialihkan... </a>
                 	</div>
-                	<div class="col s12 row section" id="berita"> <br>
+                	<div class="section" id="berita"> <br>
                 		<a href="module/berita/tampil.php"> Dialihkan... </a>
                 	</div>
-                	<div class="col s12 row section" id="forum"> <br>
+                	<div class="section" id="forum"> <br>
                 		<a href="module/diskusi/tampil.php"> Dialihkan... </a>
                 	</div>
 
-                	<div class="col s12 row section" id="home"> <br>
+                	<div class="section" id="home"> <br>
 <?php 
 	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 	$query = "SELECT * FROM berita ";
