@@ -69,7 +69,7 @@ require "includes/config.php";
     
     <li class="active">
       <div class="collapsible-header active teal white-text"><i class="mdi-av-subtitles"></i>Deskripsi</div>
-      <div class="collapsible-body" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
+      <div class="collapsible-body teal white-text" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
     </li>
     
     <!-- dokumen -->
@@ -101,7 +101,7 @@ require "includes/config.php";
       <div class="collapsible-body" style="padding:20px">
         <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header teal">
+              <div class="collapsible-header teal white-text">
                 <i class="mdi-image-filter-drama"></i><?php echo $data2['nama'] ?>
               </div>
               <div class="collapsible-body">
