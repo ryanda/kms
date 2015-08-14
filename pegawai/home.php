@@ -91,7 +91,7 @@ include 'config.php';
                 	<div class="section" id="home"> <br>
 <?php 
 	error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-	$query = "SELECT * FROM berita ";
+	$query = "SELECT * FROM berita LIMIT 6";
 
 	$result = mysql_query($query) or die('Error');
 	while($data = mysql_fetch_array($result)) {
