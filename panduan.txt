@@ -1,3 +1,8 @@
+new new
+index home, di limit 6 berita
+semua tabel teks limit teks 30
+
+
 jobdesk baru 
 1. tambah tampilan home index baru. isi: tampilan home baru tulisannya selamat datang blabla terus ada tombol menu DONE
 2. navbar berita dihapus DONE
