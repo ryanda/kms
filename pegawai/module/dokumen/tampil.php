@@ -70,7 +70,7 @@ require "includes/config.php";
     
     <li class="active">
       <div class="collapsible-header active teal white-text"><i class="mdi-av-subtitles"></i>Deskripsi</div>
-      <div class="collapsible-body" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
+      <div class="collapsible-body teal white-text" style="display: block;"><p><?php echo $data['nama'] ?></p></div>
     </li>
     
     <!-- dokumen -->
