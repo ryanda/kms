@@ -91,7 +91,7 @@
 
                 	<div class="section" id="home"> <br>
 <?php
-	$query = "SELECT * FROM berita ";
+	$query = "SELECT * FROM berita LIMIT 6";
 
 	$result = mysql_query($query) or die('Error');
 	while($data = mysql_fetch_array($result)) {
