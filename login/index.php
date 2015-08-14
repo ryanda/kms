@@ -12,7 +12,7 @@ if ($cekdata == 1) {
 
 	$_SESSION['id_user'] = $data['id_user'];
 	$_SESSION['username'] = $data['username'];
-	$_SESSION['nama_lengkap'] = $data['nama_lengkap'];
+	$_SESSION['nama_lengkap'] = $data['username'];
     $_SESSION['level'] = $data['level'];
     $_SESSION['divisi'] = $data['divisi'];
         
