@@ -28,7 +28,7 @@ require "includes/config.php";
 						<td><?php echo $no ?></td>
 						
 						<td><?php echo $hasil['judul_berita']?></td>
-						<td><?php echo $hasil['isi']?></td> 
+						<td><?php echo substr($hasil['isi'], 0, 50). ' ...'?></td> 
 						<td><?php echo $hasil['tgl_posting_berita']?></td>
 			
 						<td>

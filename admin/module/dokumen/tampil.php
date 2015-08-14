@@ -33,7 +33,7 @@ require "includes/config.php";
                     <td><?php echo $no?></td>
 					
 					<td><?php echo $hasil['judul']?></td>
-                    <td><?php echo $hasil['isi']?></td>
+                    <td><?php echo substr($hasil['isi'], 0, 50). ' ...'?></td>
 					<td><?php echo $hasil['tanggal']?></td>
 					<td><?php echo $hasil['waktu']?></td>
 					<td><?php echo $hasil['baca']?></td> 
