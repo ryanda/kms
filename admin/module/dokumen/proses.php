@@ -6,7 +6,9 @@ if (isset($_POST['proses'])) {
 	$isi = mysql_real_escape_string($_POST['isi']);
 	$tgl = date('Y-m-d');
  	$waktu = date ('H:i:s', time());
-$query = mysql_query("insert into dokumen values('','$judul','$isi','$tgl','$waktu','','')") or die(mysql_error());
+ 	$divisi = $_SESSION['divisi'];
+ 	
+$query = mysql_query("insert into dokumen values('','$judul','$isi','$tgl','$waktu','','','$divisi')") or die(mysql_error());
  
 if ($query) {
     header('location:tampil.php');
