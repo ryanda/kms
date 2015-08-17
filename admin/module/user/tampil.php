@@ -17,6 +17,7 @@ $query=mysql_query("select * from user");
                         <th>Email</th>
                         <th>No Telp</th>
                         <th>Level</th>
+                        <th>Divisi</th>
                         <th>Opsi</th>
                 </tr>
         </thead>
@@ -33,6 +34,7 @@ while($row=mysql_fetch_array($query)){
                         <td><?php echo $row['email'];?></td>
                         <td><?php echo $row['no_telp'];?></td>
                         <td><?php echo $row['level'];?></td>
+                        <td><?php echo $row['divisi'];?></td>
                         <td>    
 <a href="update.php?id_user=<?php echo $row['id_user']; ?>">ubah</a>  |
 <a href="hapus.php?id_user=<?php echo $row['id_user']; ?>" onClick="return confirm('Apakah anda yakin?')">hapus</a>

@@ -18,36 +18,52 @@ $query=mysql_query("select * from user");
     <form action="simpan.php" method="post"> 
         
 <?php
-    while($row=mysql_fetch_array($query)){
+    while($row=mysql_fetch_array($query)){ 
+      $a = $row['divisi'];
 ?>
           <div class="input-field col s3">
             <input type="text" id="id_user" name="id_user" readonly="readonly" value="<?php echo $row['id_user'];?>" required>
             <label for="id_user">Id_User</label>
           </div>
 
-            <div class="input-field col s3">
-              <input id="username" type="text" name="username" value="<?php echo $row['username'];?>" required>
-              <label for="username">Username</label>
-            </div>
+          <div class="input-field col s4">
+            <input id="username" type="text" name="username" value="<?php echo $row['username'];?>" required>
+            <label for="username">Username</label>
+          </div>
 
-            <div class="input-field col s3">
-                <select name="level" id="level" required>
-                  <option value="1"
+          <div class="input-field col s5">
+            <input type="password" name="password" value="" required id="password">
+            <label for="password">Password</label>
+          </div>
+
+          <div class="input-field col s4">
+              <select name="level" id="level" required>
+                <option value="1"
 <?php if($row['level'] == '1') echo 'selected = "selected"' ?>
-                  >admin</option>
-                  <option value="2"
+                >admin</option>
+                <option value="2"
 <?php if($row['level'] == '2') echo 'selected = "selected"' ?>
-                  >pegawai</option>
-                  <option value="3"
+                >pegawai</option>
+                <option value="3"
 <?php if($row['level'] == '3') echo 'selected = "selected"' ?>
-                  >kepala</option>
-                </select>
-                <label>Level</label>
-            </div>
+                >kepala</option>
+              </select>
+              <label>Level</label>
+          </div>
 
-            <div class="input-field col s3">
-              <input type="password" name="password" value="" required id="password">
-              <label for="password">Password</label>
+            <div class="input-field col s8">
+                <select name="divisi" id="divisi" required>
+                  <option value="1" <?php if($a == 1) echo "selected"; ?> >Kepala Pusat Informasi & Hubungan Masyarakat RI </option>
+                  <option value="2" <?php if($a == 2) echo "selected"; ?> >Subbagian Tata Usaha</option>
+                  <option value="3" <?php if($a == 3) echo "selected"; ?> >Kelompok Jabatan Fungsional</option>
+                  <option value="4" <?php if($a == 4) echo "selected"; ?> >Subbidang Data Keagamaan</option>
+                  <option value="5" <?php if($a == 5) echo "selected"; ?> >Subbidang Data Pendidikan</option>
+                  <option value="6" <?php if($a == 6) echo "selected"; ?> >Subbidang Pengembangan Teknologi Informasi dan Komunikasi</option>
+                  <option value="7" <?php if($a == 7) echo "selected"; ?> >Subbidang Media Informasi Elektronik</option>
+                  <option value="8" <?php if($a == 8) echo "selected"; ?> >Subbidang Hubungan Kelembagaan</option>
+                  <option value="9" <?php if($a == 9) echo "selected"; ?> >Subbidang Layanan Informasi Publik</option>
+                </select>
+                <label>Divisi</label>
             </div>
 
             <div class="input-field col s6">
