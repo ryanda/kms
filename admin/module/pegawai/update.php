@@ -19,7 +19,7 @@ $query = mysql_query("select * from pegawai_pinmas");
     while($row=mysql_fetch_array($query)){
 ?>
         
-        
+        <input type="hidden" value="<?php echo $row['id'] ?>" name="id">
         <div class="input-field col s4">
           <input type="text" id="nip" name="nip" value="<?php echo $row['nip'];?>" required>
           <label for="nip">NIP</label>
